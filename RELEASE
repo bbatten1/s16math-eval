@@ -1,0 +1,6 @@
+0.13
+1. Fix rounding error in binary mode fixed point multiplication.
+2. Expand examples directory to include build for Freescale kl46z development
+   board.
+3. Add library compilations for ARM Cortex M0.
+4. Drop MIPS due to Emdebian ceasing operations.

@@ -1,0 +1,83 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of s16_reduce</TITLE>
+</HEAD><BODY>
+<H1>s16_reduce</H1>
+Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>s16_reduce </B>- reduction of terms
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<PRE>
+#include &quot;s16math.h&quot;
+s16 <B>s16_reduce</B>(qm_n <I>k</I>);
+</PRE>
+
+
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Computes reduction of terms for <I>k</I> to unit integer - either 100
+(decimal resolution) or 128 (Q8.7 resolution). Evaluates fractional
+part of <I>k</I> for <I>k</I>/UI=x/y for x and y.
+<A NAME="lbAE">&nbsp;</A>
+<H2>PARAMETERS</H2>
+
+<DL COMPACT>
+<DT><B></B><I>k</I>
+
+<DD>
+16 bit signed fixed point number with two digits or seven bits
+of resolution.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>RETURN</H2>
+
+x and y are packed as two signed bytes into a 16 bit signed integer.
+x is returned in bit 15:8, and y is returned in bits 7:0.
+To be used in fixed point operations, both x and y must be scaled by
+the unit integer.
+<P>
+
+The function returns zero if <I>k</I> is zero or greater than the unit integer.
+<A NAME="lbAG">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<A NAME="lbAH">&nbsp;</A>
+<H3>yahoo questions</H3>
+
+<A HREF="http://answers.yahoo.com/question/index?qid=20080925090511AACvULa">http://answers.yahoo.com/question/index?qid=20080925090511AACvULa</A>
+<A NAME="lbAI">&nbsp;</A>
+<H2>FILE</H2>
+
+reduce.c
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">PARAMETERS</A><DD>
+<DT><A HREF="#lbAF">RETURN</A><DD>
+<DT><A HREF="#lbAG">SEE ALSO</A><DD>
+<DL>
+<DT><A HREF="#lbAH">yahoo questions</A><DD>
+</DL>
+<DT><A HREF="#lbAI">FILE</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 22:14:13 GMT, August 28, 2014
+</BODY>
+</HTML>

@@ -1,0 +1,79 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of s16_todeg</TITLE>
+</HEAD><BODY>
+<H1>s16_todeg</H1>
+Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>s16_todeg </B>- radians to degrees
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<PRE>
+#include &quot;s16math.h&quot;
+qm_deg <B>s16_todeg</B>(qm_rad <I>rad</I>);
+</PRE>
+
+
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Convert radians with three digits - or 9 bits - of resolution to
+degrees with one digit - or 4 bits - of resolution.
+<A NAME="lbAE">&nbsp;</A>
+<H2>PARAMETER</H2>
+
+<DL COMPACT>
+<DT><B></B><I>rad</I>
+
+<DD>
+is an angle in radians having an implied binary point with 9 bits
+of resolution, or an implied decimal point with three digits of resolution.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>RETURN</H2>
+
+<DL COMPACT>
+<DT><B></B><I>deg</I>
+
+<DD>
+The return value is a 16 bit integer degree value having an
+implied binary point with 4 bits - or one decimal digit - of resolution.
+</DL>
+<P>
+
+If <I>deg</I> differs in sign from <I>rad</I>, overflow has occured.
+<A NAME="lbAG">&nbsp;</A>
+<H2>NOTES</H2>
+
+Internal 32 bit intermediate results.
+<A NAME="lbAH">&nbsp;</A>
+<H2>FILE</H2>
+
+todeg.c
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">PARAMETER</A><DD>
+<DT><A HREF="#lbAF">RETURN</A><DD>
+<DT><A HREF="#lbAG">NOTES</A><DD>
+<DT><A HREF="#lbAH">FILE</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 22:14:13 GMT, August 28, 2014
+</BODY>
+</HTML>

@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AS	Makefile	/^AS      = $(GCC_BIN)arm-none-eabi-as$/;"	m
+BINARY	Makefile	/^BINARY ?=0$/;"	m
+BS	multest.cpp	9;"	d	file:
+CC	Makefile	/^CC      = $(GCC_BIN)arm-none-eabi-gcc$/;"	m
+CC_FLAGS	Makefile	/^CC_FLAGS = $(CPU) -c -g -fno-common -fmessage-length=0 -Wall \\$/;"	m
+CC_SYMBOLS	Makefile	/^CC_SYMBOLS = -DTARGET_KL46Z -DTARGET_M0P -DTARGET_Freescale -DTARGET_KLXX \\$/;"	m
+CPU	Makefile	/^CPU = -mcpu=cortex-m0 -mthumb$/;"	m
+CXX	Makefile	/^CXX     = $(GCC_BIN)arm-none-eabi-g++$/;"	m
+DEFINES	Makefile	/^DEFINES :=-DUSE_BINARY_POINT$/;"	m
+DEL	multest.cpp	10;"	d	file:
+EOT	multest.cpp	8;"	d	file:
+GCC_BIN	Makefile	/^GCC_BIN =\/usr\/local\/gcc-arm-none-eabi-4_8-2014q2\/bin\/$/;"	m
+INCLUDE_PATHS	Makefile	/^INCLUDE_PATHS =-I. -I.\/mbed -I.\/mbed\/TARGET_KL46Z \\$/;"	m
+IPATH	Makefile	/^IPATH =..\/..\/lib$/;"	m
+LD	Makefile	/^LD      = $(GCC_BIN)arm-none-eabi-gcc$/;"	m
+LD_FLAGS	Makefile	/^LD_FLAGS = -mcpu=cortex-m0 -mthumb -Wl,--gc-sections --specs=nano.specs \\$/;"	m
+LD_SYS_LIBS	Makefile	/^LD_SYS_LIBS = -lstdc++ -lsupc++ -lm -lc -lgcc -lnosys$/;"	m
+LIBRARIES	Makefile	/^LIBRARIES = -lmbed$/;"	m
+LIBRARY_PATHS	Makefile	/^LIBRARY_PATHS = -L.\/mbed\/TARGET_KL46Z\/TOOLCHAIN_GCC_ARM$/;"	m
+LINKER_SCRIPT	Makefile	/^LINKER_SCRIPT = .\/mbed\/TARGET_KL46Z\/TOOLCHAIN_GCC_ARM\/MKL46Z4.ld$/;"	m
+OBJCOPY	Makefile	/^OBJCOPY = $(GCC_BIN)arm-none-eabi-objcopy$/;"	m
+OBJECTS	Makefile	/^OBJECTS = .\/multest.o$/;"	m
+PROJECT	Makefile	/^PROJECT = multest$/;"	m
+S16MATH_A	Makefile	/^S16MATH_A=..\/..\/arch-binary\/arm-cortex-m0+-l\/s16math.a$/;"	m
+S16MATH_A	Makefile	/^S16MATH_A=..\/..\/arch-decimal\/arm-cortex-m0+-l\/s16math.a$/;"	m
+SYS_OBJECTS	Makefile	/^SYS_OBJECTS = .\/mbed\/TARGET_KL46Z\/TOOLCHAIN_GCC_ARM\/startup_MKL46Z4.o \\$/;"	m
+args	multest.cpp	/^static const char args[]={"args> "};$/;"	v	file:
+formatqmn	multest.cpp	/^static void formatqmn(char *d, s16 x)$/;"	f	file:
+main	multest.cpp	/^int main()$/;"	f
+readline	multest.cpp	/^static s8 readline(char *input, s8 len)$/;"	f	file:
+skipnonws	multest.cpp	/^static char *skipnonws(char *p, char *q)$/;"	f	file:
+skipws	multest.cpp	/^static char *skipws(char *p, char *q)$/;"	f	file:
+toolong	multest.cpp	/^static const char toolong[]={"too long\\n"};$/;"	v	file:

@@ -1,0 +1,75 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of s16_den</TITLE>
+</HEAD><BODY>
+<H1>s16_den</H1>
+Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>s16_den </B>- convert integer portion to denominator.
+<A NAME="lbAC">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Converts the fractional part of a 16 bit signed fixed point number
+to a fixed point value.
+<P>
+
+The fractional portion of the parameter is treated as the numerator of
+a fraction with an implied denominator of 100. It is divided into 100
+and the integer portion of the result is returned in the form n.00.
+<A NAME="lbAD">&nbsp;</A>
+<H2>PARAMETER</H2>
+
+<DL COMPACT>
+<DT><B>pwr</B>
+
+<DD>
+real number power with integer and fractional parts.
+</DL>
+<A NAME="lbAE">&nbsp;</A>
+<H2>RETURN</H2>
+
+The return value is the signed 16 bit denominator. Range is <B>-</B>327.00
+through 327.00.
+<A NAME="lbAF">&nbsp;</A>
+<H2>NOTE</H2>
+
+Superceded by <B>s16_reduce</B>.
+<A NAME="lbAG">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<A NAME="lbAH">&nbsp;</A>
+<H3>[1] Q (number format)</H3>
+
+<A HREF="http://en.wikipedia.org/wiki/Q_%28number_format%29">http://en.wikipedia.org/wiki/Q_%28number_format%29</A>
+<A NAME="lbAI">&nbsp;</A>
+<H2>FILE</H2>
+
+den.c
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAD">PARAMETER</A><DD>
+<DT><A HREF="#lbAE">RETURN</A><DD>
+<DT><A HREF="#lbAF">NOTE</A><DD>
+<DT><A HREF="#lbAG">SEE ALSO</A><DD>
+<DL>
+<DT><A HREF="#lbAH">[1] Q (number format)</A><DD>
+</DL>
+<DT><A HREF="#lbAI">FILE</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 22:14:13 GMT, August 28, 2014
+</BODY>
+</HTML>

@@ -1,0 +1,143 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of s16_root</TITLE>
+</HEAD><BODY>
+<H1>s16_root</H1>
+Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>s16_root </B>- evaluate root
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<PRE>
+#include &quot;s16math.h&quot;
+qm_n <B>s16_root</B>(qm_n <I>a</I>, qm_n <I>n</I>);
+</PRE>
+
+
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Evaluate <I>a</I>^(1/<I>n</I>) and return principal root.
+<A NAME="lbAE">&nbsp;</A>
+<H2>PARAMETERS</H2>
+
+Parameters are supplied as 16 bit integers having an implied binary point
+with 7 bits of resolution, or an implied decimal point with two digits
+of resolution.
+<DL COMPACT>
+<DT><B></B><I>a</I>
+
+<DD>
+number to find root of.
+<DT><B></B><I>n</I>
+
+<DD>
+root to be found.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>RETURN</H2>
+
+The root is returned as a 16 bit integer having an implied binary
+point with 7 bits of resolution, or an implied decimal point with two
+digits of resolution.
+<P>
+
+If an even root of a negative number is requested, the function returns
+zero. Otherwise the function returns a negative root [8].
+<P>
+
+A negative return value of -327.68, or -216.000 if binary resolution
+is used, means overflow has occurred.
+<A NAME="lbAG">&nbsp;</A>
+<H2>NOTES</H2>
+
+Internal 32 bit intermediate results.
+<P>
+
+Calculators vary in handling roots of negative numbers. The funcs.bc
+package [8] issues an error message followed by a zero when an even
+integer valued root of a negative number is requested. The Debian
+qalculate-gtk desktop calculator package returns a complex number.
+This function follows funcs.bc practice.
+<P>
+
+For odd integer valued roots of negative numbers, both packages return
+the negative of the root of the corresponding positive number, as does
+this function.
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<A NAME="lbAI">&nbsp;</A>
+<H3>[1] Binary numeral system</H3>
+
+<A HREF="http://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Binary_numeral_system_.28base_2.29">http://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Binary_numeral_system_.28base_2.29</A>
+<A NAME="lbAJ">&nbsp;</A>
+<H3>[2] Integer square root</H3>
+
+<A HREF="http://en.wikipedia.org/wiki/Integer_square_root">http://en.wikipedia.org/wiki/Integer_square_root</A>
+<A NAME="lbAK">&nbsp;</A>
+<H3>[3] Bisection method</H3>
+
+<A HREF="http://en.wikipedia.org/wiki/Bisection_method">http://en.wikipedia.org/wiki/Bisection_method</A>
+<A NAME="lbAL">&nbsp;</A>
+<H3>[4] Jarvis, Frazer, Square roots by subtraction</H3>
+
+<A HREF="http://www.afjarvis.staff.shef.ac.uk/maths/jarvisspec02.pdf">http://www.afjarvis.staff.shef.ac.uk/maths/jarvisspec02.pdf</A>
+<A NAME="lbAM">&nbsp;</A>
+<H3>[5] Nth root algorithm</H3>
+
+<A HREF="http://en.wikipedia.org/wiki/Nth_root_algorithm">http://en.wikipedia.org/wiki/Nth_root_algorithm</A>
+<A NAME="lbAN">&nbsp;</A>
+<H3>[6] GNU MP 5.1.2</H3>
+
+<A HREF="http://gmplib.org/manual/index.html#Top">http://gmplib.org/manual/index.html#Top</A>
+<A NAME="lbAO">&nbsp;</A>
+<H3>[7] Using Exponents in Algebra - Negative Exponents</H3>
+
+<A HREF="http://www.mathsisfun.com/algebra/exponents-using.html">http://www.mathsisfun.com/algebra/exponents-using.html</A>
+<A NAME="lbAP">&nbsp;</A>
+<H3>[8] ::phodd.net::GNU bc programming::</H3>
+
+<A HREF="http://phodd.net/gnu-bc/">http://phodd.net/gnu-bc/</A>
+<A NAME="lbAQ">&nbsp;</A>
+<H2>FILE</H2>
+
+rootof.c
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">PARAMETERS</A><DD>
+<DT><A HREF="#lbAF">RETURN</A><DD>
+<DT><A HREF="#lbAG">NOTES</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+<DL>
+<DT><A HREF="#lbAI">[1] Binary numeral system</A><DD>
+<DT><A HREF="#lbAJ">[2] Integer square root</A><DD>
+<DT><A HREF="#lbAK">[3] Bisection method</A><DD>
+<DT><A HREF="#lbAL">[4] Jarvis, Frazer, Square roots by subtraction</A><DD>
+<DT><A HREF="#lbAM">[5] Nth root algorithm</A><DD>
+<DT><A HREF="#lbAN">[6] GNU MP 5.1.2</A><DD>
+<DT><A HREF="#lbAO">[7] Using Exponents in Algebra - Negative Exponents</A><DD>
+<DT><A HREF="#lbAP">[8] ::phodd.net::GNU bc programming::</A><DD>
+</DL>
+<DT><A HREF="#lbAQ">FILE</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 22:14:13 GMT, August 28, 2014
+</BODY>
+</HTML>

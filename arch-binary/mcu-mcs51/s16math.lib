@@ -1,0 +1,3291 @@
+<SDCCLIB>
+
+<INDEX>
+      1831
+<MODULE>
+gcd 9
+.__.ABS.
+_s16_gcd_PARM_2
+_s16_gcd
+</MODULE>
+
+<MODULE>
+den 2932
+.__.ABS.
+_s16_den
+</MODULE>
+
+<MODULE>
+acos 4445
+.__.ABS.
+_s16_acos
+</MODULE>
+
+<MODULE>
+asin 5622
+.__.ABS.
+_s16_asin
+</MODULE>
+
+<MODULE>
+atan 8746
+.__.ABS.
+_s16_atan
+</MODULE>
+
+<MODULE>
+sin 12595
+.__.ABS.
+_s16_sin
+</MODULE>
+
+<MODULE>
+cos 14830
+.__.ABS.
+_s16_cos
+</MODULE>
+
+<MODULE>
+sincos 16912
+.__.ABS.
+_s16_sincos
+</MODULE>
+
+<MODULE>
+tan 22220
+.__.ABS.
+_s16_tan
+</MODULE>
+
+<MODULE>
+quadrant 23898
+.__.ABS.
+_s16_quadrant
+</MODULE>
+
+<MODULE>
+cot 25382
+.__.ABS.
+_s16_cot
+</MODULE>
+
+<MODULE>
+sec 26945
+.__.ABS.
+_s16_sec
+</MODULE>
+
+<MODULE>
+csc 28508
+.__.ABS.
+_s16_csc
+</MODULE>
+
+<MODULE>
+scale 30071
+.__.ABS.
+_s16_scale_PARM_2
+_s16_scale
+</MODULE>
+
+<MODULE>
+factorial 31632
+.__.ABS.
+_s16_factorial
+</MODULE>
+
+<MODULE>
+hypot 35803
+.__.ABS.
+_s16_hypot_PARM_2
+_s16_hypot
+</MODULE>
+
+<MODULE>
+div 37543
+.__.ABS.
+_s16_div_PARM_2
+_s16_div
+</MODULE>
+
+<MODULE>
+mul 40979
+.__.ABS.
+_s16_mul_PARM_2
+_s16_mul
+</MODULE>
+
+<MODULE>
+ln 42762
+.__.ABS.
+_s16_ln
+</MODULE>
+
+<MODULE>
+log 47326
+.__.ABS.
+_s16_log_PARM_2
+_s16_log
+</MODULE>
+
+<MODULE>
+log10 49071
+.__.ABS.
+_s16_log10
+</MODULE>
+
+<MODULE>
+powerof 50645
+.__.ABS.
+_s16_pow_PARM_2
+_s16_pow
+</MODULE>
+
+<MODULE>
+rootof 56839
+.__.ABS.
+_s16_root_PARM_2
+_s16_root
+</MODULE>
+
+<MODULE>
+reduce 65038
+.__.ABS.
+_s16_reduce
+</MODULE>
+
+<MODULE>
+todeg 67032
+.__.ABS.
+_s16_todeg
+</MODULE>
+
+<MODULE>
+torad 68475
+.__.ABS.
+_s16_torad
+</MODULE>
+
+<MODULE>
+addov 69851
+.__.ABS.
+_s16_addov_PARM_2
+_s16_addov_PARM_3
+_s16_addov
+</MODULE>
+
+<MODULE>
+subov 71359
+.__.ABS.
+_s16_subov_PARM_2
+_s16_subov_PARM_3
+_s16_subov
+</MODULE>
+
+<MODULE>
+divov 72898
+.__.ABS.
+_s16_divov_PARM_2
+_s16_divov_PARM_3
+_s16_divov
+</MODULE>
+
+<MODULE>
+mulov 74669
+.__.ABS.
+_s16_mulov_PARM_2
+_s16_mulov_PARM_3
+_s16_mulov
+</MODULE>
+
+</INDEX>
+
+<FILES>
+
+<FILE>
+gcd
+<REL>
+XH
+H 1A areas 3 global symbols
+M gcd
+O -mmcs51 --model-small
+S .__.ABS. Def0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 2 flags 0 addr 0
+S _s16_gcd_PARM_2 Def0000
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size C1 flags 20 addr 0
+S _s16_gcd Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 EE B5 00 00 00 09 EF B5
+R 00 00 00 16 F1 21 08 00 05
+T 00 0A 00 00 01 05 8E 82 8F 83 22
+R 00 00 00 16 F1 21 02 00 05
+T 00 11
+R 00 00 00 16
+T 00 11 EE 4F 70 07 85 00 00 00 82 85 00 00 01 83
+R 00 00 00 16 F1 21 07 00 05 F1 21 0C 00 05
+T 00 1B 22
+R 00 00 00 16
+T 00 1C
+R 00 00 00 16
+T 00 1C E5 00 00 00 45 00 00 01 70 05 8E 82 8F 83
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 00 26 22
+R 00 00 00 16
+T 00 27
+R 00 00 00 16
+T 00 27 EE F4 FC EF F4 FD EC 30 E0 39 E5 00 00 00
+R 00 00 00 16 F1 21 0D 00 05
+T 00 33 30 E0 0E 8E 82 EF C3 13 C5 82 13 C5 82 F5
+R 00 00 00 16
+T 00 41 83 80 BC
+R 00 00 00 16
+T 00 44
+R 00 00 00 16
+T 00 44 8E 82 EF C3 13 C5 82 13 C5 82 F5 83 E5
+R 00 00 00 16
+T 00 51 00 00 01 C3 13 C5 00 00 00 13 C5
+R 00 00 00 16 F1 21 02 00 05 F1 21 08 00 05
+T 00 58 00 00 00 F5 00 00 01 12
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 5C 00 00 E5 83 C5 82 25 E0 C5 82 33 F5 83 22
+R 00 00 00 16 00 02 00 16
+T 00 6A
+R 00 00 00 16
+T 00 6A E5 00 00 00 F4 FC E5 00 00 01 F4 FD EC 30
+R 00 00 00 16 F1 21 03 00 05 F1 21 09 00 05
+T 00 74 E0 12 E5 00 00 01 C3 13 C5 00 00 00 13 C5
+R 00 00 00 16 F1 21 05 00 05 F1 21 0B 00 05
+T 00 7E 00 00 00 F5 00 00 01 8E 82 8F 83 02
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 86 00 00
+R 00 00 00 16 00 02 00 16
+T 00 88
+R 00 00 00 16
+T 00 88 C3 E5 00 00 00 9E E5 00 00 01 9F 50 16 EE
+R 00 00 00 16 F1 21 04 00 05 F1 21 09 00 05
+T 00 92 C3 95 00 00 00 FC EF 95 00 00 01 8C 82 C3
+R 00 00 00 16 F1 21 04 00 05 F1 21 0A 00 05
+T 00 9C 13 C5 82 13 C5 82 F5 83 02 00 00
+R 00 00 00 16 00 0B 00 16
+T 00 A7
+R 00 00 00 16
+T 00 A7 E5 00 00 00 C3 9E FC E5 00 00 01 9F 8C 82
+R 00 00 00 16 F1 21 03 00 05 F1 21 0A 00 05
+T 00 B1 C3 13 C5 82 13 C5 82 F5 83 8E 00 00 00 8F
+R 00 00 00 16 F1 21 0C 00 05
+T 00 BD 00 00 01 02 00 00
+R 00 00 00 16 F1 21 02 00 05 00 06 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+den
+<REL>
+XH
+H 1A areas 6 global symbols
+M den
+O -mmcs51 --model-small
+S __modsint_PARM_2 Ref0000
+S .__.ABS. Def0000
+S __divsint_PARM_2 Ref0000
+S __modsint Ref0000
+S __divsint Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 2E flags 20 addr 0
+S _s16_den Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 75 00 00 00 80 75 00 00 01 00 12
+R 00 00 00 16 F1 23 03 00 00 F1 23 08 00 00
+T 00 07 00 00 AE 82 AF 83 EE 4F 60 18 8E 00 00 00
+R 00 00 00 16 02 02 00 03 F1 23 0D 00 02
+T 00 13 8F 00 00 01 90 00 80 12 00 00 AE 82 E5 83
+R 00 00 00 16 F1 23 03 00 02 02 0A 00 04
+T 00 1F 54 01 A2 E0 CE 13 CE 13 CE FF
+R 00 00 00 16
+T 00 29
+R 00 00 00 16
+T 00 29 8E 82 8F 83 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+acos
+<REL>
+XH
+H 1A areas 3 global symbols
+M acos
+O -mmcs51 --model-small
+S _s16_asin Ref0000
+S .__.ABS. Def0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 13 flags 20 addr 0
+S _s16_acos Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 12 00 00 AE 82 AF 83 74 48 C3 9E F5 82 74
+R 00 00 00 16 02 03 00 00
+T 00 0E 06 9F F5 83 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+asin
+<REL>
+XH
+H 1A areas A global symbols
+M asin
+O -mmcs51 --model-small
+S _s16_scale_PARM_2 Ref0000
+S __mulint Ref0000
+S _s16_root Ref0000
+S .__.ABS. Def0000
+S __divsint_PARM_2 Ref0000
+S _s16_scale Ref0000
+S __mulint_PARM_2 Ref0000
+S _s16_root_PARM_2 Ref0000
+S __divsint Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 1 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size F3 flags 20 addr 0
+S _s16_asin Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 E5 83 FF 33 E4 33 F5 00 00 00 E4 FB
+R 00 00 00 16 F1 21 0B 00 05
+T 00 0C FC E5 00 00 00 60 07 C3 E4 9E FE E4 9F FF
+R 00 00 00 16 F1 21 04 00 05
+T 00 18
+R 00 00 00 16
+T 00 18 C3 EE 94 80 EF 64 80 94 80 40 07 7B 48 7C
+R 00 00 00 16
+T 00 26 06 02 00 E3
+R 00 00 00 16 00 04 00 16
+T 00 2A
+R 00 00 00 16
+T 00 2A C3 E4 9E E4 64 80 8F F0 63 F0 80 95 F0 40
+R 00 00 00 16
+T 00 38 03 02 00 E3
+R 00 00 00 16 00 04 00 16
+T 00 3C
+R 00 00 00 16
+T 00 3C 79 01 7A 00
+R 00 00 00 16
+T 00 40
+R 00 00 00 16
+T 00 40 C3 EE 99 EF 64 80 8A F0 63 F0 80 95 F0 50
+R 00 00 00 16
+T 00 4E 03 02 00 D2
+R 00 00 00 16 00 04 00 16
+T 00 52
+R 00 00 00 16
+T 00 52 89 00 00 00 8A 00 00 01 89 82 8A 83 C0 07
+R 00 00 00 16 F1 23 03 00 06 F1 23 07 00 06
+T 00 5C C0 06 C0 04 C0 03 C0 02 C0 01 12 00 00 A8
+R 00 00 00 16 02 0D 00 01
+T 00 6A 82 AD 83 D0 01 D0 02 D0 03 D0 04 D0 06 D0
+R 00 00 00 16
+T 00 78 07 ED A2 E7 C8 33 C8 33 C8 54 01 30 E0 02
+R 00 00 00 16
+T 00 86 44 FE
+R 00 00 00 16
+T 00 88
+R 00 00 00 16
+T 00 88 FD 74 80 C3 98 F5 82 E4 9D F5 83 75
+R 00 00 00 16
+T 00 94 00 00 00 00 75 00 00 01 01 C0 07 C0 06 C0
+R 00 00 00 16 F1 23 02 00 07 F1 23 07 00 07
+T 00 9E 04 C0 03 C0 02 C0 01 12 00 00 85 82
+R 00 00 00 16 02 0A 00 02
+T 00 AA 00 00 00 85 83 00 00 01 90 40 00 12
+R 00 00 00 16 F1 23 02 00 04 F1 23 07 00 04
+T 00 B2 00 00 A8 82 AD 83 D0 01 D0 02 D0 03 D0 04
+R 00 00 00 16 02 02 00 08
+T 00 C0 D0 06 D0 07 E8 2B FB ED 3C FC 09 B9 00 01
+R 00 00 00 16
+T 00 CE 0A
+R 00 00 00 16
+T 00 CF
+R 00 00 00 16
+T 00 CF 02 00 40
+R 00 00 00 16 00 03 00 16
+T 00 D2
+R 00 00 00 16
+T 00 D2 75 00 00 00 04 75 00 00 01 00 8B 82 8C 83
+R 00 00 00 16 F1 23 03 00 00 F1 23 08 00 00
+T 00 DC 12 00 00 AB 82 AC 83
+R 00 00 00 16 02 03 00 05
+T 00 E3
+R 00 00 00 16
+T 00 E3 E5 00 00 00 60 07 C3 E4 9B FB E4 9C FC
+R 00 00 00 16 F1 21 03 00 05
+T 00 EE
+R 00 00 00 16
+T 00 EE 8B 82 8C 83 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+atan
+<REL>
+XH
+H 1A areas 8 global symbols
+M atan
+O -mmcs51 --model-small
+S _s16_scale_PARM_2 Ref0000
+S __mulint Ref0000
+S .__.ABS. Def0000
+S __divsint_PARM_2 Ref0000
+S _s16_scale Ref0000
+S __mulint_PARM_2 Ref0000
+S __divsint Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 3 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 110 flags 20 addr 0
+S _s16_atan Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 01
+R 00 00 00 05
+T 00 01
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 E5 83 FF 33 E4 33 F5 00 00 00 E4 F5
+R 00 00 00 16 F1 21 0B 00 05
+T 00 0C 00 00 01 F5 00 00 02 E5
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 10 00 00 00 60 07 C3 E4 9E FE E4 9F FF
+R 00 00 00 16 F1 21 02 00 05
+T 00 1A
+R 00 00 00 16
+T 00 1A C3 E4 9E E4 64 80 8F F0 63 F0 80 95 F0 40
+R 00 00 00 16
+T 00 28 03 02 00 FA
+R 00 00 00 16 00 04 00 16
+T 00 2C
+R 00 00 00 16
+T 00 2C 79 01 7A 00
+R 00 00 00 16
+T 00 30
+R 00 00 00 16
+T 00 30 89 00 8A 05 8E 03 8F 04 C3 EB 98 EC 9D 50
+R 00 00 00 16
+T 00 3E 03 02 00 E5
+R 00 00 00 16 00 04 00 16
+T 00 42
+R 00 00 00 16
+T 00 42 C3 E9 94 B6 EA 64 80 94 80 50 2A 89
+R 00 00 00 16
+T 00 4E 00 00 00 8A 00 00 01 89 82 8A 83 C0 07 C0
+R 00 00 00 16 F1 23 02 00 05 F1 23 06 00 05
+T 00 58 06 C0 02 C0 01 12 00 00 75 00 00 00 80 75
+R 00 00 00 16 02 08 00 01 F1 23 0B 00 03
+T 00 64 00 00 01 00 12 00 00 AC 82 AD 83 D0 01 D0
+R 00 00 00 16 F1 23 02 00 03 02 07 00 06
+T 00 70 02 D0 06 D0 07 80 39
+R 00 00 00 16
+T 00 77
+R 00 00 00 16
+T 00 77 75 00 00 00 10 75 00 00 01 00 89 82 8A 83
+R 00 00 00 16 F1 23 03 00 03 F1 23 08 00 03
+T 00 81 C0 07 C0 06 C0 02 C0 01 12 00 00 D0 01 D0
+R 00 00 00 16 02 0B 00 06
+T 00 8F 02 89 00 00 00 8A 00 00 01 C0 02 C0 01 12
+R 00 00 00 16 F1 23 04 00 05 F1 23 08 00 05
+T 00 99 00 00 75 00 00 00 10 75
+R 00 00 00 16 02 02 00 01 F1 23 05 00 03
+T 00 9F 00 00 01 00 12 00 00 AC 82 AD 83 D0 01 D0
+R 00 00 00 16 F1 23 02 00 03 02 07 00 06
+T 00 AB 02 D0 06 D0 07
+R 00 00 00 16
+T 00 B0
+R 00 00 00 16
+T 00 B0 74 80 2C F5 00 00 00 E4 3D F5 00 00 01 90
+R 00 00 00 16 F1 23 06 00 03 F1 23 0C 00 03
+T 00 BA 40 00 C0 07 C0 06 C0 02 C0 01 12 00 00 AC
+R 00 00 00 16 02 0D 00 06
+T 00 C8 82 AD 83 D0 01 D0 02 D0 06 D0 07 EC 25
+R 00 00 00 16
+T 00 D5 00 00 01 F5 00 00 01 ED 35
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 DA 00 00 02 F5 00 00 02 09 B9 00 01 0A
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 E2
+R 00 00 00 16
+T 00 E2 02 00 30
+R 00 00 00 16 00 03 00 16
+T 00 E5
+R 00 00 00 16
+T 00 E5 75 00 00 00 04 75 00 00 01 00 85
+R 00 00 00 16 F1 23 03 00 00 F1 23 08 00 00
+T 00 EC 00 00 01 82 85 00 00 02 83 12
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 00 F2 00 00 85 82 00 00 01 85 83
+R 00 00 00 16 02 02 00 04 F1 21 06 00 05
+T 00 F9 00 00 02
+R 00 00 00 16 F1 21 02 00 05
+T 00 FA
+R 00 00 00 16
+T 00 FA E5 00 00 00 60 0B C3 E4 95 00 00 01 F5
+R 00 00 00 16 F1 21 03 00 05 F1 21 0B 00 05
+T 01 03 00 00 01 E4 95 00 00 02 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 08 00 00 02
+R 00 00 00 16 F1 21 02 00 05
+T 01 09
+R 00 00 00 16
+T 01 09 85 00 00 01 82 85 00 00 02 83 22
+R 00 00 00 16 F1 21 03 00 05 F1 21 08 00 05
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+sin
+<REL>
+XH
+H 1A areas 3 global symbols
+M sin
+O -mmcs51 --model-small
+S .__.ABS. Def0000
+S _s16_sincos Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 4 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 94 flags 20 addr 0
+S _s16_sin Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 7D 00 EF 30 E7 09 7D 01 C3 E4
+R 00 00 00 16
+T 00 0E 9E FE E4 9F FF
+R 00 00 00 16
+T 00 13
+R 00 00 00 16
+T 00 13 8E 03 8F 04
+R 00 00 00 16
+T 00 17
+R 00 00 00 16
+T 00 17 C3 74 22 9B 74 99 8C F0 63 F0 80 95 F0 50
+R 00 00 00 16
+T 00 25 0A EB 24 DE FB EC 34 E6 FC 80 E7
+R 00 00 00 16
+T 00 30
+R 00 00 00 16
+T 00 30 8B 06 8C 07 C3 74 D9 9B 74 92 8C F0 63 F0
+R 00 00 00 16
+T 00 3E 80 95 F0 50 08 EB 24 DE FE EC 34 E6 FF
+R 00 00 00 16
+T 00 4B
+R 00 00 00 16
+T 00 4B C3 74 48 9E 74 86 8F F0 63 F0 80 95 F0 50
+R 00 00 00 16
+T 00 59 09 74 91 C3 9E FE 74 0C 9F FF
+R 00 00 00 16
+T 00 63
+R 00 00 00 16
+T 00 63 8E 82 8F 83 C0 05 12 00 00 AB 82 AC 83 AE
+R 00 00 00 16 02 09 00 01
+T 00 71 F0 FF D0 05 8B 00 00 00 8C 00 00 01 8E
+R 00 00 00 16 F1 21 07 00 05 F1 21 0B 00 05
+T 00 7A 00 00 02 8F 00 00 03 ED 60 0D C3 E4 95
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 83 00 00 02 FE E4 95 00 00 03 FF 8E
+R 00 00 00 16 F1 21 02 00 05 F1 21 08 00 05
+T 00 8A 00 00 02 8F 00 00 03
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 8D
+R 00 00 00 16
+T 00 8D 85 00 00 02 82 85 00 00 03 83 22
+R 00 00 00 16 F1 21 03 00 05 F1 21 08 00 05
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+cos
+<REL>
+XH
+H 1A areas 3 global symbols
+M cos
+O -mmcs51 --model-small
+S .__.ABS. Def0000
+S _s16_sincos Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 4 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 77 flags 20 addr 0
+S _s16_cos Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 7D 00 EF 30 E7 07 C3 E4 9E FE
+R 00 00 00 16
+T 00 0E E4 9F FF
+R 00 00 00 16
+T 00 11
+R 00 00 00 16
+T 00 11
+R 00 00 00 16
+T 00 11 C3 74 22 9E 74 99 8F F0 63 F0 80 95 F0 50
+R 00 00 00 16
+T 00 1F 0A EE 24 DE FE EF 34 E6 FF 80 E7
+R 00 00 00 16
+T 00 2A
+R 00 00 00 16
+T 00 2A
+R 00 00 00 16
+T 00 2A C3 74 48 9E 74 86 8F F0 63 F0 80 95 F0 50
+R 00 00 00 16
+T 00 38 0D EE 24 6F FE EF 34 F3 FF 63 05 01 80 E4
+R 00 00 00 16
+T 00 46
+R 00 00 00 16
+T 00 46 8E 82 8F 83 C0 05 12 00 00 AB 82 AC 83 AE
+R 00 00 00 16 02 09 00 01
+T 00 54 F0 FF D0 05 8B 00 00 00 8C 00 00 01 8E
+R 00 00 00 16 F1 21 07 00 05 F1 21 0B 00 05
+T 00 5D 00 00 02 8F 00 00 03 ED 60 0D C3 E4 95
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 66 00 00 00 FE E4 95 00 00 01 FF 8E
+R 00 00 00 16 F1 21 02 00 05 F1 21 08 00 05
+T 00 6D 00 00 00 8F 00 00 01
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 70
+R 00 00 00 16
+T 00 70 85 00 00 00 82 85 00 00 01 83 22
+R 00 00 00 16 F1 21 03 00 05 F1 21 08 00 05
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+sincos
+<REL>
+XH
+H 1A areas 4 global symbols
+M sincos
+O -mmcs51 --model-small
+S _s16_scale_PARM_2 Ref0000
+S .__.ABS. Def0000
+S _s16_scale Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 6 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 192 flags 20 addr 0
+S _s16_sincos Def0036
+A CONST size 14 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 E5 83 FF 33 E4 33 FD 60 07 C3 E4 9E
+R 00 00 00 16
+T 00 0E FE E4 9F FF
+R 00 00 00 16
+T 00 12
+R 00 00 00 16
+T 00 12 75 00 00 00 03 75 00 00 01 00 8E 82 8F 83
+R 00 00 00 16 F1 23 03 00 00 F1 23 08 00 00
+T 00 1C C0 05 12 00 00 AE 82 AF 83 D0 05 ED 60 07
+R 00 00 00 16 02 05 00 02
+T 00 2A C3 E4 9E FE E4 9F FF
+R 00 00 00 16
+T 00 31
+R 00 00 00 16
+T 00 31 8E 82 8F 83 22
+R 00 00 00 16
+T 00 36
+R 00 00 00 16
+T 00 36 85 82 00 00 00 85 83 00 00 01 75
+R 00 00 00 16 F1 21 04 00 05 F1 21 09 00 05
+T 00 3D 00 00 02 6E 75 00 00 03 02 E4 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 00 44 00 00 04 F5 00 00 05 FD
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 48
+R 00 00 00 16
+T 00 48 E5 00 00 01 30 E7 03 02 00 D2
+R 00 00 00 16 F1 21 03 00 05 00 0A 00 16
+T 00 50
+R 00 00 00 16
+T 00 50 8D F0 05 F0 AB 00 00 04 AC 00 00 05 E5
+R 00 00 00 16 F1 21 07 00 05 F1 21 0B 00 05
+T 00 59 00 00 05 33 92 D2 80 08
+R 00 00 00 16 F1 21 02 00 05
+T 00 5F
+R 00 00 00 16
+T 00 5F A2 D2 EC 13 FC EB 13 FB
+R 00 00 00 16
+T 00 67
+R 00 00 00 16
+T 00 67 D5 F0 F5 E5 00 00 02 C3 9B FB E5 00 00 03
+R 00 00 00 16 F1 21 06 00 05 F1 21 0D 00 05
+T 00 71 9C FC 8D F0 05 F0 AA 00 00 02 E5 00 00 03
+R 00 00 00 16 F1 21 09 00 05 F1 21 0D 00 05
+T 00 7B FF 33 92 D2 80 08
+R 00 00 00 16
+T 00 81
+R 00 00 00 16
+T 00 81 A2 D2 EF 13 FF EA 13 FA
+R 00 00 00 16
+T 00 89
+R 00 00 00 16
+T 00 89 D5 F0 F5 EA 25 00 00 04 FA EF 35 00 00 05
+R 00 00 00 16 F1 21 07 00 05 F1 21 0D 00 05
+T 00 93 FF 8A 00 00 04 8F 00 00 05 C2 D5 75 F0 02
+R 00 00 00 16 F1 21 04 00 05 F1 21 08 00 05
+T 00 9D ED 30 E7 04 B2 D5 F4 04
+R 00 00 00 16
+T 00 A5
+R 00 00 00 16
+T 00 A5 A4 30 D5 0A F4 24 01 C5 F0 F4 34 00 C5 F0
+R 00 00 00 16
+T 00 B3
+R 00 00 00 16
+T 00 B3 24 00 00 00 F5 82 74 00 00 00 35 F0 F5 83
+R 00 00 00 16 F1 01 03 00 17 F1 81 09 00 17
+T 00 BD E4 93 FE A3 E4 93 FF E5 00 00 00 C3 9E F5
+R 00 00 00 16 F1 21 0A 00 05
+T 00 C9 00 00 00 E5 00 00 01 9F F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 CE 00 00 01 02 01 50
+R 00 00 00 16 F1 21 02 00 05 00 06 00 16
+T 00 D2
+R 00 00 00 16
+T 00 D2 8D F0 05 F0 AE 00 00 04 AF 00 00 05 E5
+R 00 00 00 16 F1 21 07 00 05 F1 21 0B 00 05
+T 00 DB 00 00 05 33 92 D2 80 08
+R 00 00 00 16 F1 21 02 00 05
+T 00 E1
+R 00 00 00 16
+T 00 E1 A2 D2 EF 13 FF EE 13 FE
+R 00 00 00 16
+T 00 E9
+R 00 00 00 16
+T 00 E9 D5 F0 F5 EE 25 00 00 02 FB EF 35 00 00 03
+R 00 00 00 16 F1 21 07 00 05 F1 21 0D 00 05
+T 00 F3 FC 8D F0 05 F0 AE 00 00 02 E5 00 00 03 FF
+R 00 00 00 16 F1 21 08 00 05 F1 21 0C 00 05
+T 00 FD 33 92 D2 80 08
+R 00 00 00 16
+T 01 02
+R 00 00 00 16
+T 01 02 A2 D2 EF 13 FF EE 13 FE
+R 00 00 00 16
+T 01 0A
+R 00 00 00 16
+T 01 0A D5 F0 F5 E5 00 00 04 C3 9E FE E5 00 00 05
+R 00 00 00 16 F1 21 06 00 05 F1 21 0D 00 05
+T 01 14 9F FF 8E 00 00 04 8F 00 00 05 C2 D5 75 F0
+R 00 00 00 16 F1 21 05 00 05 F1 21 09 00 05
+T 01 1E 02 ED 30 E7 04 B2 D5 F4 04
+R 00 00 00 16
+T 01 27
+R 00 00 00 16
+T 01 27 A4 30 D5 0A F4 24 01 C5 F0 F4 34 00 C5 F0
+R 00 00 00 16
+T 01 35
+R 00 00 00 16
+T 01 35 24 00 00 00 F5 82 74 00 00 00 35 F0 F5 83
+R 00 00 00 16 F1 01 03 00 17 F1 81 09 00 17
+T 01 3F E4 93 FE A3 E4 93 FF EE 25 00 00 00 F5
+R 00 00 00 16 F1 21 0B 00 05
+T 01 4A 00 00 00 EF 35 00 00 01 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 4F 00 00 01
+R 00 00 00 16 F1 21 02 00 05
+T 01 50
+R 00 00 00 16
+T 01 50 8B 00 00 02 8C 00 00 03 0D C3 ED 64 80 94
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 01 5A 8A 50 03 02 00 48
+R 00 00 00 16 00 06 00 16
+T 01 60
+R 00 00 00 16
+T 01 60 85 00 00 02 82 85 00 00 03 83 12
+R 00 00 00 16 F1 21 03 00 05 F1 21 08 00 05
+T 01 67 00 00 E5 82 85 83 F0 F5 00 00 02 85 F0
+R 00 00 00 16 00 02 00 16 F1 21 0A 00 05
+T 01 72 00 00 03 85 00 00 04 82 85
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 77 00 00 05 83 12 00 00 E5 82 85 83 F0 F5
+R 00 00 00 16 F1 21 02 00 05 00 07 00 16
+T 01 82 00 00 04 85 F0 00 00 05 85
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 87 00 00 02 82 85 00 00 03 83 85
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 8D 00 00 04 F0 E5 00 00 05 22
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 00 00
+R 00 00 00 17
+T 00 00 24 03 DA 01 FA 00 7F 00 3E 00 1F 00 0E 00
+R 00 00 00 17
+T 00 0E 07 00 03 00 01 00
+R 00 00 00 17
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+tan
+<REL>
+XH
+H 1A areas 6 global symbols
+M tan
+O -mmcs51 --model-small
+S _s16_div Ref0000
+S _s16_cos Ref0000
+S .__.ABS. Def0000
+S _s16_sin Ref0000
+S _s16_div_PARM_2 Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 4E flags 20 addr 0
+S _s16_tan Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 C0 07 C0 06 12 00 00 AC 82 AD
+R 00 00 00 16 02 0B 00 01
+T 00 0E 83 D0 06 D0 07 8E 82 8F 83 C0 05 C0 04 12
+R 00 00 00 16
+T 00 1C 00 00 AE 82 AF 83 D0 04 D0 05 EC 4D 70 10
+R 00 00 00 16 02 02 00 03
+T 00 2A EF 30 E7 06 7E 00 7F 80 80 15
+R 00 00 00 16
+T 00 34
+R 00 00 00 16
+T 00 34 7E FF 7F 7F 80 0F
+R 00 00 00 16
+T 00 3A
+R 00 00 00 16
+T 00 3A 8C 00 00 00 8D 00 00 01 8E 82 8F 83 12
+R 00 00 00 16 F1 23 03 00 04 F1 23 07 00 04
+T 00 43 00 00 AE 82 AF 83
+R 00 00 00 16 02 02 00 00
+T 00 49
+R 00 00 00 16
+T 00 49 8E 82 8F 83 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+quadrant
+<REL>
+XH
+H 1A areas 4 global symbols
+M quadrant
+O -mmcs51 --model-small
+S __modsint_PARM_2 Ref0000
+S .__.ABS. Def0000
+S __modsint Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 2F flags 20 addr 0
+S _s16_quadrant Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 75 00 00 00 22 75 00 00 01 19 12
+R 00 00 00 16 F1 23 03 00 00 F1 23 08 00 00
+T 00 07 00 00 AE 82 AF 83 EE 30 E7 04 74 22 2E FE
+R 00 00 00 16 02 02 00 02
+T 00 15
+R 00 00 00 16
+T 00 15 EE FD 33 95 E0 FF 75 00 00 00 48 75
+R 00 00 00 16 F1 23 09 00 00
+T 00 1F 00 00 01 06 8D 82 8F 83 12 00 00 AD 82 8D
+R 00 00 00 16 F1 23 02 00 00 02 0B 00 02
+T 00 2B 06 8E 82 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+cot
+<REL>
+XH
+H 1A areas 6 global symbols
+M cot
+O -mmcs51 --model-small
+S _s16_tan Ref0000
+S _s16_div Ref0000
+S .__.ABS. Def0000
+S _s16_quadrant Ref0000
+S _s16_div_PARM_2 Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 34 flags 20 addr 0
+S _s16_cot Def0000
+A CONST size 4 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 C0 07 C0 06 12 00 00 AC 82 AD
+R 00 00 00 16 02 0B 00 00
+T 00 0E 83 D0 06 D0 07 EC 4D 70 13 8E 82 8F 83 12
+R 00 00 00 16
+T 00 1C 00 00 E5 82 90 00 00 93 FF FC 33 95 E0 FD
+R 00 00 00 16 02 02 00 03 00 07 00 17
+T 00 2A
+R 00 00 00 16
+T 00 2A 8C 00 00 00 8D 00 00 01 90 00 80 02
+R 00 00 00 16 F1 23 03 00 04 F1 23 07 00 04
+T 00 32 00 00
+R 00 00 00 16 02 02 00 01
+T 00 00
+R 00 00 00 17
+T 00 00 01 FF 01 FF
+R 00 00 00 17
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+sec
+<REL>
+XH
+H 1A areas 6 global symbols
+M sec
+O -mmcs51 --model-small
+S _s16_div Ref0000
+S _s16_cos Ref0000
+S .__.ABS. Def0000
+S _s16_quadrant Ref0000
+S _s16_div_PARM_2 Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 34 flags 20 addr 0
+S _s16_sec Def0000
+A CONST size 4 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 C0 07 C0 06 12 00 00 AC 82 AD
+R 00 00 00 16 02 0B 00 01
+T 00 0E 83 D0 06 D0 07 EC 4D 70 13 8E 82 8F 83 12
+R 00 00 00 16
+T 00 1C 00 00 E5 82 90 00 00 93 FF FC 33 95 E0 FD
+R 00 00 00 16 02 02 00 03 00 07 00 17
+T 00 2A
+R 00 00 00 16
+T 00 2A 8C 00 00 00 8D 00 00 01 90 00 80 02
+R 00 00 00 16 F1 23 03 00 04 F1 23 07 00 04
+T 00 32 00 00
+R 00 00 00 16 02 02 00 00
+T 00 00
+R 00 00 00 17
+T 00 00 01 FF FF 01
+R 00 00 00 17
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+csc
+<REL>
+XH
+H 1A areas 6 global symbols
+M csc
+O -mmcs51 --model-small
+S _s16_div Ref0000
+S .__.ABS. Def0000
+S _s16_sin Ref0000
+S _s16_quadrant Ref0000
+S _s16_div_PARM_2 Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 34 flags 20 addr 0
+S _s16_csc Def0000
+A CONST size 4 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 C0 07 C0 06 12 00 00 AC 82 AD
+R 00 00 00 16 02 0B 00 02
+T 00 0E 83 D0 06 D0 07 EC 4D 70 13 8E 82 8F 83 12
+R 00 00 00 16
+T 00 1C 00 00 E5 82 90 00 00 93 FF FC 33 95 E0 FD
+R 00 00 00 16 02 02 00 03 00 07 00 17
+T 00 2A
+R 00 00 00 16
+T 00 2A 8C 00 00 00 8D 00 00 01 90 00 80 02
+R 00 00 00 16 F1 23 03 00 04 F1 23 07 00 04
+T 00 32 00 00
+R 00 00 00 16 02 02 00 00
+T 00 00
+R 00 00 00 17
+T 00 00 01 01 FF FF
+R 00 00 00 17
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+scale
+<REL>
+XH
+H 1B areas 3 global symbols
+M scale
+O -mmcs51 --model-small
+S .__.ABS. Def0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A OSEG size 2 flags 4 addr 0
+S _s16_scale_PARM_2 Def0000
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 3A flags 20 addr 0
+S _s16_scale Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 06
+T 00 00
+R 00 00 00 06
+T 00 00
+R 00 00 00 17
+T 00 00 AE 82 AF 83 74 01 25 00 00 00 FC E4 35
+R 00 00 00 17 F1 21 09 00 06
+T 00 0B 00 00 01 A2 E7 13 CC 13 CC FD EC 2E FE ED
+R 00 00 00 17 F1 21 02 00 06
+T 00 17 3F FF 85 00 00 00 F0 05 F0 85 06 82 85 07
+R 00 00 00 17 F1 21 05 00 06
+T 00 23 83 EF 33 92 D2 80 0C
+R 00 00 00 17
+T 00 2A
+R 00 00 00 17
+T 00 2A A2 D2 E5 83 13 F5 83 E5 82 13 F5 82
+R 00 00 00 17
+T 00 36
+R 00 00 00 17
+T 00 36 D5 F0 F1 22
+R 00 00 00 17
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+factorial
+<REL>
+XH
+H 1A areas 8 global symbols
+M factorial
+O -mmcs51 --model-small
+S __divslong_PARM_2 Ref0000
+S __mulint Ref0000
+S __mullong_PARM_2 Ref0000
+S .__.ABS. Def0000
+S __divslong Ref0000
+S __mulint_PARM_2 Ref0000
+S __mullong Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 4 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size FF flags 20 addr 0
+S _s16_factorial Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 E5 83 FF 30 E7 0C E4 F5 00 00 00 F5
+R 00 00 00 16 F1 21 0C 00 05
+T 00 0C 00 00 01 F5 00 00 02 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 10 00 00 03 02 00 F8
+R 00 00 00 16 F1 21 02 00 05 00 06 00 16
+T 00 14
+R 00 00 00 16
+T 00 14 C3 EE 94 C8 EF 64 80 94 80 50 0D 75
+R 00 00 00 16
+T 00 20 00 00 00 80 E4 F5 00 00 01 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 08 00 05
+T 00 26 00 00 02 F5 00 00 03 02
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 2A 00 F8
+R 00 00 00 16 00 02 00 16
+T 00 2C
+R 00 00 00 16
+T 00 2C E4 F5 00 00 00 75 00 00 01 05 F5
+R 00 00 00 16 F1 21 04 00 05 F1 21 08 00 05
+T 00 33 00 00 02 F5 00 00 03 8E
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 37 00 00 00 8F 00 00 01 90 00 0A 12
+R 00 00 00 16 F1 23 02 00 05 F1 23 06 00 05
+T 00 3E 00 00 AE 82 AF 83
+R 00 00 00 16 02 02 00 01
+T 00 44
+R 00 00 00 16
+T 00 44 C3 E4 95 00 00 00 E4 95 00 00 01 E4 95
+R 00 00 00 16 F1 21 05 00 05 F1 21 0A 00 05
+T 00 4D 00 00 02 E4 64 80 85 00 00 03 F0 63 F0 80
+R 00 00 00 16 F1 21 02 00 05 F1 21 09 00 05
+T 00 57 95 F0 50 6D C3 EF 64 80 94 85 40 65 8E
+R 00 00 00 16
+T 00 64 00 00 00 EF F5 00 00 01 33 95 E0 F5
+R 00 00 00 16 F1 23 02 00 02 F1 23 07 00 02
+T 00 6C 00 00 02 F5 00 00 03 85
+R 00 00 00 16 F1 23 02 00 02 F1 23 06 00 02
+T 00 70 00 00 00 82 85 00 00 01 83 85
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 00 76 00 00 02 F0 E5 00 00 03 C0 07 C0 06 12
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 00 7F 00 00 85 82 00 00 00 85 83
+R 00 00 00 16 02 02 00 06 F1 21 06 00 05
+T 00 86 00 00 01 85 F0 00 00 02 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 00 8B 00 00 03 74 F4 25 00 00 00 F8 74 01 35
+R 00 00 00 16 F1 21 02 00 05 F1 21 08 00 05
+T 00 94 00 00 01 F9 E4 35 00 00 02 FC E4 35
+R 00 00 00 16 F1 21 02 00 05 F1 21 08 00 05
+T 00 9C 00 00 03 FD E4 F5 00 00 00 75
+R 00 00 00 16 F1 21 02 00 05 F1 23 08 00 00
+T 00 A2 00 00 01 05 F5 00 00 02 F5
+R 00 00 00 16 F1 23 02 00 00 F1 23 07 00 00
+T 00 A7 00 00 03 88 82 89 83 8C F0 ED 12 00 00 85
+R 00 00 00 16 F1 23 02 00 00 02 0D 00 04
+T 00 B3 82 00 00 00 85 83 00 00 01 85 F0
+R 00 00 00 16 F1 21 03 00 05 F1 21 08 00 05
+T 00 BA 00 00 02 F5 00 00 03 D0 06 D0 07 EF 24 FB
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 C4 FF 02 00 44
+R 00 00 00 16 00 04 00 16
+T 00 C8
+R 00 00 00 16
+T 00 C8 74 05 25 00 00 00 FC E4 35 00 00 01 FD E4
+R 00 00 00 16 F1 21 05 00 05 F1 21 0B 00 05
+T 00 D2 35 00 00 02 FE E4 35 00 00 03 FF 75
+R 00 00 00 16 F1 21 03 00 05 F1 21 09 00 05
+T 00 DA 00 00 00 0A E4 F5 00 00 01 F5
+R 00 00 00 16 F1 23 02 00 00 F1 23 08 00 00
+T 00 E0 00 00 02 F5 00 00 03 8C 82 8D 83 8E F0 EF
+R 00 00 00 16 F1 23 02 00 00 F1 23 06 00 00
+T 00 EA 12 00 00 85 82 00 00 00 85 83
+R 00 00 00 16 02 03 00 04 F1 21 07 00 05
+T 00 F2 00 00 01 85 F0 00 00 02 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 00 F7 00 00 03
+R 00 00 00 16 F1 21 02 00 05
+T 00 F8
+R 00 00 00 16
+T 00 F8 85 00 00 00 82 85 00 00 01 83 22
+R 00 00 00 16 F1 21 03 00 05 F1 21 08 00 05
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+hypot
+<REL>
+XH
+H 1A areas 7 global symbols
+M hypot
+O -mmcs51 --model-small
+S _s16_pow_PARM_2 Ref0000
+S _s16_root Ref0000
+S .__.ABS. Def0000
+S _s16_pow Ref0000
+S _s16_root_PARM_2 Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 2 flags 0 addr 0
+S _s16_hypot_PARM_2 Def0000
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 39 flags 20 addr 0
+S _s16_hypot Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 75 00 00 00 00 75 00 00 01 01 12
+R 00 00 00 16 F1 23 03 00 00 F1 23 08 00 00
+T 00 07 00 00 AE 82 AF 83 75 00 00 00 00 75
+R 00 00 00 16 02 02 00 03 F1 23 09 00 00
+T 00 11 00 00 01 01 85 00 00 00 82 85
+R 00 00 00 16 F1 23 02 00 00 F1 21 07 00 05
+T 00 17 00 00 01 83 C0 07 C0 06 12 00 00 AC 82 AD
+R 00 00 00 16 F1 21 02 00 05 02 0B 00 03
+T 00 23 83 D0 06 D0 07 EC 2E F5 82 ED 3F F5 83 75
+R 00 00 00 16
+T 00 31 00 00 00 00 75 00 00 01 01 02
+R 00 00 00 16 F1 23 02 00 04 F1 23 07 00 04
+T 00 37 00 00
+R 00 00 00 16 02 02 00 01
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+div
+<REL>
+XH
+H 1A areas 5 global symbols
+M div
+O -mmcs51 --model-small
+S __divslong_PARM_2 Ref0000
+S .__.ABS. Def0000
+S __divslong Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size A flags 0 addr 0
+S _s16_div_PARM_2 Def0000
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size C6 flags 20 addr 0
+S _s16_div Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 04
+R 00 00 00 05
+T 00 04
+R 00 00 00 05
+T 00 06
+R 00 00 00 05
+T 00 06
+R 00 00 00 05
+T 00 08
+R 00 00 00 05
+T 00 08
+R 00 00 00 05
+T 00 09
+R 00 00 00 05
+T 00 09
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 85 82 00 00 02 85 83 00 00 03 E4 FA FB FC
+R 00 00 00 16 F1 21 04 00 05 F1 21 09 00 05
+T 00 0A FD E5 00 00 01 33 E4 33 F5 00 00 09 60 0D
+R 00 00 00 16 F1 21 04 00 05 F1 21 0B 00 05
+T 00 14 C3 E4 95 00 00 00 F5 00 00 04 E4 95
+R 00 00 00 16 F1 21 05 00 05 F1 21 09 00 05
+T 00 1C 00 00 01 F5 00 00 05 80 06
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 21
+R 00 00 00 16
+T 00 21 85 00 00 00 00 00 04 85
+R 00 00 00 16 F1 21 03 00 05 F1 21 06 00 05
+T 00 25 00 00 01 00 00 05
+R 00 00 00 16 F1 21 02 00 05 F1 21 05 00 05
+T 00 27
+R 00 00 00 16
+T 00 27 E5 00 00 00 45 00 00 01 70 03 02
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 00 2E 00 C1
+R 00 00 00 16 00 02 00 16
+T 00 30
+R 00 00 00 16
+T 00 30 E5 00 00 03 33 E4 33 F5 00 00 08 60 0D C3
+R 00 00 00 16 F1 21 03 00 05 F1 21 0A 00 05
+T 00 3A E4 95 00 00 02 F5 00 00 06 E4 95
+R 00 00 00 16 F1 21 04 00 05 F1 21 08 00 05
+T 00 41 00 00 03 F5 00 00 07 80 06
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 46
+R 00 00 00 16
+T 00 46 85 00 00 02 00 00 06 85
+R 00 00 00 16 F1 21 03 00 05 F1 21 06 00 05
+T 00 4A 00 00 03 00 00 07
+R 00 00 00 16 F1 21 02 00 05 F1 21 05 00 05
+T 00 4C
+R 00 00 00 16
+T 00 4C A8 00 00 06 E5 00 00 07 F9 33 95 E0 FC 54
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 00 56 01 A2 E0 CC 13 CC 13 CC FD E9 C3 13 4C FC
+R 00 00 00 16
+T 00 64 88 02 E9 54 01 A2 E0 CA 13 CA 13 CA FB AE
+R 00 00 00 16
+T 00 72 00 00 04 E5 00 00 05 A2 E7 13 CE 13 CE 8E
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 7C 00 F9 33 95 E0 FE FF E8 2A FA E9 3B FB EE
+R 00 00 00 16
+T 00 8A 3C FC EF 3D FD 85 00 00 04 00 00 00 E5
+R 00 00 00 16 F1 21 08 00 05 F1 23 0B 00 00
+T 00 93 00 00 05 F5 00 00 01 33 95 E0 F5
+R 00 00 00 16 F1 21 02 00 05 F1 23 06 00 00
+T 00 9A 00 00 02 F5 00 00 03 8A 82 8B 83 8C F0 ED
+R 00 00 00 16 F1 23 02 00 00 F1 23 06 00 00
+T 00 A4 12 00 00 AA 82 AB 83 AC F0 FD E5 00 00 09
+R 00 00 00 16 02 03 00 02 F1 21 0D 00 05
+T 00 B0 65 00 00 08 60 0D C3 E4 9A FA E4 9B FB E4
+R 00 00 00 16 F1 21 03 00 05
+T 00 BC 9C FC E4 9D FD
+R 00 00 00 16
+T 00 C1
+R 00 00 00 16
+T 00 C1 8A 82 8B 83 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+mul
+<REL>
+XH
+H 1A areas 5 global symbols
+M mul
+O -mmcs51 --model-small
+S __mullong_PARM_2 Ref0000
+S .__.ABS. Def0000
+S __mullong Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 2 flags 0 addr 0
+S _s16_mul_PARM_2 Def0000
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 59 flags 20 addr 0
+S _s16_mul Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 E5 83 FF 33 95 E0 FD FC 85 00 00 00
+R 00 00 00 16 F1 21 0D 00 05
+T 00 0C 00 00 00 E5 00 00 01 F5
+R 00 00 00 16 F1 23 02 00 00 F1 21 06 00 05
+T 00 10 00 00 01 33 95 E0 F5 00 00 02 F5
+R 00 00 00 16 F1 23 02 00 00 F1 23 09 00 00
+T 00 17 00 00 03 8E 82 8F 83 8D F0 EC 12 00 00 AC
+R 00 00 00 16 F1 23 02 00 00 02 0D 00 02
+T 00 23 82 AD 83 AE F0 FF 74 40 2C FC E4 3D FD E4
+R 00 00 00 16
+T 00 31 3E FE E4 3F FF ED A2 E7 CC 33 CC 33 CC 54
+R 00 00 00 16
+T 00 3F 01 FD EE 2E 4D FD EF A2 E7 CE 33 CE 33 CE
+R 00 00 00 16
+T 00 4D 54 01 30 E0 02 44 FE
+R 00 00 00 16
+T 00 54
+R 00 00 00 16
+T 00 54 8C 82 8D 83 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+ln
+<REL>
+XH
+H 1A areas 8 global symbols
+M ln
+O -mmcs51 --model-small
+S __divslong_PARM_2 Ref0000
+S _s16_div Ref0000
+S __mullong_PARM_2 Ref0000
+S .__.ABS. Def0000
+S __divslong Ref0000
+S _s16_div_PARM_2 Ref0000
+S __mullong Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 8 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 146 flags 20 addr 0
+S _s16_ln Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 04
+R 00 00 00 05
+T 00 04
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 75 00 00 00 01 E4 F5 00 00 01
+R 00 00 00 16 F1 21 07 00 05 F1 21 0D 00 05
+T 00 0A F5 00 00 04 F5 00 00 05 F5
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 00 0F 00 00 06 F5 00 00 07 C3 E4 9E E4 64 80 8F
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 19 F0 63 F0 80 95 F0 40 04 90 CE 80 22
+R 00 00 00 16
+T 00 25
+R 00 00 00 16
+T 00 25 C3 EE 94 80 EF 64 80 94 80 50 14 8E
+R 00 00 00 16
+T 00 31 00 00 00 8F 00 00 01 90 00 80 12
+R 00 00 00 16 F1 23 02 00 05 F1 23 06 00 05
+T 00 38 00 00 AE 82 AF 83 75 00 00 00 FF 75
+R 00 00 00 16 02 02 00 01 F1 21 09 00 05
+T 00 42 00 00 01 FF
+R 00 00 00 16 F1 21 02 00 05
+T 00 44
+R 00 00 00 16
+T 00 44 7C 80 7D FF
+R 00 00 00 16
+T 00 48
+R 00 00 00 16
+T 00 48 74 80 2C FC E4 3D FD C3 74 5C 9E 74 81 8F
+R 00 00 00 16
+T 00 56 F0 63 F0 80 95 F0 50 1B 75 00 00 00 5C 75
+R 00 00 00 16 F1 23 0B 00 05
+T 00 62 00 00 01 01 8E 82 8F 83 C0 05 C0 04 12
+R 00 00 00 16 F1 23 02 00 05
+T 00 6D 00 00 AE 82 AF 83 D0 04 D0 05 80 CF
+R 00 00 00 16 02 02 00 01
+T 00 79
+R 00 00 00 16
+T 00 79 8C 00 00 02 8D 00 00 03 7C 7F 7D 00
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 00 81
+R 00 00 00 16
+T 00 81 0C BC 00 01 0D
+R 00 00 00 16
+T 00 86
+R 00 00 00 16
+T 00 86 8C 00 00 00 8D 00 00 01 90 05 00 C0 07 C0
+R 00 00 00 16 F1 23 03 00 05 F1 23 07 00 05
+T 00 90 06 C0 05 C0 04 12 00 00 AA 82 AB 83 D0 04
+R 00 00 00 16 02 08 00 01
+T 00 9E D0 05 D0 06 D0 07 8A 00 EB F9 33 95 E0 FA
+R 00 00 00 16
+T 00 AC FB E8 25 00 00 04 F5 00 00 04 E9 35
+R 00 00 00 16 F1 21 05 00 05 F1 21 09 00 05
+T 00 B4 00 00 05 F5 00 00 05 EA 35
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 B9 00 00 06 F5 00 00 06 EB 35
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 BE 00 00 07 F5 00 00 07 C3 EC 9E ED 64 80 8F
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 C8 F0 63 F0 80 95 F0 40 B1 E4 B5 00 00 04 0F
+R 00 00 00 16 F1 21 0C 00 05
+T 00 D4 74 05 B5 00 00 05 0A E4 B5 00 00 06 06 E4
+R 00 00 00 16 F1 21 05 00 05 F1 21 0B 00 05
+T 00 DE B5 00 00 07 02 80 02
+R 00 00 00 16 F1 21 03 00 05
+T 00 E3
+R 00 00 00 16
+T 00 E3 80 0A
+R 00 00 00 16
+T 00 E5
+R 00 00 00 16
+T 00 E5 7C 00 7D 00 7E 00 7F 00 80 1F
+R 00 00 00 16
+T 00 EF
+R 00 00 00 16
+T 00 EF E4 F5 00 00 00 75 00 00 01 05 F5
+R 00 00 00 16 F1 23 04 00 00 F1 23 08 00 00
+T 00 F6 00 00 02 F5 00 00 03 85
+R 00 00 00 16 F1 23 02 00 00 F1 23 06 00 00
+T 00 FA 00 00 04 82 85 00 00 05 83 85
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 00 00 00 06 F0 E5 00 00 07 12
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 05 00 00 AC 82 AD 83 AE F0 FF
+R 00 00 00 16 02 02 00 04
+T 01 0E
+R 00 00 00 16
+T 01 0E 8C 00 00 04 8D 00 00 05 8E
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 01 13 00 00 06 8F 00 00 07 AC
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 17 00 00 02 E5 00 00 03 FD 33 95 E0 FE FF EC
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 21 25 00 00 04 F5 00 00 00 ED 35
+R 00 00 00 16 F1 21 03 00 05 F1 23 07 00 02
+T 01 27 00 00 05 F5 00 00 01 EE 35
+R 00 00 00 16 F1 21 02 00 05 F1 23 06 00 02
+T 01 2C 00 00 06 F5 00 00 02 EF 35
+R 00 00 00 16 F1 21 02 00 05 F1 23 06 00 02
+T 01 31 00 00 07 F5 00 00 03 AC
+R 00 00 00 16 F1 21 02 00 05 F1 23 06 00 02
+T 01 35 00 00 00 E5 00 00 01 FD 33 95 E0 FE 8C 82
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 3F 8D 83 8E F0 02 00 00
+R 00 00 00 16 02 07 00 06
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+log
+<REL>
+XH
+H 1A areas 6 global symbols
+M log
+O -mmcs51 --model-small
+S _s16_div Ref0000
+S .__.ABS. Def0000
+S _s16_ln Ref0000
+S _s16_div_PARM_2 Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 2 flags 0 addr 0
+S _s16_log_PARM_2 Def0000
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 4D flags 20 addr 0
+S _s16_log Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 85 00 00 00 82 85 00 00 01 83
+R 00 00 00 16 F1 21 07 00 05 F1 21 0C 00 05
+T 00 0A C0 07 C0 06 12 00 00 AC 82 AD 83 D0 06 D0
+R 00 00 00 16 02 07 00 02
+T 00 18 07 BC 80 08 BD CE 05 8C 82 8D 83 22
+R 00 00 00 16
+T 00 24
+R 00 00 00 16
+T 00 24 8E 82 8F 83 C0 05 C0 04 12 00 00 AE 82 AF
+R 00 00 00 16 02 0B 00 02
+T 00 32 83 D0 04 D0 05 BE 80 08 BF CE 05 8E 82 8F
+R 00 00 00 16
+T 00 40 83 22
+R 00 00 00 16
+T 00 42
+R 00 00 00 16
+T 00 42 8E 00 00 00 8F 00 00 01 8C 82 8D 83 02
+R 00 00 00 16 F1 23 03 00 03 F1 23 07 00 03
+T 00 4B 00 00
+R 00 00 00 16 02 02 00 00
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+log10
+<REL>
+XH
+H 1A areas 5 global symbols
+M log10
+O -mmcs51 --model-small
+S _s16_div Ref0000
+S .__.ABS. Def0000
+S _s16_ln Ref0000
+S _s16_div_PARM_2 Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 34 flags 20 addr 0
+S _s16_log10 Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 12 00 00 AE 82 AF 83 E4 BE 80 04 BF CE 01
+R 00 00 00 16 02 03 00 02
+T 00 0E 04
+R 00 00 00 16
+T 00 0F
+R 00 00 00 16
+T 00 0F FD B4 01 00
+R 00 00 00 16
+T 00 13
+R 00 00 00 16
+T 00 13 E4 33 FD 60 13 75 00 00 00 26 75 00 00 01
+R 00 00 00 16 F1 23 08 00 03 F1 23 0D 00 03
+T 00 1D 01 8E 82 8F 83 12 00 00 AC 82 AD 83 80 04
+R 00 00 00 16 02 08 00 00
+T 00 2B
+R 00 00 00 16
+T 00 2B 8E 04 8F 05
+R 00 00 00 16
+T 00 2F
+R 00 00 00 16
+T 00 2F 8C 82 8D 83 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+powerof
+<REL>
+XH
+H 1A areas A global symbols
+M powerof
+O -mmcs51 --model-small
+S _s16_mul_PARM_2 Ref0000
+S _s16_reduce Ref0000
+S _s16_div Ref0000
+S _s16_root Ref0000
+S .__.ABS. Def0000
+S _s16_mul Ref0000
+S _s16_div_PARM_2 Ref0000
+S _s16_root_PARM_2 Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 10 flags 0 addr 0
+S _s16_pow_PARM_2 Def0000
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 198 flags 20 addr 0
+S _s16_pow Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 04
+R 00 00 00 05
+T 00 04
+R 00 00 00 05
+T 00 06
+R 00 00 00 05
+T 00 06
+R 00 00 00 05
+T 00 08
+R 00 00 00 05
+T 00 08
+R 00 00 00 05
+T 00 0A
+R 00 00 00 05
+T 00 0A
+R 00 00 00 05
+T 00 0C
+R 00 00 00 05
+T 00 0C
+R 00 00 00 05
+T 00 0E
+R 00 00 00 05
+T 00 0E
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 85 82 00 00 02 85 83 00 00 03 E5
+R 00 00 00 16 F1 21 04 00 05 F1 21 09 00 05
+T 00 07 00 00 01 33 E4 33 FD 60 03 02 01 52
+R 00 00 00 16 F1 21 02 00 05 00 0C 00 16
+T 00 11
+R 00 00 00 16
+T 00 11 79 80 7A 00 7B 00 7C 00 C3 E4 95 00 00 00
+R 00 00 00 16 F1 21 0D 00 05
+T 00 1D E4 64 80 85 00 00 01 F0 63 F0 80 95 F0 40
+R 00 00 00 16 F1 21 06 00 05
+T 00 29 03 02 01 93
+R 00 00 00 16 00 04 00 16
+T 00 2D
+R 00 00 00 16
+T 00 2D 74 7F 55 00 00 00 F5 00 00 06 75
+R 00 00 00 16 F1 21 05 00 05 F1 21 09 00 05
+T 00 34 00 00 07 00 45 00 00 07 70 03 02
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 00 3B 00 C5
+R 00 00 00 16 00 02 00 16
+T 00 3D
+R 00 00 00 16
+T 00 3D 85 00 00 06 82 85 00 00 07 83 C0 04 C0 03
+R 00 00 00 16 F1 21 03 00 05 F1 21 08 00 05
+T 00 47 C0 02 C0 01 12 00 00 85 82 00 00 0A 85 83
+R 00 00 00 16 02 07 00 01 F1 21 0B 00 05
+T 00 53 00 00 0B D0 01 D0 02 D0 03 D0 04 E5
+R 00 00 00 16 F1 21 02 00 05
+T 00 5D 00 00 0A 45 00 00 0B 60 63 E5
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 63 00 00 0B F5 00 00 0C 33 95 E0 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 6A 00 00 0D 85 00 00 0A
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 6D 00 00 0E 75 00 00 0F 00 85
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 72 00 00 0E 00 00 00 E5
+R 00 00 00 16 F1 21 02 00 05 F1 23 05 00 07
+T 00 75 00 00 0F 54 01 A2 E0 C5 00 00 00 13 C5
+R 00 00 00 16 F1 21 02 00 05 F1 23 0A 00 07
+T 00 7E 00 00 00 13 C5 00 00 00 F5
+R 00 00 00 16 F1 23 02 00 07 F1 23 07 00 07
+T 00 83 00 00 01 85 00 00 02 82 85
+R 00 00 00 16 F1 23 02 00 07 F1 21 06 00 05
+T 00 88 00 00 03 83 C0 04 C0 03 C0 02 C0 01 12
+R 00 00 00 16 F1 21 02 00 05
+T 00 93 00 00 85 82 00 00 06 85 83
+R 00 00 00 16 02 02 00 03 F1 21 06 00 05
+T 00 9A 00 00 07 85 00 00 0C
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 9D 00 00 00 E5 00 00 0D 54 01 A2 E0 C5
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 A5 00 00 00 13 C5 00 00 00 13 C5
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 00 AB 00 00 00 F5 00 00 01 85
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 AF 00 00 06 82 85 00 00 07 83 12
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 00 B5 00 00 85 82 00 00 06 85 83
+R 00 00 00 16 00 02 00 16 F1 21 06 00 05
+T 00 BC 00 00 07 D0 01 D0 02 D0 03 D0 04
+R 00 00 00 16 F1 21 02 00 05
+T 00 C5
+R 00 00 00 16
+T 00 C5 74 80 55 00 00 00 F5 00 00 08 85
+R 00 00 00 16 F1 21 05 00 05 F1 21 09 00 05
+T 00 CC 00 00 01 00 00 09 45
+R 00 00 00 16 F1 21 02 00 05 F1 21 05 00 05
+T 00 CF 00 00 09 60 52 A9 00 00 02 E5
+R 00 00 00 16 F1 21 02 00 05 F1 21 08 00 05
+T 00 D5 00 00 03 FA 33 95 E0 FB FC 75 00 00 04 80
+R 00 00 00 16 F1 21 02 00 05 F1 21 0C 00 05
+T 00 DF 75 00 00 05 00
+R 00 00 00 16 F1 21 03 00 05
+T 00 E2
+R 00 00 00 16
+T 00 E2 C3 E5 00 00 04 95 00 00 08 E5
+R 00 00 00 16 F1 21 04 00 05 F1 21 08 00 05
+T 00 E8 00 00 05 64 80 85 00 00 09 F0 63 F0 80 95
+R 00 00 00 16 F1 21 02 00 05 F1 21 08 00 05
+T 00 F2 F0 50 2F 89 82 8A 83 85 00 00 02 00 00 00
+R 00 00 00 16 F1 21 0A 00 05 F1 23 0D 00 00
+T 00 FC 85 00 00 03 00 00 01 12
+R 00 00 00 16 F1 21 03 00 05 F1 23 06 00 00
+T 01 00 00 00 A8 82 AF 83 88 01 EF FA 33 95 E0 FB
+R 00 00 00 16 02 02 00 05
+T 01 0E FC 30 E7 05 89 82 8A 83 22
+R 00 00 00 16
+T 01 17
+R 00 00 00 16
+T 01 17 74 80 25 00 00 04 F5 00 00 04 E4 35
+R 00 00 00 16 F1 21 05 00 05 F1 21 09 00 05
+T 01 1F 00 00 05 F5 00 00 05 80 BE
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 24
+R 00 00 00 16
+T 01 24 E5 00 00 06 45 00 00 07 60 69 E9 4A 4B 4C
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 01 2E 60 13 89 82 8A 83 85 00 00 06 00 00 00 85
+R 00 00 00 16 F1 21 09 00 05 F1 23 0C 00 00
+T 01 38 00 00 07 00 00 01 12
+R 00 00 00 16 F1 21 02 00 05 F1 23 05 00 00
+T 01 3B 00 00 AE 82 AF 83 80 04
+R 00 00 00 16 02 02 00 05
+T 01 43
+R 00 00 00 16
+T 01 43 AE 00 00 06 AF 00 00 07
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 01 47
+R 00 00 00 16
+T 01 47 8E 01 EF FA 33 95 E0 FB FC 80 41
+R 00 00 00 16
+T 01 52
+R 00 00 00 16
+T 01 52 ED 60 0B C3 E4 95 00 00 00 FE E4 95
+R 00 00 00 16 F1 21 08 00 05
+T 01 5C 00 00 01 FF 80 04
+R 00 00 00 16 F1 21 02 00 05
+T 01 60
+R 00 00 00 16
+T 01 60 AE 00 00 00 AF 00 00 01
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 01 64
+R 00 00 00 16
+T 01 64 8E 00 00 00 8F 00 00 01 85
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 01 69 00 00 02 82 85 00 00 03 83 12
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 6F 00 00 AE 82 AF 83 8E 01 EF FA 33 95 E0 89
+R 00 00 00 16 00 02 00 16
+T 01 7D 00 00 00 8A 00 00 01 90 00 80 12
+R 00 00 00 16 F1 23 02 00 06 F1 23 06 00 06
+T 01 84 00 00 AE 82 AF 83 8E 01 EF FA 33 95 E0 FB
+R 00 00 00 16 02 02 00 02
+T 01 92 FC
+R 00 00 00 16
+T 01 93
+R 00 00 00 16
+T 01 93 89 82 8A 83 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+rootof
+<REL>
+XH
+H 1A areas A global symbols
+M rootof
+O -mmcs51 --model-small
+S _s16_pow_PARM_2 Ref0000
+S _s16_reduce Ref0000
+S __mulint Ref0000
+S _s16_div Ref0000
+S .__.ABS. Def0000
+S _s16_pow Ref0000
+S __mulint_PARM_2 Ref0000
+S _s16_div_PARM_2 Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size E flags 0 addr 0
+S _s16_root_PARM_2 Def0004
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 293 flags 20 addr 0
+S _s16_root Def00C6
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 04
+R 00 00 00 05
+T 00 04
+R 00 00 00 05
+T 00 06
+R 00 00 00 05
+T 00 06
+R 00 00 00 05
+T 00 08
+R 00 00 00 05
+T 00 08
+R 00 00 00 05
+T 00 0A
+R 00 00 00 05
+T 00 0A
+R 00 00 00 05
+T 00 0C
+R 00 00 00 05
+T 00 0C
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 7C 80 7D 00 E5 00 00 00 24 80
+R 00 00 00 16 F1 21 0B 00 05
+T 00 0C F5 00 00 02 E5 00 00 01 34 FF F5
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 00 13 00 00 03 E5 00 00 02 45
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 00 17 00 00 03 70 05 8E 82 8F 83 22
+R 00 00 00 16 F1 21 02 00 05
+T 00 1F
+R 00 00 00 16
+T 00 1F 85 00 00 02 00 00 00 85
+R 00 00 00 16 F1 21 03 00 05 F1 23 06 00 00
+T 00 23 00 00 03 00 00 01 8C 82 8D 83 C0 07 C0 06
+R 00 00 00 16 F1 21 02 00 05 F1 23 05 00 00
+T 00 2D C0 05 C0 04 12 00 00 A8 82 A9 83 D0 04 D0
+R 00 00 00 16 02 07 00 05
+T 00 3B 05 D0 06 D0 07 E9 33 95 E0 FA FB C3 E4 98
+R 00 00 00 16
+T 00 49 E4 99 E4 9A E4 64 80 8B F0 63 F0 80 95 F0
+R 00 00 00 16
+T 00 57 40 04 90 80 00 22
+R 00 00 00 16
+T 00 5D
+R 00 00 00 16
+T 00 5D 88 00 00 00 89 00 00 01 8E 82 8F 83 C0 07
+R 00 00 00 16 F1 23 03 00 07 F1 23 07 00 07
+T 00 67 C0 06 C0 05 C0 04 12 00 00 AA 82 AB 83 D0
+R 00 00 00 16 02 09 00 03
+T 00 75 04 D0 05 EA C3 9C FA EB 9D FB 85 00 00 00
+R 00 00 00 16 F1 21 0D 00 05
+T 00 81 00 00 00 85 00 00 01
+R 00 00 00 16 F1 23 02 00 07 F1 21 06 00 05
+T 00 84 00 00 01 8A 82 8B 83 C0 05 C0 04 12 00 00
+R 00 00 00 16 F1 23 02 00 07 02 0E 00 03
+T 00 90 AA 82 AB 83 D0 04 D0 05 D0 06 D0 07 EA 2C
+R 00 00 00 16
+T 00 9E FC EB 3D FD EB 30 E7 09 C3 E4 9A F8 E4 9B
+R 00 00 00 16
+T 00 AC F9 80 04
+R 00 00 00 16
+T 00 AF
+R 00 00 00 16
+T 00 AF 8A 00 8B 01
+R 00 00 00 16
+T 00 B3
+R 00 00 00 16
+T 00 B3 C3 E8 94 03 E9 64 80 94 80 40 03 02 00 1F
+R 00 00 00 16 00 0E 00 16
+T 00 C1
+R 00 00 00 16
+T 00 C1 8C 82 8D 83 22
+R 00 00 00 16
+T 00 C6
+R 00 00 00 16
+T 00 C6 85 82 00 00 06 85 83 00 00 07 E5
+R 00 00 00 16 F1 21 04 00 05 F1 21 09 00 05
+T 00 CD 00 00 05 33 E4 33 FD 60 03 02 02 4D
+R 00 00 00 16 F1 21 02 00 05 00 0C 00 16
+T 00 D7
+R 00 00 00 16
+T 00 D7 E4 F9 FA FB FC E5 00 00 06 45 00 00 07 70
+R 00 00 00 16 F1 21 08 00 05 F1 21 0C 00 05
+T 00 E1 03 02 02 8E
+R 00 00 00 16 00 04 00 16
+T 00 E5
+R 00 00 00 16
+T 00 E5 E5 00 00 04 45 00 00 05 70 03 02
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 00 EC 02 8E
+R 00 00 00 16 00 02 00 16
+T 00 EE
+R 00 00 00 16
+T 00 EE 74 80 B5 00 00 04 06 E4 B5 00 00 05 02 80
+R 00 00 00 16 F1 21 05 00 05 F1 21 0B 00 05
+T 00 F8 02
+R 00 00 00 16
+T 00 F9
+R 00 00 00 16
+T 00 F9 80 0D
+R 00 00 00 16
+T 00 FB
+R 00 00 00 16
+T 00 FB A9 00 00 06 E5 00 00 07 FA 33 95 E0 FB FC
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 01 05 02 02 8E
+R 00 00 00 16 00 03 00 16
+T 01 08
+R 00 00 00 16
+T 01 08 E5 00 00 07 33 E4 33 F8 60 03 02 01 DE
+R 00 00 00 16 F1 21 03 00 05 00 0D 00 16
+T 01 13
+R 00 00 00 16
+T 01 13 74 7F 55 00 00 04 F5 00 00 0C 75
+R 00 00 00 16 F1 21 05 00 05 F1 21 09 00 05
+T 01 1A 00 00 0D 00 45 00 00 0D 70 03 02
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 21 01 BF
+R 00 00 00 16 00 02 00 16
+T 01 23
+R 00 00 00 16
+T 01 23 85 00 00 0C 82 85 00 00 0D 83 12
+R 00 00 00 16 F1 21 03 00 05 F1 21 08 00 05
+T 01 2A 00 00 85 82 00 00 08 85 83
+R 00 00 00 16 02 02 00 01 F1 21 06 00 05
+T 01 31 00 00 09 85 00 00 08
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 34 00 00 0A 75 00 00 0B 00 E5
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 39 00 00 09 F5 00 00 08 33 95 E0 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 40 00 00 09 85 00 00 04 82 E5
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 45 00 00 05 A2 E7 C5 82 33 C5 82 33 C5 82 54
+R 00 00 00 16 F1 21 02 00 05
+T 01 51 01 30 E0 02 44 FE
+R 00 00 00 16
+T 01 57
+R 00 00 00 16
+T 01 57 F5 83 85 00 00 0A 00 00 00 85
+R 00 00 00 16 F1 21 05 00 05 F1 23 08 00 06
+T 01 5D 00 00 0B 00 00 01 12
+R 00 00 00 16 F1 21 02 00 05 F1 23 05 00 06
+T 01 60 00 00 AE 82 AF 83 EE 25 00 00 08 F5
+R 00 00 00 16 02 02 00 02 F1 21 0A 00 05
+T 01 6A 00 00 08 EF 35 00 00 09 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 6F 00 00 09 85 00 00 08
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 72 00 00 00 54 01 A2 E0 C5 00 00 00 13 C5
+R 00 00 00 16 F1 21 02 00 05 F1 21 0A 00 05
+T 01 7B 00 00 00 13 C5 00 00 00 F5
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 80 00 00 01 85 00 00 06 82 85
+R 00 00 00 16 F1 21 02 00 05 F1 21 06 00 05
+T 01 85 00 00 07 83 12 00 00 AE 82 AF 83 8E 01 EF
+R 00 00 00 16 F1 21 02 00 05 00 07 00 16
+T 01 91 FA 33 95 E0 89 82 8A 83 85 00 00 0A
+R 00 00 00 16 F1 21 0B 00 05
+T 01 9B 00 00 00 E5 00 00 0B 54 01 A2 E0 C5
+R 00 00 00 16 F1 23 02 00 00 F1 21 06 00 05
+T 01 A3 00 00 00 13 C5 00 00 00 13 C5
+R 00 00 00 16 F1 23 02 00 00 F1 23 07 00 00
+T 01 A9 00 00 00 F5 00 00 01 12
+R 00 00 00 16 F1 23 02 00 00 F1 23 06 00 00
+T 01 AD 00 00 AE 82 AF 83 8E 01 EF FA 33 95 E0 FB
+R 00 00 00 16 02 02 00 05
+T 01 BB FC 02 02 8E
+R 00 00 00 16 00 04 00 16
+T 01 BF
+R 00 00 00 16
+T 01 BF 85 00 00 04 00 00 00 85
+R 00 00 00 16 F1 21 03 00 05 F1 21 06 00 05
+T 01 C3 00 00 05 00 00 01 85
+R 00 00 00 16 F1 21 02 00 05 F1 21 05 00 05
+T 01 C6 00 00 06 82 85 00 00 07 83 12
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 01 CC 00 00 AE 82 AF 83 8E 01 EF FA 33 95 E0 FB
+R 00 00 00 16 00 02 00 16
+T 01 DA FC 02 02 8E
+R 00 00 00 16 00 04 00 16
+T 01 DE
+R 00 00 00 16
+T 01 DE E5 00 00 04 54 7F 60 29 E8 60 0B C3 E4 95
+R 00 00 00 16 F1 21 03 00 05
+T 01 EA 00 00 06 FE E4 95 00 00 07 FF 80 04
+R 00 00 00 16 F1 21 02 00 05 F1 21 08 00 05
+T 01 F2
+R 00 00 00 16
+T 01 F2 AE 00 00 06 AF 00 00 07
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 01 F6
+R 00 00 00 16
+T 01 F6 8E 82 8F 83 12 00 C6 AE 82 AF 83 8E 01 EF
+R 00 00 00 16 00 07 00 16
+T 02 04 FA 33 95 E0 FB FC 02 02 8E
+R 00 00 00 16 00 09 00 16
+T 02 0D
+R 00 00 00 16
+T 02 0D E5 00 00 04 23 54 01 FF 60 2E E8 60 0B C3
+R 00 00 00 16 F1 21 03 00 05
+T 02 19 E4 95 00 00 06 FE E4 95 00 00 07 FF 80 04
+R 00 00 00 16 F1 21 04 00 05 F1 21 0A 00 05
+T 02 23
+R 00 00 00 16
+T 02 23 AE 00 00 06 AF 00 00 07
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 02 27
+R 00 00 00 16
+T 02 27 8E 82 8F 83 12 00 C6 AE 82 AF 83 C3 E4 9E
+R 00 00 00 16 00 07 00 16
+T 02 35 FE E4 9F FF 8E 01 FA 33 95 E0 FB FC 80 4B
+R 00 00 00 16
+T 02 43
+R 00 00 00 16
+T 02 43 79 00 7A 00 7B 00 7C 00 80 41
+R 00 00 00 16
+T 02 4D
+R 00 00 00 16
+T 02 4D ED 60 0B C3 E4 95 00 00 04 FE E4 95
+R 00 00 00 16 F1 21 08 00 05
+T 02 57 00 00 05 FF 80 04
+R 00 00 00 16 F1 21 02 00 05
+T 02 5B
+R 00 00 00 16
+T 02 5B AE 00 00 04 AF 00 00 05
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 02 5F
+R 00 00 00 16
+T 02 5F 8E 00 00 04 8F 00 00 05 85
+R 00 00 00 16 F1 21 03 00 05 F1 21 07 00 05
+T 02 64 00 00 06 82 85 00 00 07 83 12
+R 00 00 00 16 F1 21 02 00 05 F1 21 07 00 05
+T 02 6A 00 C6 AE 82 AF 83 8E 01 EF FA 33 95 E0 89
+R 00 00 00 16 00 02 00 16
+T 02 78 00 00 00 8A 00 00 01 90 00 80 12
+R 00 00 00 16 F1 23 02 00 07 F1 23 06 00 07
+T 02 7F 00 00 AE 82 AF 83 8E 01 EF FA 33 95 E0 FB
+R 00 00 00 16 02 02 00 03
+T 02 8D FC
+R 00 00 00 16
+T 02 8E
+R 00 00 00 16
+T 02 8E 89 82 8A 83 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+reduce
+<REL>
+XH
+H 1A areas 6 global symbols
+M reduce
+O -mmcs51 --model-small
+S _s16_gcd Ref0000
+S .__.ABS. Def0000
+S __divsint_PARM_2 Ref0000
+S _s16_gcd_PARM_2 Ref0000
+S __divsint Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 78 flags 20 addr 0
+S _s16_reduce Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 C3 74 80 9E E4 64 80 8F F0 63
+R 00 00 00 16
+T 00 0E F0 80 95 F0 40 0E E4 9E E4 64 80 8F F0 63
+R 00 00 00 16
+T 00 1C F0 80 95 F0 40 06
+R 00 00 00 16
+T 00 22
+R 00 00 00 16
+T 00 22 7C 00 7D 00 80 4B
+R 00 00 00 16
+T 00 28
+R 00 00 00 16
+T 00 28 8E 00 00 00 8F 00 00 01 90 00 80 C0 07 C0
+R 00 00 00 16 F1 23 03 00 03 F1 23 07 00 03
+T 00 32 06 12 00 00 AA 82 AB 83 8A 00 00 00 8B
+R 00 00 00 16 02 04 00 00 F1 23 0B 00 02
+T 00 3D 00 00 01 90 00 80 C0 03 C0 02 12 00 00 A8
+R 00 00 00 16 F1 23 02 00 02 02 0D 00 04
+T 00 49 82 A9 83 D0 02 D0 03 D0 06 D0 07 8A
+R 00 00 00 16
+T 00 55 00 00 00 8B 00 00 01 8E 82 8F 83 C0 01 C0
+R 00 00 00 16 F1 23 02 00 02 F1 23 06 00 02
+T 00 5F 00 12 00 00 AC 82 D0 00 D0 01 8C 07 7E 00
+R 00 00 00 16 02 04 00 04
+T 00 6D E8 4E FC E9 4F FD
+R 00 00 00 16
+T 00 73
+R 00 00 00 16
+T 00 73 8C 82 8D 83 22
+R 00 00 00 16
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+todeg
+<REL>
+XH
+H 1A areas 6 global symbols
+M todeg
+O -mmcs51 --model-small
+S __mulint Ref0000
+S .__.ABS. Def0000
+S __divsint_PARM_2 Ref0000
+S __mulint_PARM_2 Ref0000
+S __divsint Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 24 flags 20 addr 0
+S _s16_todeg Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 85 82 00 00 00 85 83 00 00 01 90 16 80 12
+R 00 00 00 16 F1 23 04 00 03 F1 23 09 00 03
+T 00 0A 00 00 E5 82 85 83 F0 24 91 F5 82 74 0C 35
+R 00 00 00 16 02 02 00 00
+T 00 18 F0 F5 83 75 00 00 00 22 75 00 00 01 19 02
+R 00 00 00 16 F1 23 06 00 02 F1 23 0B 00 02
+T 00 22 00 00
+R 00 00 00 16 02 02 00 04
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+torad
+<REL>
+XH
+H 1A areas 6 global symbols
+M torad
+O -mmcs51 --model-small
+S __mulint Ref0000
+S .__.ABS. Def0000
+S __divsint_PARM_2 Ref0000
+S __mulint_PARM_2 Ref0000
+S __divsint Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 15 flags 20 addr 0
+S _s16_torad Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 16
+T 00 00 85 82 00 00 00 85 83 00 00 01 90 19 22 12
+R 00 00 00 16 F1 23 04 00 03 F1 23 09 00 03
+T 00 0A 00 00 75 00 00 00 80 75
+R 00 00 00 16 02 02 00 00 F1 23 05 00 02
+T 00 10 00 00 01 16 02 00 00
+R 00 00 00 16 F1 23 02 00 02 02 07 00 04
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+addov
+<REL>
+XH
+H 1B areas 4 global symbols
+M addov
+O -mmcs51 --model-small
+S .__.ABS. Def0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A OSEG size 4 flags 4 addr 0
+S _s16_addov_PARM_2 Def0000
+S _s16_addov_PARM_3 Def0002
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 26 flags 20 addr 0
+S _s16_addov Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 06
+T 00 00
+R 00 00 00 06
+T 00 02
+R 00 00 00 06
+T 00 02
+R 00 00 00 06
+T 00 00
+R 00 00 00 17
+T 00 00 AE 82 AF 83 E5 00 00 01 33 E4 33 FD E5
+R 00 00 00 17 F1 21 07 00 06
+T 00 0B 00 00 03 33 E4 33 FC 6D 60 04 7C 00 80 06
+R 00 00 00 17 F1 21 02 00 06
+T 00 17
+R 00 00 00 17
+T 00 17 EF 33 E4 33 6D FC
+R 00 00 00 17
+T 00 1D
+R 00 00 00 17
+T 00 1D EC 33 95 E0 8C 82 F5 83 22
+R 00 00 00 17
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+subov
+<REL>
+XH
+H 1B areas 4 global symbols
+M subov
+O -mmcs51 --model-small
+S .__.ABS. Def0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A OSEG size 4 flags 4 addr 0
+S _s16_subov_PARM_2 Def0000
+S _s16_subov_PARM_3 Def0002
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 29 flags 20 addr 0
+S _s16_subov Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 06
+T 00 00
+R 00 00 00 06
+T 00 02
+R 00 00 00 06
+T 00 02
+R 00 00 00 06
+T 00 00
+R 00 00 00 17
+T 00 00 AE 82 AF 83 E5 00 00 01 33 E4 33 FD E5
+R 00 00 00 17 F1 21 07 00 06
+T 00 0B 00 00 03 33 E4 33 FC 6D 60 0B EF 33 B3 E4
+R 00 00 00 17 F1 21 02 00 06
+T 00 17 33 FE EC 6E FF 80 02
+R 00 00 00 17
+T 00 1E
+R 00 00 00 17
+T 00 1E 7F 00
+R 00 00 00 17
+T 00 20
+R 00 00 00 17
+T 00 20 EF 33 95 E0 8F 82 F5 83 22
+R 00 00 00 17
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+divov
+<REL>
+XH
+H 1B areas 4 global symbols
+M divov
+O -mmcs51 --model-small
+S .__.ABS. Def0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 0 flags 0 addr 0
+A OSEG size 4 flags 4 addr 0
+S _s16_divov_PARM_2 Def0000
+S _s16_divov_PARM_3 Def0002
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 3D flags 20 addr 0
+S _s16_divov Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 06
+T 00 00
+R 00 00 00 06
+T 00 02
+R 00 00 00 06
+T 00 02
+R 00 00 00 06
+T 00 00
+R 00 00 00 17
+T 00 00 AE 82 AF 83 E5 00 00 02 45 00 00 03 70 04
+R 00 00 00 17 F1 21 07 00 06 F1 21 0B 00 06
+T 00 0A 90 00 01 22
+R 00 00 00 17
+T 00 0E
+R 00 00 00 17
+T 00 0E E5 00 00 00 45 00 00 01 70 04 90 00 00 22
+R 00 00 00 17 F1 21 03 00 06 F1 21 07 00 06
+T 00 18
+R 00 00 00 17
+T 00 18 E5 00 00 01 33 E4 33 FD E5 00 00 03 33 E4
+R 00 00 00 17 F1 21 03 00 06 F1 21 0B 00 06
+T 00 22 33 FC 6D 60 08 EF 33 B3 E4 33 FD 80 05
+R 00 00 00 17
+T 00 2F
+R 00 00 00 17
+T 00 2F EF 33 E4 33 FD
+R 00 00 00 17
+T 00 34
+R 00 00 00 17
+T 00 34 ED 33 95 E0 8D 82 F5 83 22
+R 00 00 00 17
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+mulov
+<REL>
+XH
+H 1A areas 7 global symbols
+M mulov
+O -mmcs51 --model-small
+S _s16_divov Ref0000
+S .__.ABS. Def0000
+S _s16_divov_PARM_2 Ref0000
+S _s16_divov_PARM_3 Ref0000
+A _CODE size 0 flags 0 addr 0
+A RSEG size 0 flags 8 addr 0
+A RSEG0 size 0 flags 8 addr 0
+A RSEG1 size 0 flags 8 addr 0
+A REG_BANK_0 size 8 flags 4 addr 0
+A DSEG size 4 flags 0 addr 0
+S _s16_mulov_PARM_2 Def0000
+S _s16_mulov_PARM_3 Def0002
+A ISEG size 0 flags 0 addr 0
+A IABS size 0 flags 8 addr 0
+A BSEG size 0 flags 80 addr 0
+A PSEG size 0 flags 50 addr 0
+A XSEG size 0 flags 40 addr 0
+A XABS size 0 flags 48 addr 0
+A XISEG size 0 flags 40 addr 0
+A HOME size 0 flags 20 addr 0
+A GSINIT0 size 0 flags 20 addr 0
+A GSINIT1 size 0 flags 20 addr 0
+A GSINIT2 size 0 flags 20 addr 0
+A GSINIT3 size 0 flags 20 addr 0
+A GSINIT4 size 0 flags 20 addr 0
+A GSINIT5 size 0 flags 20 addr 0
+A GSINIT size 0 flags 20 addr 0
+A GSFINAL size 0 flags 20 addr 0
+A CSEG size 21 flags 20 addr 0
+S _s16_mulov Def0000
+A CONST size 0 flags 20 addr 0
+A XINIT size 0 flags 20 addr 0
+A CABS size 0 flags 28 addr 0
+T 00 00
+R 00 00 00 02
+T 00 00
+R 00 00 00 03
+T 00 00
+R 00 00 00 04
+T 00 00
+R 00 00 00 05
+T 00 00
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 02
+R 00 00 00 05
+T 00 00
+R 00 00 00 16
+T 00 00 AE 82 AF 83 E5 00 00 02 45 00 00 03 70 04
+R 00 00 00 16 F1 21 07 00 05 F1 21 0B 00 05
+T 00 0A 90 00 00 22
+R 00 00 00 16
+T 00 0E
+R 00 00 00 16
+T 00 0E 85 00 00 00 00 00 00 85
+R 00 00 00 16 F1 21 03 00 05 F1 23 06 00 02
+T 00 12 00 00 01 00 00 01 85
+R 00 00 00 16 F1 21 02 00 05 F1 23 05 00 02
+T 00 15 00 00 02 00 00 00 85
+R 00 00 00 16 F1 21 02 00 05 F1 23 05 00 03
+T 00 18 00 00 03 00 00 01 8E 82 8F 83 02
+R 00 00 00 16 F1 21 02 00 05 F1 23 05 00 03
+T 00 1F 00 00
+R 00 00 00 16 02 02 00 00
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+</FILES>
+
+</SDCCLIB>

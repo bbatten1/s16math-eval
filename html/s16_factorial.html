@@ -1,0 +1,101 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of s16_factorial</TITLE>
+</HEAD><BODY>
+<H1>s16_factorial</H1>
+Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>s16_factorial </B>- n!
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<PRE>
+#include &quot;s16math.h&quot;
+qm_n <B>s16_factorial</B>(qm_n <I>n</I>);
+</PRE>
+
+
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Evaluates <I>n</I>!.
+<A NAME="lbAE">&nbsp;</A>
+<H2>PARAMETERS</H2>
+
+<DL COMPACT>
+<DT><B></B><I>n</I>
+
+<DD>
+numeric argument in 16 bit fixed point decimal with two digits
+of resolution.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>RETURN</H2>
+
+A negative return indicates overflow. Otherwise it is the factorial of <I>n</I>.
+<A NAME="lbAG">&nbsp;</A>
+<H2>NOTE</H2>
+
+Attempting to evaluate the factorial of numbers greater than 5.5 (550
+in the internal representation) produces overflow.
+<A NAME="lbAH">&nbsp;</A>
+<H2>NOTES</H2>
+
+Internal 32 bit intermediate results.
+<A NAME="lbAI">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<A NAME="lbAJ">&nbsp;</A>
+<H3>bc Command Manual</H3>
+
+<A HREF="http://www.gnu.org/software/bc/manual/html_mono/bc.html">http://www.gnu.org/software/bc/manual/html_mono/bc.html</A>
+<A NAME="lbAK">&nbsp;</A>
+<H3>Factorial</H3>
+
+<A HREF="http://en.wikipedia.org/wiki/Factorial">http://en.wikipedia.org/wiki/Factorial</A>
+<A NAME="lbAL">&nbsp;</A>
+<H3>Gamma function</H3>
+
+<A HREF="http://en.wikipedia.org/wiki/Gamma_function">http://en.wikipedia.org/wiki/Gamma_function</A>
+<A NAME="lbAM">&nbsp;</A>
+<H3>The Gamma Function</H3>
+
+<A HREF="http://www.sosmath.com/calculus/improper/gamma/gamma.html">http://www.sosmath.com/calculus/improper/gamma/gamma.html</A>
+<A NAME="lbAN">&nbsp;</A>
+<H2>FILE</H2>
+
+factorial.c
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">PARAMETERS</A><DD>
+<DT><A HREF="#lbAF">RETURN</A><DD>
+<DT><A HREF="#lbAG">NOTE</A><DD>
+<DT><A HREF="#lbAH">NOTES</A><DD>
+<DT><A HREF="#lbAI">SEE ALSO</A><DD>
+<DL>
+<DT><A HREF="#lbAJ">bc Command Manual</A><DD>
+<DT><A HREF="#lbAK">Factorial</A><DD>
+<DT><A HREF="#lbAL">Gamma function</A><DD>
+<DT><A HREF="#lbAM">The Gamma Function</A><DD>
+</DL>
+<DT><A HREF="#lbAN">FILE</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 22:14:13 GMT, August 28, 2014
+</BODY>
+</HTML>

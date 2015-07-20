@@ -4,7 +4,7 @@ Content-type: text/html
 <HTML><HEAD><TITLE>Man page of s16_factorial</TITLE>
 </HEAD><BODY>
 <H1>s16_factorial</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 19 July 2015<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -24,26 +24,31 @@ qm_n <B>s16_factorial</B>(qm_n <I>n</I>);
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
-Evaluates <I>n</I>!.
+Evaluates <I>n</I>!. Where <I>n</I> is negative, <I>n</I>! = 0. Where <I>n</I> is 0 or 1, <I>n</I>! = 1.
 <A NAME="lbAE">&nbsp;</A>
 <H2>PARAMETERS</H2>
 
+The parameter is supplied as a 16 bit integer having an implied binary
+point with 7 bits of resolution, or an implied decimal point with two
+digits of resolution.
 <DL COMPACT>
 <DT><B></B><I>n</I>
 
 <DD>
-numeric argument in 16 bit fixed point decimal with two digits
-of resolution.
+numeric argument.
 </DL>
 <A NAME="lbAF">&nbsp;</A>
 <H2>RETURN</H2>
 
-A negative return indicates overflow. Otherwise it is the factorial of <I>n</I>.
+Zero is returned for the factorial of a negative number. The factorial
+of 0 or 1 is defined to be 1. A negative return indicates overflow.
+Otherwise it is the factorial of <I>n</I>.
 <A NAME="lbAG">&nbsp;</A>
 <H2>NOTE</H2>
 
 Attempting to evaluate the factorial of numbers greater than 5.5 (550
-in the internal representation) produces overflow.
+using decimal resolution), or greater than 5.3671 - 5 and 47/128 - with
+binary resolution, produces overflow.
 <A NAME="lbAH">&nbsp;</A>
 <H2>NOTES</H2>
 
@@ -68,6 +73,14 @@ Internal 32 bit intermediate results.
 
 <A HREF="http://www.sosmath.com/calculus/improper/gamma/gamma.html">http://www.sosmath.com/calculus/improper/gamma/gamma.html</A>
 <A NAME="lbAN">&nbsp;</A>
+<H3>Factorials of Negative Integers</H3>
+
+<A HREF="http://mathforum.org/library/drmath/view/60851.html">http://mathforum.org/library/drmath/view/60851.html</A>
+<A NAME="lbAO">&nbsp;</A>
+<H3>Iterative Implementation of Factorial</H3>
+
+<A HREF="https://chortle.ccsu.edu/java5/Notes/chap72/ch72_8.html">https://chortle.ccsu.edu/java5/Notes/chap72/ch72_8.html</A>
+<A NAME="lbAP">&nbsp;</A>
 <H2>FILE</H2>
 
 factorial.c
@@ -89,13 +102,15 @@ factorial.c
 <DT><A HREF="#lbAK">Factorial</A><DD>
 <DT><A HREF="#lbAL">Gamma function</A><DD>
 <DT><A HREF="#lbAM">The Gamma Function</A><DD>
+<DT><A HREF="#lbAN">Factorials of Negative Integers</A><DD>
+<DT><A HREF="#lbAO">Iterative Implementation of Factorial</A><DD>
 </DL>
-<DT><A HREF="#lbAN">FILE</A><DD>
+<DT><A HREF="#lbAP">FILE</A><DD>
 </DL>
 <HR>
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 22:14:13 GMT, August 28, 2014
+Time: 22:19:27 GMT, July 19, 2015
 </BODY>
 </HTML>

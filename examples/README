@@ -1,5 +1,14 @@
+README file for s16math code examples
 All items are copyright (c) 2014 Bryan Batten <bjbatten@acm.org>
 
+This file contains the following sections
+
+Introduction
+x86
+kl46z
+
+Introduction
+------------
 The source program(s) in this directory show examples of using the s16math
 library functions.
 

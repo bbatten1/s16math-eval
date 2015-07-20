@@ -4,7 +4,7 @@ Content-type: text/html
 <HTML><HEAD><TITLE>Man page of s16_cot</TITLE>
 </HEAD><BODY>
 <H1>s16_cot</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 19 July 2015<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -24,9 +24,9 @@ qm_n <B>s16_cot</B>(qm_rad <I>phi</I>);
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
-Computes <B>1/tan</B>(<I>phi</I>).
+Computes <B>1/tan</B>(<I>phi</I>) by evaluating cos/sin.
 <A NAME="lbAE">&nbsp;</A>
-<H2>PARAMETERS</H2>
+<H2>PARAMETER</H2>
 
 Parameter is radians supplied as a 16 bit integer having an implied binary
 point with 7 bits of resolution, or an implied decimal point with two
@@ -49,12 +49,27 @@ digits of resolution.
 <DD>
 1/tan(<I>phi</I>).
 For large values of the trigonometric ratio, the return value saturates
-at +/- 100 (100.00).
+at positive or negative infinity.
 </DL>
+<P>
+
+Positive and negative infinity are indicated by return values of 327.67
+and -327.68 respectively when compiled with decimal resolution,
+or 255.127 and -256.000 when compiled with binary resolution.
 <A NAME="lbAG">&nbsp;</A>
 <H2>NOTES</H2>
 
 Internal 32 bit intermediate results.
+<P>
+
+The accuracy of this computation is poor. For angles between <B>-45</B> degrees
+and +45 degrees inclusive, only 82% of results correspond to those of the
+reference implementation to within +/- 0.1 units, and only 38% correspond 
+<DL COMPACT>
+<DT>&bull;<DD>
+within +/- 0.01 units. Correspondence declines further with increasing
+angle.
+</DL>
 <A NAME="lbAH">&nbsp;</A>
 <H2>SEE ALSO</H2>
 
@@ -74,7 +89,7 @@ cot.c
 <DT><A HREF="#lbAB">NAME</A><DD>
 <DT><A HREF="#lbAC">SYNOPSIS</A><DD>
 <DT><A HREF="#lbAD">DESCRIPTION</A><DD>
-<DT><A HREF="#lbAE">PARAMETERS</A><DD>
+<DT><A HREF="#lbAE">PARAMETER</A><DD>
 <DT><A HREF="#lbAF">RETURN</A><DD>
 <DT><A HREF="#lbAG">NOTES</A><DD>
 <DT><A HREF="#lbAH">SEE ALSO</A><DD>
@@ -87,6 +102,6 @@ cot.c
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 22:14:13 GMT, August 28, 2014
+Time: 22:19:27 GMT, July 19, 2015
 </BODY>
 </HTML>

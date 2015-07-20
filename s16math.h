@@ -103,9 +103,9 @@ typedef uint32_t	u32;
 #define fixscale(x)		((x)>>UF)			/* for multiply */
 #define scaledown(n,s)	((n)>>(s))
 #define scaleup(n,s)	((n)<<(s))
-#define dround(x)		(KD)				/* degree multiply */
-#define nround(x)		(KN)				/* real number multiply */
-#define rround(x)		(KR)				/* radian multiply */
+#define dround(x)	(isneg(x)?-((abs(x)-KD)):(x)+KD)/* degree multiply */
+#define nround(x)	(isneg(x)?-((abs(x)-KN)):(x)+KN)/* real number multiply */
+#define rround(x)	(isneg(x)?-((abs(x)-KR)):(x)+KR)/* radian multiply */
 
 #else /* (don't) USE_BINARY_POINT */
 
@@ -127,9 +127,9 @@ typedef uint32_t	u32;
 #define fixscale(x)		((x)/UF)
 #define scaledown(n,s)	((n)/(s))
 #define scaleup(n,s)	((n)*(s))
-#define dround(x)		(isneg(x)?-KD:KD)/* degree multiply */
-#define nround(x)		(isneg(x)?-KN:KN)/* real number multiply */
-#define rround(x)		(isneg(x)?-KR:KR)/* radian multiply */
+#define dround(x)		((x)+(isneg(x)?-KD:KD))/* degree multiply */
+#define nround(x)		((x)+(isneg(x)?-KN:KN))/* real number multiply */
+#define rround(x)		((x)+(isneg(x)?-KR:KR))/* radian multiply */
 #endif /* (don't) USE_BINARY_POINT */
 
 #ifdef NAN	/* needed for mbed compile */
@@ -235,12 +235,12 @@ u16 s16_gcd(u16 u, u16 v);		/* returns greatest common divisor u,v */
 qm_n s16_den(qm_n pwr);			/* Integer denominator of Q3.2 fraction */
 qm_n s16_div(qm_n a, qm_n b);	/* Q3.2 quotient a3.2/b3.2 */
 qm_n s16_mul(qm_n a, qm_n b);	/* Q3.2 product a3.2*b3.2 */
-qm_n s16_pow(qm_n a,qm_n n);/* returns a^n */
+qm_n s16_pow(qm_n a,qm_n n);	/* returns a^n */
 s16 s16_reduce(qm_n k);			/* evaluate k/100=x/y for x and y and return x
 								   in bits 8-15, y in bits 0-7. */
 qm_n s16_root(qm_n a,qm_n n);	/* returns n'th root nearest to a^(1/n) */
-#define	s16_sqrt(x)	s16_root((qm_n)(x),2*UI)
-								/* fixed point principle square root */
+#define s16_sqr(a) (s16_mul(a,a))/* returns a^2 */
+qm_n s16_sqrt(qm_n a);			/* fixed point principle square root */
 qm_n s16_factorial(qm_n n);		/* returns n! */
 s16 s16_scale(s16 n,s16 s);		/* Downscale number n by factor s. */
 
@@ -283,6 +283,9 @@ s16 s16_addov(qm_n a, qm_n b, qm_n c);
 s16 s16_subov(qm_n a, qm_n b, qm_n c);
 s16 s16_divov(qm_n a, qm_n b, qm_n c);
 s16 s16_mulov(qm_n a, qm_n b, qm_n c);
+s16 s16_rootov(qm_n a, qm_n b, qm_n c);
+#define s16_sqrov(a)	(isneg(a))	/* squaring overflow check */
+#define s16_sqrtov(a)	(isneg(a))	/* square root overflow check */
 
 #ifndef SDCC			/* omit if SDCC <= 3.10 */
 #pragma pack(pop)

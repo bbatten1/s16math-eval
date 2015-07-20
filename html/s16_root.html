@@ -4,7 +4,7 @@ Content-type: text/html
 <HTML><HEAD><TITLE>Man page of s16_root</TITLE>
 </HEAD><BODY>
 <H1>s16_root</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 19 July 2015<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -25,6 +25,29 @@ qm_n <B>s16_root</B>(qm_n <I>a</I>, qm_n <I>n</I>);
 <H2>DESCRIPTION</H2>
 
 Evaluate <I>a</I>^(1/<I>n</I>) and return principal root.
+<P>
+
+Fractional operands are evaluated by applying successive exponential
+identities to simplify them into a set of integer valued power and
+root operations of acceptable degree.
+<P>
+
+The resolution of fractional exponents is constrained by using a
+reduction table to obtain manageable values for power/root calculations.
+This approximates the fractional part of the index to the nearest
+1/16'th value when binary resolution is used and the nearest 1/10'th value
+when decimal resolution is used.
+<P>
+
+Accuracy is good for radicands with integer valued indices and for
+fractional indices that reduce to integer multiples of 1/2. e.g. 0.5,
+4.5. Fractional indices less than one that reduce to integer multiples
+of 1/8 - e.g. 0.125, 0.625 - produce accurate roots for indices in the
+range 0.25 - 4.00 inclusive.
+<P>
+
+Fractional indices greater than 0 but less than 0.25 cause inaccurate
+results, as do indices that reduce to any odd multiple of 1/16.
 <A NAME="lbAE">&nbsp;</A>
 <H2>PARAMETERS</H2>
 
@@ -35,11 +58,11 @@ of resolution.
 <DT><B></B><I>a</I>
 
 <DD>
-number to find root of.
+number to find root of i.e. radicand.
 <DT><B></B><I>n</I>
 
 <DD>
-root to be found.
+root to be found - i.e. index.
 </DL>
 <A NAME="lbAF">&nbsp;</A>
 <H2>RETURN</H2>
@@ -51,10 +74,6 @@ digits of resolution.
 
 If an even root of a negative number is requested, the function returns
 zero. Otherwise the function returns a negative root [8].
-<P>
-
-A negative return value of -327.68, or -216.000 if binary resolution
-is used, means overflow has occurred.
 <A NAME="lbAG">&nbsp;</A>
 <H2>NOTES</H2>
 
@@ -64,13 +83,13 @@ Internal 32 bit intermediate results.
 Calculators vary in handling roots of negative numbers. The funcs.bc
 package [8] issues an error message followed by a zero when an even
 integer valued root of a negative number is requested. The Debian
-qalculate-gtk desktop calculator package returns a complex number.
+calculate-gtk desktop calculator package returns a complex number.
 This function follows funcs.bc practice.
 <P>
 
-For odd integer valued roots of negative numbers, both packages return
-the negative of the root of the corresponding positive number, as does
-this function.
+For odd integer valued roots of negative numbers, both of those packages
+return the negative of the root of the corresponding positive number, as
+does this function.
 <A NAME="lbAH">&nbsp;</A>
 <H2>SEE ALSO</H2>
 
@@ -107,6 +126,10 @@ this function.
 
 <A HREF="http://phodd.net/gnu-bc/">http://phodd.net/gnu-bc/</A>
 <A NAME="lbAQ">&nbsp;</A>
+<H3>[9] Failure of the method to converge to the root</H3>
+
+<A HREF="https://en.wikipedia.org/wiki/Newton%27s_method#Failure_of_the_method_to_converge_to_the_root">https://en.wikipedia.org/wiki/Newton%27s_method#Failure_of_the_method_to_converge_to_the_root</A>
+<A NAME="lbAR">&nbsp;</A>
 <H2>FILE</H2>
 
 rootof.c
@@ -131,13 +154,14 @@ rootof.c
 <DT><A HREF="#lbAN">[6] GNU MP 5.1.2</A><DD>
 <DT><A HREF="#lbAO">[7] Using Exponents in Algebra - Negative Exponents</A><DD>
 <DT><A HREF="#lbAP">[8] ::phodd.net::GNU bc programming::</A><DD>
+<DT><A HREF="#lbAQ">[9] Failure of the method to converge to the root</A><DD>
 </DL>
-<DT><A HREF="#lbAQ">FILE</A><DD>
+<DT><A HREF="#lbAR">FILE</A><DD>
 </DL>
 <HR>
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 22:14:13 GMT, August 28, 2014
+Time: 22:19:27 GMT, July 19, 2015
 </BODY>
 </HTML>

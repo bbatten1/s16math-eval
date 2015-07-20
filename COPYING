@@ -6,127 +6,77 @@ Copyright (c) 2014 Bryan Batten <bjbatten@acm.org>
     o There is no warranty.
     o Specifications may change without notice at any time.
     o Derivative works are not allowed.
-    o Support is provided at my sole discretion.
-
-    All language here is still tentative, preliminary, and subject to
-    possibly extensive revision.
-
-    All source may be changed as you wish.
 
 Evaluation Package
 ++++++++++++++++++
-    The evaluation package is available for free from:
+    The evaluation package may be downloaded for free from these
+    software project hosts:
 
     o Atmel     https://gallery.atmel.com/Products/List
-    o Microchip http://embeddedcodesource.com/algorithms
+    o Bitbuchet https://bitbucket.org/bbatten/s16math-eval/wiki/Home
+    o mbed      https://developer.mbed.org/users/bbatten/code/s16math/
+    o Microchip http://www.embeddedcodesource.com/codesnippet/s16math
 
-    It may be used without charge for evaluation, or for personal use.
+    It may be used for evaluation or personal use without charge.
     Components may be modified as you wish, so long as the personal use
     constraint is followed.
 
+    If no version of the library in the evaluation package has the object
+    format you need, email me on your company letterhead at:
+    
+    <bjbatten@acm.org>
+    
+    If it can be built from the compilers available to me, I will email you
+    a custom archive build and include it in subsequent iterations of the
+    evaluation package.
+
 Licenses
 ++++++++
-    Development of language for licenses is preliminary, tentative, and
-    incomplete. So things are probably going to change here.
-
     The product is available for commercial use under either a binary
     license or a source license. For pricing, send an email (plain text
-    preferred ) with "RFQ" or "Request For Quote" in the subject line to:
+    preferred) with "RFQ" or "Request For Quote" in the subject line to:
 
     <bjbatten@acm.org>
 
-    Terms apply to the version of the library available for download at the
-    time of purchase. Licenses are "at will" and may be terminated by either
-    party. There are no refunds.
+    Terms are the terms in effect for the version of the library available
+    at the time of licensing. Terms at the time of purchase apply to all
+    later versions of the library you may subsequently acquire.
+
+    Licenses are "at will" and may be terminated by either party. There are
+    no refunds. The license is effective when funds are deposited into my
+    Paypal account. To do this, log in to Paypal, click on "Send and
+    Request" -> "Pay for goods or services" and enter bjbatten@acm.org in
+    the email address field.
 
 Binary License
 --------------
+    The binary license is available on a per unit royalty basis, and
+    becomes active on receipt of an advance payment which is applied to the
+    per unit royalty. Royalties are assessed in US dollars and are set at
+    1.5% of the unit sale price.
+
     The binary license allows you to incorporate binaries from the current
-    and later versions of the evaluation package into your own product and
-    sell or lease it.
-
-    Support for six months is included in the price, and is available after
-    that for an hourly fee. Support extends to fixing errors in the math
-    functions. As bugs are fixed, the fixed object file is immediately made
-    available to the customer, and is put in the evaluation package as part
-    of the normal release schedule. Also, I will provide machine architecture
-    object versions directly to the customer if they are not available in the
-    standard evaluation package, and can be made from the available compilers.
-    Those versions of the library are then made available in the standard
-    evaluation package as part of the normal release schedule.
-
-    The binary license is available for an advance on royalties. Royalties
-    are set as a percentage of the unit sale price.
+    and later versions of the evaluation package into your own product.
 
     If the binary license is terminated, you no longer pay royalties, and
     you may no longer include the library in your product.
 
-    Support for changes made to source components of the evaluation package
-    is available for an hourly fee plus materials.
-
 Source License
 --------------
-    The source license makes the full source for all the math functions,
-    test code, and build facilities available to you. You may optimize the
-    library code for your specific application and incorporate the result
-    into your own product. You can build customized versions of the library
-    using both "Make" variables that can be overridden on the command line,
-    and by selecting among specified conditional compilation options
-    available in the product source files.
+    The source license is available for a fixed fee. Full source for
+    all the math functions, test code, and build facilities is provided
+    to you. You may modify all source code as you wish. Source updates are
+    provided at no charge as they become available.
 
-    The following enumerated source change types are supported:
-
-    First, variables defined in the file "Makefile" in the top level
-    directory as:
-
-    Name     Assignment
-    ----     ----------
-    var      ?=[<initial value>]
-
-    may be overridden on the command line.
-
-    Second, conditional definition macros of the form:
-
-    #ifdef     USE_<filename>_<option>
-    #undef     USE_<filename>_<option>
-
-    where <filename> is an upper case version of the file name (without the
-    ".c" extension) and <option> is a descriptive term such as "TABLE", or
-    "NTHROOT", may be interchanged to allow you to select among algorithms
-    where more than one algorithm is available.
-
-    Code within the scope of undefined USE_xxx constants compiles - mostly
-    (I think) - but may not work. In most cases disabled algorithms may use
-    less code, but provide poorer accuracy, than the one enabled by default.
-    
-    Support for six months is included in the price, and is available after
-    that for an hourly fee. Source updates are provided at no charge.
-
-    The source license is available for a fixed fee. Binaries made from
-    either modified or unmodified source can be distributed for a royalty
-    set as a percentage of the unit sale price.
-
-    If the source license is terminated, you no longer pay royalties, and
-    you may no longer include the library in your product.
-
-    You may make any other source code changes you wish. Support for those
-    changes is available for an hourly fee plus materials.
-
-Support
-+++++++
-    Problems submitted for support are evaluated solely by myself to
-    determine need.
-
-    Support for the evaluation package is available through the contact
-    developer facility at the host sites and in online forums.
-
-    Support for binary and source licensees is available via email, Skype,
-    and phone.
+    Binaries made from either modified or unmodified source, and binaries
+    from the versions of the library in the evaluation package, can be
+    distributed on the same per unit royalty basis as the binary license,
+    without the advance payment requirement.
 
     Anyone may submit code changes to be included in the product if you
     allow me to copyright it as a derivative work. User submitted code
-    changes must be made in the form of a patch in "diff -U" format attached
-    to a plain text email.
+    changes should be made in the form of a patch in "diff -U" format
+    attached to a plain text email.
 
     The title of the email should contain the word "PATCH". The body of the
     email must contain language that allows me to  copyright it as a
@@ -137,7 +87,9 @@ Support
     language allowing copyright by me as a derivative work.
 
     If accepted, the patch may be modified in any way. The resulting code
-    will be made available as part of the product and provided with
-    standard support.
+    will be made available as part of the product.
+
+    If the source license is terminated, you no longer pay royalties, and
+    you may no longer include the library in your product.
 
 # vi:set expandtab:

@@ -1,6 +1,14 @@
-0.13
-1. Fix rounding error in binary mode fixed point multiplication.
-2. Expand examples directory to include build for Freescale kl46z development
-   board.
-3. Add library compilations for ARM Cortex M0.
-4. Drop MIPS due to Emdebian ceasing operations.
+0.13.1
+1. Manual line wrap col. 72 for ABSTRACT, ATMEL, and DESCRIPTION
+2. Finalize license terms.
+3. Update README.
+4. Add optimized s16_sqr (x^2), s16_sqrt (x^(1/2)) functions.
+5. Improve correspondence of s16_atan(x) with reference implmentation for
+   large x.
+6. Fix calculation of cot, sec, csc functions.
+7. Fix calculation of angle quadrant.
+8. Fix flat spot between 1.0 and 2.0 for factorial function.
+9. Fix s16_root (x^(1/n) oscillation problem.
+10.Add man pages for nth root, square root, and square overflow check
+   functions.
+11.Drop PPC due to removal of cross compile support from Debian.

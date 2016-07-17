@@ -1,7 +1,7 @@
 <SDCCLIB>
 
 <INDEX>
-       936
+      1018
 <MODULE>
 gcd 9
 </MODULE>
@@ -11,115 +11,127 @@ den 82
 </MODULE>
 
 <MODULE>
-acos 148
+acos 138
 </MODULE>
 
 <MODULE>
-asin 208
+asin 198
 </MODULE>
 
 <MODULE>
-atan 293
+atan 272
 </MODULE>
 
 <MODULE>
-sin 370
+sin 353
 </MODULE>
 
 <MODULE>
-cos 426
+cos 407
 </MODULE>
 
 <MODULE>
-sincos 483
+sincos 473
 </MODULE>
 
 <MODULE>
-tan 588
+tan 592
 </MODULE>
 
 <MODULE>
-quadrant 646
+quadrant 660
 </MODULE>
 
 <MODULE>
-cot 703
+cot 719
 </MODULE>
 
 <MODULE>
-sec 757
+sec 779
 </MODULE>
 
 <MODULE>
-csc 811
+csc 842
 </MODULE>
 
 <MODULE>
-scale 865
+scale 902
 </MODULE>
 
 <MODULE>
-factorial 923
+fact 960
 </MODULE>
 
 <MODULE>
-hypot 1027
+hypot 1023
 </MODULE>
 
 <MODULE>
-div 1085
+div 1088
 </MODULE>
 
 <MODULE>
-mul 1158
+mul 1160
 </MODULE>
 
 <MODULE>
-ln 1223
+ln 1222
 </MODULE>
 
 <MODULE>
-log 1317
+log 1309
 </MODULE>
 
 <MODULE>
-log10 1369
+log10 1361
 </MODULE>
 
 <MODULE>
-powerof 1436
+pow 1428
 </MODULE>
 
 <MODULE>
-rootof 1544
+root 1532
 </MODULE>
 
 <MODULE>
-reduce 1668
+sqrt 1804
 </MODULE>
 
 <MODULE>
-todeg 1727
+reduce 1875
 </MODULE>
 
 <MODULE>
-torad 1781
+todeg 1932
 </MODULE>
 
 <MODULE>
-addov 1850
+torad 1986
 </MODULE>
 
 <MODULE>
-subov 1910
+addov 2055
 </MODULE>
 
 <MODULE>
-divov 1968
+subov 2115
 </MODULE>
 
 <MODULE>
-mulov 2026
+divov 2173
+</MODULE>
+
+<MODULE>
+mulov 2231
+</MODULE>
+
+<MODULE>
+powov 2307
+</MODULE>
+
+<MODULE>
+rootov 2368
 </MODULE>
 
 </INDEX>
@@ -135,9 +147,9 @@ gcd
 n
 
 
-<
+;
 
-¿
+ø
 »
 
 </REL>
@@ -149,9 +161,8 @@ n
 den
 <REL>
 4
-‰œŸˇ
-B
-16_den
+·&
+A
 </REL>
 <ADB>
 </ADB>
@@ -161,7 +172,7 @@ B
 acos
 <REL>
 4
-?
+=
 isters
 </REL>
 <ADB>
@@ -175,12 +186,10 @@ asin
 Û\
 Ân
 
-D
+C
 
-Ã
-ulint
-ñ
-_s16_root
+À
+6_asin
 </REL>
 <ADB>
 </ADB>
@@ -190,15 +199,15 @@ _s16_root
 atan
 <REL>
 4
+nÛœ
 Ân
-Ân
-Ân
+
+L
 
-E
-
-ƒ
-»
-
+Ã
+¨
+
+111_DS_
 </REL>
 <ADB>
 </ADB>
@@ -207,10 +216,9 @@ E
 <FILE>
 sin
 <REL>
-4
-
-G
-
+4
+*
+I
 </REL>
 <ADB>
 </ADB>
@@ -219,10 +227,10 @@ G
 <FILE>
 cos
 <REL>
-4
-
-G
-S_
+4
+ˇÓœ
+I
+__s16_cos
 </REL>
 <ADB>
 </ADB>
@@ -231,22 +239,27 @@ S_
 <FILE>
 sincos
 <REL>
-4
-&
+4
+¿Âˇ
+
+ˇ
 Ân
+W
 
-
+œ
+»
 
-
-R
-
-–
-í
-
-U*
-ù*
-r0x05
-_00134_DS_
+F*
+»
+
+Ø*
+»
+
+
+
+x03
+˛ˇ
+47_DS_
 </REL>
 <ADB>
 </ADB>
@@ -256,8 +269,13 @@ _00134_DS_
 tan
 <REL>
 4
-·&
-C
+n
+‰œŸˇ
+K
+
+∞
+
+_
 </REL>
 <ADB>
 </ADB>
@@ -267,7 +285,8 @@ C
 quadrant
 <REL>
 4
-@
+?
+m
 </REL>
 <ADB>
 </ADB>
@@ -276,9 +295,12 @@ quadrant
 <FILE>
 cot
 <REL>
-4
-
-G
+4
+n
+
+K
+
+±
 </REL>
 <ADB>
 </ADB>
@@ -287,9 +309,12 @@ G
 <FILE>
 sec
 <REL>
-4
-
-G
+4
+Ä|
+Q
+
+¿
+
 </REL>
 <ADB>
 </ADB>
@@ -298,9 +323,12 @@ G
 <FILE>
 csc
 <REL>
-4
-
-G
+4
+
+Q
+
+¡
+
 </REL>
 <ADB>
 </ADB>
@@ -311,26 +339,19 @@ scale
 <REL>
 4
 ‰œ
->
+=
 </REL>
 <ADB>
 </ADB>
 </FILE>
 
 <FILE>
-factorial
+fact
 <REL>
 4
-Ân
-Ân
-
-
-F
-
-∆
-¬
-ƒ
-torial__s16_factorial
+
+@
+126_DS_
 </REL>
 <ADB>
 </ADB>
@@ -340,8 +361,9 @@ torial__s16_factorial
 hypot
 <REL>
 4
-nÛœ
->
+&
+=
+16_hypot
 </REL>
 <ADB>
 </ADB>
@@ -352,13 +374,12 @@ div
 <REL>
 4
 ê
-‰œ
 
 
-G
+F
 
-¬
-&
+Ω
+x0a
 sters
 </REL>
 <ADB>
@@ -371,9 +392,9 @@ mul
 4
 &ÿÄ
 
-D
+C
 
-_mul
+e
 </REL>
 <ADB>
 </ADB>
@@ -385,17 +406,15 @@ ln
 4
 n
 œŸˇ
-
 
-L
+K
 
-’
-í
+œ
+ñ
+ò
 
 G*
-file
-x07
-144_DS_
+130_DS_
 </REL>
 <ADB>
 </ADB>
@@ -405,7 +424,7 @@ x07
 log
 <REL>
 4
-?
+=
 </REL>
 <ADB>
 </ADB>
@@ -415,7 +434,7 @@ log
 log10
 <REL>
 4
-B
+@
 m
 og10.asm
 </REL>
@@ -424,57 +443,120 @@ og10.asm
 </FILE>
 
 <FILE>
-powerof
+pow
 <REL>
 4
 \ÿ†
-J
+Ân
+¿
 
 
-G
-P
+
+N
 
-»
-∫
+ƒ
+∆
 
-F*
+>*
 »
 
-¥*
-"
-r0x04
-sint
+®*
+
+0108_DS_
 </REL>
 <ADB>
 </ADB>
 </FILE>
 
 <FILE>
-rootof
+root
 <REL>
-4
-Ä
-¿
+4
+n
+·&
+·&
+Ï
+‰œ
+PÂn
+€œ
+¿Âˇ
 
+
 
 
-N
+
 
-…
-º
 
-=*
+
+–
+
+
+
+
+Y
+
+–
+™
+
+B*
 »
 
-π*
+º*
 »
-$
-&
-ƒ
+*
+4
+6
+‘
 
-ã*
-0201_DS_
-_DS_
+p*
+»
+
+Í*
+»
+?*
+»
+
+Ø*
+»
+Ú
+Ù
+
+*
+,*
+»
+
+ù*
+»
+
+˛*
+
+
+∞
+
+Ç*
+»
+nt
+
+
+0200_DS_
+32
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+sqrt
+<REL>
+4
+n
+‰œ
+
+
+J
+
+»
+ters
 </REL>
 <ADB>
 </ADB>
@@ -483,9 +565,9 @@ _DS_
 <FILE>
 reduce
 <REL>
-4
-nÛœ
-B
+4
+œ
+D
 </REL>
 <ADB>
 </ADB>
@@ -495,7 +577,7 @@ B
 todeg
 <REL>
 4
-@
+?
 </REL>
 <ADB>
 </ADB>
@@ -505,7 +587,7 @@ todeg
 torad
 <REL>
 4
-@
+?
 rad__s16_torad
 </REL>
 <ADB>
@@ -517,7 +599,7 @@ addov
 <REL>
 4
 œ
-:
+9
 
 s
 </REL>
@@ -530,7 +612,7 @@ subov
 <REL>
 4
 P‰œ
-:
+9
 </REL>
 <ADB>
 </ADB>
@@ -541,7 +623,7 @@ divov
 <REL>
 4
 Æÿê
-:
+9
 </REL>
 <ADB>
 </ADB>
@@ -552,9 +634,34 @@ mulov
 <REL>
 4
 œ
-?
+>
 
 _mulov__s16_mulov
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+powov
+<REL>
+4
+n
+>
+2
+sm
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+rootov
+<REL>
+4
+·&
+@
+
 </REL>
 <ADB>
 </ADB>

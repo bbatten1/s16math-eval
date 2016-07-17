@@ -18,7 +18,7 @@
    In Qm.n format 'm' is the number of bits in the integer portion of the
    number, and 'n' is the number of bits in the fractional part. The
    denominator is a constant equal to 2^n[2]. In this library, Q11.4, Q8.7,
-   and Q6.9 formats are used.
+   and Q5.10 formats are used.
 
    The number pi is handled as having the equivalent of approximately three
    decimal digits of resolution - 3.142. To handle the needed range of
@@ -38,7 +38,7 @@
 	Real	Dec  2	-327.68  <-> 327.67
 			Q8.7	-256.000 <-> 255.127
 	Radians	Dec  3	-32.768  <-> 32.767	 Otherwise would be max of 327.67
-			Q6.9	-64.000  <-> 63.511
+			Q5.10	-64.000  <-> 63.511
 
 	Observe the following possible gotchas:
 
@@ -62,7 +62,8 @@ extern "C"
 {
 #endif /* __cplusplus */
 
-#ifndef SDCC			/* omit if SDCC <= 3.10 */
+/* omit if SDCC <= 3.10 or we have a Keil compiler */
+#if !defined(SDCC) && !defined(__C51__) && !defined(__CX51__)
 #pragma pack(push,1)
 #endif
 
@@ -83,7 +84,7 @@ typedef uint32_t	u32;
 /* numbers other than radians */
 #define NSHIFT		7				/* Qm.7 */
 #define NSCALE		(1<<NSHIFT)		/* scaling factor is implicit denominator */
-#define NMASK		(NSCALE-1)		/* fraction mask */
+#define NMASK		((NSCALE)-1)	/* fraction mask */
 #define NWIDTH		3				/* for test fixture printf */
 #define MMASK		(~NMASK)		/* integer mask */
 /* radians */
@@ -91,21 +92,25 @@ typedef uint32_t	u32;
 #define RSCALE		(1<<RSHIFT)		/* scaling factor is implicit denominator */
 #define RMASK		(RSCALE-1)		/* fraction mask */
 #define RWIDTH		4				/* for test fixture printf */
-#define UF			NSHIFT
-#define SCALE_INTEGRAL	(DSHIFT)		/* scaling factor */
-#define SCALE_SINCOS	(NSHIFT-DSHIFT)	/* scaling factor */
+#define RF			RSHIFT			/* unit radian factor */
+#define UF			NSHIFT			/* unit integer factor */
+#define SCALE_INTEGRAL	(DSHIFT)	/* scaling factor */
+#define SCALE_RAD	(NSHIFT-DSHIFT)	/* scaling factor num <-> rad */
 
 #define fvalue(x)		(((x)&NMASK)<<UF)	/* fraction as integer value */
 #define ivalue(x)		((x)&MMASK)			/* integer as integer value */
 #define frac_part(x)	((x)&NMASK)			/* fractional value as integer */
 #define int_part(x)		((x)>>UF)			/* integer value as integer */
+#define is_odd(x)		(((x)&(UI|NMASK))!=0)
 #define prescale(x)		((s32)abs(x)<<UF)	/* for divide */
+#define prerscale(x)	((s32)abs(x)<<RF)	/* for radian divide */
 #define fixscale(x)		((x)>>UF)			/* for multiply */
+#define fixrscale(x)	((x)>>RF)			/* for radian multiply */
 #define scaledown(n,s)	((n)>>(s))
 #define scaleup(n,s)	((n)<<(s))
-#define dround(x)		(KD)				/* degree multiply */
-#define nround(x)		(KN)				/* real number multiply */
-#define rround(x)		(KR)				/* radian multiply */
+#define dround(x)	(isneg(x)?-((abs(x)-KD)):(x)+KD)/* degree multiply */
+#define nround(x)	(isneg(x)?-((abs(x)-KN)):(x)+KN)/* real number multiply */
+#define rround(x)	(isneg(x)?-((abs(x)-KR)):(x)+KR)/* radian multiply */
 
 #else /* (don't) USE_BINARY_POINT */
 
@@ -115,21 +120,25 @@ typedef uint32_t	u32;
 #define NWIDTH		2				/* for test fixture printf */
 #define RSCALE		1000
 #define RWIDTH		3				/* for test fixture printf */
-#define UF			NSCALE
+#define RF			RSCALE			/* unit radian factor */
+#define UF			NSCALE			/* unit integer factor */
 #define SCALE_INTEGRAL	(RSCALE/NSCALE)	/* scaling factor */
-#define SCALE_SINCOS	(RSCALE/NSCALE)	/* scaling factor */
+#define SCALE_RAD	(RSCALE/NSCALE)		/* scaling factor num <-> rad */
 
 #define fvalue(x)		(((x)%UF)*UF)	/* fraction as integer value */
 #define ivalue(x)		(((x)/UF)*UF)	/* integer as integer value */
 #define frac_part(x)	((x)%UF)		/* fractional part as integer */
 #define int_part(x)		((x)/UF)		/* integer part as integer */
+#define is_odd(x)		(((x)%(2*UI))!=0)
 #define prescale(x)		((s32)abs(x)*UF)
+#define prerscale(x)	((s32)abs(x)*RF)
 #define fixscale(x)		((x)/UF)
+#define fixrscale(x)	((x)/RF)
 #define scaledown(n,s)	((n)/(s))
 #define scaleup(n,s)	((n)*(s))
-#define dround(x)		(isneg(x)?-KD:KD)/* degree multiply */
-#define nround(x)		(isneg(x)?-KN:KN)/* real number multiply */
-#define rround(x)		(isneg(x)?-KR:KR)/* radian multiply */
+#define dround(x)		((x)+(isneg(x)?-KD:KD))/* degree multiply */
+#define nround(x)		((x)+(isneg(x)?-KN:KN))/* real number multiply */
+#define rround(x)		((x)+(isneg(x)?-KR:KR))/* radian multiply */
 #endif /* (don't) USE_BINARY_POINT */
 
 #ifdef NAN	/* needed for mbed compile */
@@ -153,7 +162,7 @@ typedef uint32_t	u32;
 /* Q formats 			   Binary   Decimal */
 #define qm_n	s16		/* Q8.7		Q3_2 */
 #define qm_deg	s16		/* Q11.4	Q4_1 */
-#define qm_rad	s16		/* Q6.9		Q2_3 */
+#define qm_rad	s16		/* Q5.10	Q2_3 */
 #define q1_6	s8		/* Q1.6 - +- 1.63 byte wide sin/cos values */
 #define Q1_2	s8		/* Q1.2 - +- 2.55: byte wide sin/cos values */
 #define	Q0_5	s16		/* Q0.5 - fraction only */
@@ -186,8 +195,15 @@ typedef uint32_t	u32;
 #else
 #define	S16_E		((qm_n)(272*UI/100))
 #endif
-/* natural log of 10 ~ 2.3025851 */
+/* natural log of 10 ~ 2.3025851
+   About 4% of results using the mathematically "best" expansion of the
+   S16_LN10 macro differ by 0.01 or more from those of the reference
+   implementation when compiled with binary resolution, so we fudge it. */
+#if (UI==128)
+#define S16_LN10	((qm_n)((230*UI/100)+1))
+#else
 #define S16_LN10	((qm_n)(230*UI/100))
+#endif
 /* 3.1416 rounded up to 3.142 - casts keep AVR, SDCC happy */
 #define	S16_PI		((qm_rad)((s32)((s32)3142*RI/(s32)1000)))
 #define	S16_RAD		(2*S16_PI)	/* 2*pi radians in the unit circle */
@@ -196,7 +212,7 @@ typedef uint32_t	u32;
 /* some conversion factors */
 /* 180/pi ~ 57.3 deg in Q11.4 format per rad */
 #define	DEG_PER_RAD	((573*DI)/10)
-/* pi/180 ~ 0.017453.. rad in Q6.9 format per deg */
+/* pi/180 ~ 0.017453.. rad in Q5.10 format per deg */
 #define	RAD_PER_DEG	((0017*RI)/1000)
 
 /*
@@ -217,6 +233,7 @@ s32  s16_sincos(qm_rad phi);	/* cos 0:7; sin 8:15 Q1_2 */
 qm_n s16_tan(qm_rad phi);		/* tangent given phi in radians */
 
 s8 s16_quadrant(qm_rad phi);	/* quadrant of phi */
+#define s16_unwind(phi)	((phi)%(2*S16_PI))	/* unwind phi into unit circle */
 qm_n s16_cot(qm_rad phi);		/* 1/tan */
 qm_n s16_csc(qm_rad phi);		/* 1/sin */
 qm_n s16_sec(qm_rad phi);		/* 1/cos */
@@ -235,13 +252,13 @@ u16 s16_gcd(u16 u, u16 v);		/* returns greatest common divisor u,v */
 qm_n s16_den(qm_n pwr);			/* Integer denominator of Q3.2 fraction */
 qm_n s16_div(qm_n a, qm_n b);	/* Q3.2 quotient a3.2/b3.2 */
 qm_n s16_mul(qm_n a, qm_n b);	/* Q3.2 product a3.2*b3.2 */
-qm_n s16_pow(qm_n a,qm_n n);/* returns a^n */
+qm_n s16_pow(qm_n a,qm_n n);	/* returns a^n */
 s16 s16_reduce(qm_n k);			/* evaluate k/100=x/y for x and y and return x
 								   in bits 8-15, y in bits 0-7. */
 qm_n s16_root(qm_n a,qm_n n);	/* returns n'th root nearest to a^(1/n) */
-#define	s16_sqrt(x)	s16_root((qm_n)(x),2*UI)
-								/* fixed point principle square root */
-qm_n s16_factorial(qm_n n);		/* returns n! */
+#define s16_sqr(a) (s16_mul(a,a))/* returns a^2 */
+qm_n s16_sqrt(qm_n a);			/* fixed point principle square root */
+qm_n s16_fact(qm_n n);			/* returns n! */
 s16 s16_scale(s16 n,s16 s);		/* Downscale number n by factor s. */
 
 /* convert rad --> deg.
@@ -278,13 +295,18 @@ qm_deg s16_todeg(qm_rad rad);	/* convert from radians to degrees */
  */
 qm_rad s16_torad(qm_deg deg);	/* convert from degrees to radians */
 
-/* overflow checks for a = b <op> c, where <op> is +, -, *, /. */
+/* overflow checks for a = b <op> c, where <op> is +, -, *, /, power, root. */
 s16 s16_addov(qm_n a, qm_n b, qm_n c);
 s16 s16_subov(qm_n a, qm_n b, qm_n c);
 s16 s16_divov(qm_n a, qm_n b, qm_n c);
 s16 s16_mulov(qm_n a, qm_n b, qm_n c);
+s16 s16_powov(qm_n a, qm_n b, qm_n c);
+s16 s16_rootov(qm_n a, qm_n b, qm_n c);
+#define s16_sqrov(a)	(isneg(a))			/* squaring overflow check */
+#define s16_sqrtov(a,b)	(s16_rootov(a,b,2*UI))/* square root overflow check */
 
-#ifndef SDCC			/* omit if SDCC <= 3.10 */
+/* omit if SDCC <= 3.10 or we have a Keil compiler */
+#if !defined(SDCC) && !defined(__C51__) && !defined(__CX51__)
 #pragma pack(pop)
 #endif
 

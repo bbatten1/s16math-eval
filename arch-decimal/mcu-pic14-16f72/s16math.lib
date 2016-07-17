@@ -1,25 +1,25 @@
 <SDCCLIB>
 
 <INDEX>
-       939
+      1022
 <MODULE>
 gcd 9
 </MODULE>
 
 <MODULE>
-den 78
+den 84
 </MODULE>
 
 <MODULE>
-acos 141
+acos 162
 </MODULE>
 
 <MODULE>
-asin 213
+asin 232
 </MODULE>
 
 <MODULE>
-atan 300
+atan 316
 </MODULE>
 
 <MODULE>
@@ -27,99 +27,111 @@ sin 418
 </MODULE>
 
 <MODULE>
-cos 529
+cos 514
 </MODULE>
 
 <MODULE>
-sincos 604
+sincos 602
 </MODULE>
 
 <MODULE>
-tan 728
+tan 767
 </MODULE>
 
 <MODULE>
-quadrant 785
+quadrant 848
 </MODULE>
 
 <MODULE>
-cot 859
+cot 925
 </MODULE>
 
 <MODULE>
-sec 977
+sec 1005
 </MODULE>
 
 <MODULE>
-csc 1095
+csc 1074
 </MODULE>
 
 <MODULE>
-scale 1213
+scale 1159
 </MODULE>
 
 <MODULE>
-factorial 1308
+fact 1228
 </MODULE>
 
 <MODULE>
-hypot 1392
+hypot 1296
 </MODULE>
 
 <MODULE>
-div 1450
+div 1361
 </MODULE>
 
 <MODULE>
-mul 1567
+mul 1497
 </MODULE>
 
 <MODULE>
-ln 1627
+ln 1565
 </MODULE>
 
 <MODULE>
-log 1705
+log 1647
 </MODULE>
 
 <MODULE>
-log10 1776
+log10 1711
 </MODULE>
 
 <MODULE>
-powerof 1852
+pow 1785
 </MODULE>
 
 <MODULE>
-rootof 1954
+root 1882
 </MODULE>
 
 <MODULE>
-reduce 2122
+sqrt 2143
 </MODULE>
 
 <MODULE>
-todeg 2193
+reduce 2261
 </MODULE>
 
 <MODULE>
-torad 2260
+todeg 2332
 </MODULE>
 
 <MODULE>
-addov 2328
+torad 2404
 </MODULE>
 
 <MODULE>
-subov 2394
+addov 2475
 </MODULE>
 
 <MODULE>
-divov 2453
+subov 2545
 </MODULE>
 
 <MODULE>
-mulov 2527
+divov 2611
+</MODULE>
+
+<MODULE>
+mulov 2676
+</MODULE>
+
+<MODULE>
+powov 2756
+</MODULE>
+
+<MODULE>
+rootov 2824
 </MODULE>
 
 </INDEX>
@@ -130,13 +142,12 @@ mulov 2527
 gcd
 <REL>
 4
-ù
-~
-
-07
-004
-
-ad
+
+†
+z
+sec
+6_hypot
+9_DS_
 </REL>
 <ADB>
 </ADB>
@@ -146,9 +157,9 @@ ad
 den
 <REL>
 4
-ê
-ist
-_todeg
+ó
+
+utils/header/p16f72.inc
 </REL>
 <ADB>
 </ADB>
@@ -160,9 +171,9 @@ acos
 4
 <Ä
 .file
-08
-
-torad
+11
+001
+e
 </REL>
 <ADB>
 </ADB>
@@ -177,11 +188,10 @@ asin
 0Ä
 Ä
 
-£
-t
-n
-_0
-L_asin_0
+¶
+i
+q
+6_todeg
 </REL>
 <ADB>
 </ADB>
@@ -192,22 +202,19 @@ atan
 <REL>
 4
 Ä
-0Ä
-0Ä
+<Ä
+Ä
+Ä
+0Ä
 Ä
 0Ä
 Ä
-
-¨
-i
-m
-º
-s16_sin
-16_den
-ulint
-3
-08
-6_mulov
+∫
+_
+Æ
+6_pow
+lint
+7
 </REL>
 <ADB>
 </ADB>
@@ -217,17 +224,11 @@ ulint
 sin
 <REL>
 4
-Ä
-<Ä
-Ä
-ï
-Ü
-.list
-s16_log
-04
-q
-header/p16f72.inc
-07_DS_
+í
+
+STK01
+ls/header/p16f72.inc
+16_sin_sin_1_1
 </REL>
 <ADB>
 </ADB>
@@ -237,10 +238,9 @@ header/p16f72.inc
 cos
 <REL>
 4
-Ä
-Ä
-ï
-_s16_factorial
+í
+ls/header/p16f72.inc
+16_cos_cos_1_1
 </REL>
 <ADB>
 </ADB>
@@ -250,27 +250,38 @@ _s16_factorial
 sincos
 <REL>
 4
-(
+(t0
+<Ä
+0Ä
+Ä
 Ä
 0Ä
 Ä
 
 
-
-≠
-«
-h
-i
-∏
+
+
+º
+◊
+H
+ó
+¶ˆ
 
+ 
+`
+a
+∞
 
-µ
-i
-n
-Ω
 
-s16_reduce
-_DS_
+≥
+i
+
+Œ
+
+ö
+
+6_todeg
+0139_DS_
 </REL>
 <ADB>
 </ADB>
@@ -280,9 +291,15 @@ _DS_
 tan
 <REL>
 4
-î
-ˇ
-ov
+Ä0Ä
+0Ä
+
+ó
+ü
+†
+Ô
+6f72.inc
+1
 </REL>
 <ADB>
 </ADB>
@@ -293,8 +310,9 @@ quadrant
 <REL>
 4
 ë
-
-UDL_quadrant_0
+
+_quadrant_0
+mulov
 </REL>
 <ADB>
 </ADB>
@@ -303,12 +321,14 @@ UDL_quadrant_0
 <FILE>
 cot
 <REL>
-4
-û
-s16_csc
-12
-usr/share/gputils/header/p16f72.inc
-_cot_tan_sign_1_32
+4
+Ä0Ä
+0Ä
+ò
+¢
+Ò
+p16f72.inc
+1_1
 </REL>
 <ADB>
 </ADB>
@@ -317,12 +337,14 @@ _cot_tan_sign_1_32
 <FILE>
 sec
 <REL>
-4
-û
-s16_cot
-12
-usr/share/gputils/header/p16f72.inc
-_sec_cos_sign_1_32
+4
+Ç
+
+ö
+è
+
+STK12
+e
 </REL>
 <ADB>
 </ADB>
@@ -331,12 +353,16 @@ _sec_cos_sign_1_32
 <FILE>
 csc
 <REL>
-4
-û
-s16_cot
-12
-usr/share/gputils/header/p16f72.inc
-_csc_sin_sign_1_33
+4
+Ç
+
+ö
+ç
+.list
+s16_log
+07
+00B
+ivov
 </REL>
 <ADB>
 </ADB>
@@ -346,29 +372,23 @@ _csc_sin_sign_1_33
 scale
 <REL>
 4
-î
+ó
 _cot
 pow
-are/gputils/header/p16f72.inc
-e
+divov
 </REL>
 <ADB>
 </ADB>
 </FILE>
 
 <FILE>
-factorial
+fact
 <REL>
 4
-0Ä
-0Ä
-
-©
-s
-¬
-t
-ncos
-4_DS_
+
+ú
+uadrant
+S_
 </REL>
 <ADB>
 </ADB>
@@ -378,7 +398,9 @@ ncos
 hypot
 <REL>
 4
-è
+í
+ist
+ln
 
 t
 </REL>
@@ -395,12 +417,16 @@ div
 Ä
 Ä
 Ä
-®
-u
-6_den
-
-9
+
+¨
+i
+n
+Ω
+
+STK04
+0x1007
 hare/gputils/header/p16f72.inc
+mullong
 </REL>
 <ADB>
 </ADB>
@@ -411,8 +437,9 @@ mul
 <REL>
 4
 Ä
-†
-torad
+£
+u
+_s16_torad
 </REL>
 <ADB>
 </ADB>
@@ -423,16 +450,17 @@ ln
 <REL>
 4
 Ä
+Ë0Ä
 
 
 
-Ω
-Z
-©
-∆
+¿
+X
+ß
+«
 
 
-ov
+an
 </REL>
 <ADB>
 </ADB>
@@ -442,11 +470,10 @@ ov
 log
 <REL>
 4
-ê
+ì
 nolist
-5
-log
-orial
+8
+02
 </REL>
 <ADB>
 </ADB>
@@ -456,70 +483,125 @@ orial
 log10
 <REL>
 4
-é
-TK10
-x1000
-s16_sincos
+ë
+SAVE
+log10
+6_rootov
 </REL>
 <ADB>
 </ADB>
 </FILE>
 
 <FILE>
-powerof
+pow
 <REL>
 4
 Ä
 Ä
 
-¬
-V
-•
-’
+
+∆
+S
+¢
+—
 
-Ï
+Í
 3
-st
-6_sincos
-_DS_
+4
+_hypot
+S_
 </REL>
 <ADB>
 </ADB>
 </FILE>
 
 <FILE>
-rootof
+root
+<REL>
+4
+Ä
+Ä
+Ä
+Ä
+(d0Ä
+Ä
+Ä
+Ä
+Ä
+Ä
+Ä
+Ä
+Ä
+Ä
+Ä
+Ä
+Ä
+Ä
+0Äˇ0Ä
+Ä
+
+
+
+
+
+	
+	
+
+j
+Õ…
+
+
+&
+i
+µ
+
+
+}
+i
+û
+Ì
+
+æ
+]
+¨
+
+
+
+
+n
+
+ˆÕ
+·
+
+g
+
+
+
+hypot
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+sqrt
 <REL>
 4
 Ä
 Ä
 Ä
 Ä
-Ä
-(
-Ä
+Ä
 
-
-“
-K
-ö
-»˘
-
-Î
-8
-á
-
-˘Ê
-ı
-
-6
-.eof
-s16_log
-06
-005
-
-_s16_torad
-_nth_root
+±
+i
+k
+_s16_tan
+s16_div
+04
+006
+rt_0
+powov
 </REL>
 <ADB>
 </ADB>
@@ -528,13 +610,11 @@ _nth_root
 <FILE>
 reduce
 <REL>
-4
-Ä
-ü
+4
+©
 ˛ˇ
 
-2.inc
-_
+_s16_divov
 </REL>
 <ADB>
 </ADB>
@@ -544,10 +624,10 @@ _
 todeg
 <REL>
 4
-ã
-ˇ
+é
 
-actorial
+WSAVE
+_s16_asin
 </REL>
 <ADB>
 </ADB>
@@ -557,10 +637,11 @@ actorial
 torad
 <REL>
 4
-å
+è
 s16_cos
-4
-rad
+7
+
+ddov
 </REL>
 <ADB>
 </ADB>
@@ -570,10 +651,11 @@ rad
 addov
 <REL>
 4
-ë
+î
 ist
-
-hypot
+
+ncos
+_DS_
 </REL>
 <ADB>
 </ADB>
@@ -583,9 +665,11 @@ hypot
 subov
 <REL>
 4
-ë
-
-nc
+î
+
+
+
+mulov
 </REL>
 <ADB>
 </ADB>
@@ -595,12 +679,11 @@ nc
 divov
 <REL>
 4
-Ä
-í
-16_tan
-6_div
-E
-l
+ï
+J
+den
+in
+_
 </REL>
 <ADB>
 </ADB>
@@ -610,12 +693,39 @@ l
 mulov
 <REL>
 4
-ë
+î
 file
 16_csc
-0
-00
-er/p16f72.inc
+E
+
+L_mulov_0
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+powov
+<REL>
+4
+
+õ
+J
+den
+hypot
+</REL>
+<ADB>
+</ADB>
+</FILE>
+
+<FILE>
+rootov
+<REL>
+4
+†
+i
+_s16_atan
+_00118_DS_
 </REL>
 <ADB>
 </ADB>

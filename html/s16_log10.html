@@ -4,7 +4,7 @@ Content-type: text/html
 <HTML><HEAD><TITLE>Man page of s16_log10</TITLE>
 </HEAD><BODY>
 <H1>s16_log10</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 16 July 2016<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -24,10 +24,13 @@ qm_n <B>s16_log10</B>(qm_n <I>x</I>);
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
-Evaluates log to base 10 of <I>x</I>, where 0 &lt; <I>x</I> &lt;= 327.67. The logarithm is
-evaluated as <B>y=s16_ln</B>(<I>x</I>)/<B>ln</B>(10). A constant is used for <B>ln</B>(10).
-So requesting the log of a negative number is treated as an error
-instead of a multiple of <I>i</I>.
+Evaluates log to base 10 of <I>x</I>, where 0 &lt; <I>x</I> &lt;= 327.67 (decimal resolution),
+or 255.127 (binary resolution). The logarithm is evaluated as
+<B>s16_ln</B>(<I>x</I>)/<B>ln</B>(10). A constant is used for <B>ln</B>(10).
+<P>
+
+Requesting the log of a negative number is treated as an error instead
+of a multiple of <I>i</I>.
 <A NAME="lbAE">&nbsp;</A>
 <H2>PARAMETERS</H2>
 
@@ -35,22 +38,27 @@ instead of a multiple of <I>i</I>.
 <DT><B></B><I>x</I>
 
 <DD>
-numeric argument with equivalent of two decimal digits of resolution.
+numeric argument with equivalent of two decimal digits or seven
+binary bits of resolution.
 </DL>
 <A NAME="lbAF">&nbsp;</A>
 <H2>RETURN</H2>
 
 If 0 &lt; <I>x</I> &lt;= 327.67, then the return value is the number to which 10
-would have to be raised to yield x. A return of -99.00 means
+would have to be raised to yield <I>x</I>. A return of -99.00 means
 <I>x</I> &lt;= 0 or <I>x</I> &gt; 327.67.
 <A NAME="lbAG">&nbsp;</A>
 <H2>SEE ALSO</H2>
 
 <A NAME="lbAH">&nbsp;</A>
-<H3>Natural Logorithm</H3>
+<H3>s16math Library Logarithm Functions</H3>
+
+<B><A HREF="/cgi-bin/man/man2html?3m+s16_ln">s16_ln</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_log">s16_log</A></B>(3m)
+<A NAME="lbAI">&nbsp;</A>
+<H3>Natural Logarithm</H3>
 
 <A HREF="https://en.wikipedia.org/wiki/Natural_logarithm">https://en.wikipedia.org/wiki/Natural_logarithm</A>
-<A NAME="lbAI">&nbsp;</A>
+<A NAME="lbAJ">&nbsp;</A>
 <H2>FILE</H2>
 
 log10.c
@@ -66,14 +74,15 @@ log10.c
 <DT><A HREF="#lbAF">RETURN</A><DD>
 <DT><A HREF="#lbAG">SEE ALSO</A><DD>
 <DL>
-<DT><A HREF="#lbAH">Natural Logorithm</A><DD>
+<DT><A HREF="#lbAH">s16math Library Logarithm Functions</A><DD>
+<DT><A HREF="#lbAI">Natural Logarithm</A><DD>
 </DL>
-<DT><A HREF="#lbAI">FILE</A><DD>
+<DT><A HREF="#lbAJ">FILE</A><DD>
 </DL>
 <HR>
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 22:14:13 GMT, August 28, 2014
+Time: 17:24:03 GMT, July 16, 2016
 </BODY>
 </HTML>

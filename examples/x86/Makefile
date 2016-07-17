@@ -13,6 +13,9 @@ ifneq ($(findstring x86,$(ARCH)),)
         MARCH :=-march=$(shell echo $(ARCH)|cut -d',' -f1)
     else
         MARCH :=-mtune=$(shell echo $(ARCH)|cut -d- -f2)
+        ifeq ($(MARCH),-mtune=pentium)
+            MARCH :=$(MARCH) -m32
+        endif
     endif
 
 else
@@ -34,12 +37,21 @@ CFLAGS :=$(strip $(CFLAGS))
 SRCS :=$(shell ls *.c)
 EXAMPLES :=$(patsubst %.c,%,$(SRCS))
 
-.PHONY: all clean
+.PHONY: all clean cleantags tags
 
 all: $(EXAMPLES)
 
+cleantags:
+	rm -f tags cscope.*
+
+tags:
+	@echo GEN tags
+	@ctags -R
+	@echo GEN cscope
+	@cscope -bkq $(IPATH)/s16math.h $(shell find . -type f -name '*.[ch]*')
+
 # keep just Makefile, README, *.c, *.h
-clean:
+clean: cleantags
 	rm -f $(EXAMPLES) *.{[ab]*,[d-g]*,[i-z]*}
 
 $(EXAMPLES): $(SRCS)

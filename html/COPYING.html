@@ -15,128 +15,74 @@
   </li><li>There is no warranty.
   </li><li>Specifications may change without notice at any time.
   </li><li>Derivative works are not allowed.
-  </li><li>Support is provided at my sole discretion.
 </li></ul>
-<p>    All language here is still tentative, preliminary, and subject to
-    possibly extensive revision.
-</p>
-<p>    All source may be changed as you wish.
-</p>
 <h3><a name="section_1_1_1">Evaluation Package</a></h3>
-<p>    The evaluation package is available for free from:
+<p>    The evaluation package may be downloaded for free from these
+    software project hosts:
 </p>
 <ul>
   <li>Atmel     <a href="https://gallery.atmel.com/Products/List">https://gallery.atmel.com/Products/List</a>
-  </li><li>Microchip <a href="http://embeddedcodesource.com/algorithms">http://embeddedcodesource.com/algorithms</a>
+  </li><li>Bitbucket <a href="https://bitbucket.org/bbatten/s16math-eval/">https://bitbucket.org/bbatten/s16math-eval/</a>
+  </li><li>Microchip <a href="http://www.embeddedcodesource.com/codesnippet/s16math">http://www.embeddedcodesource.com/codesnippet/s16math</a>
 </li></ul>
-<p>    It may be used without charge for evaluation, or for personal use.
+<p>    It may be used for evaluation or personal use without charge.
     Components may be modified as you wish, so long as the personal use
     constraint is followed.
 </p>
-<h3><a name="section_1_1_2">Licenses</a></h3>
-<p>    Development of language for licenses is preliminary, tentative, and
-    incomplete. So things are probably going to change here.
+<p>    If no version of the library in the evaluation package has the object
+    format you need, email me on your company letterhead at:
+    
+</p><p>    &lt;<a href="mailto:bjbatten@acm.org">bjbatten@acm.org</a>&gt;
+    
+</p><p>    If it can be built from the compilers available to me, I will email you
+    a custom archive build and include it in subsequent iterations of the
+    evaluation package.
 </p>
+<h3><a name="section_1_1_2">Licenses</a></h3>
 <p>    The product is available for commercial use under either a binary
     license or a source license. For pricing, send an email (plain text
-    preferred ) with "RFQ" or "Request For Quote" in the subject line to:
+    preferred) with "RFQ" or "Request For Quote" in the subject line to:
 </p>
 <p>    &lt;<a href="mailto:bjbatten@acm.org">bjbatten@acm.org</a>&gt;
 </p>
-<p>    Terms apply to the version of the library available for download at the
-    time of purchase. Licenses are "at will" and may be terminated by either
-    party. There are no refunds.
+<p>    Terms at the time of purchase apply to all versions of the library.
+</p>
+<p>    Licenses are "at will" and may be terminated by either party. There are
+    no refunds. The license is effective when funds are deposited into my
+    Paypal account. To do this, log in to Paypal, click on "Send and
+    Request" -&gt; "Pay for goods or services" and enter <a href="mailto:bjbatten@acm.org">bjbatten@acm.org</a> in
+    the email address field.
 </p>
 <h4><a name="section_1_1_2_1">Binary License</a></h4>
+<p>    The binary license is available on a per unit royalty basis, and
+    becomes active on receipt of an advance payment which is applied to the
+    per unit royalty. Royalties are assessed in US dollars and are set at
+    1.5% of the unit sale price.
+</p>
 <p>    The binary license allows you to incorporate binaries from the current
-    and later versions of the evaluation package into your own product and
-    sell or lease it.
-</p>
-<p>    Support for six months is included in the price, and is available after
-    that for an hourly fee. Support extends to fixing errors in the math
-    functions. As bugs are fixed, the fixed object file is immediately made
-    available to the customer, and is put in the evaluation package as part
-    of the normal release schedule. Also, I will provide machine architecture
-    object versions directly to the customer if they are not available in the
-    standard evaluation package, and can be made from the available compilers.
-    Those versions of the library are then made available in the standard
-    evaluation package as part of the normal release schedule.
-</p>
-<p>    The binary license is available for an advance on royalties. Royalties
-    are set as a percentage of the unit sale price.
+    and later versions of the evaluation package into your own product.
 </p>
 <p>    If the binary license is terminated, you no longer pay royalties, and
     you may no longer include the library in your product.
 </p>
-<p>    Support for changes made to source components of the evaluation package
-    is available for an hourly fee plus materials.
-</p>
 <h4><a name="section_1_1_2_2">Source License</a></h4>
-<p>    The source license makes the full source for all the math functions,
-    test code, and build facilities available to you. You may optimize the
-    library code for your specific application and incorporate the result
-    into your own product. You can build customized versions of the library
-    using both "Make" variables that can be overridden on the command line,
-    and by selecting among specified conditional compilation options
-    available in the product source files.
+<p>    The source license is available for a fixed fee. Full source for all
+    the math functions, test code, and build facilities is provided to you.
+    You may modify all source code as you wish. Source updates are provided
+    at no charge as they become available.
 </p>
-<p>    The following enumerated source change types are supported:
-</p>
-<p>    First, variables defined in the file "Makefile" in the top level
-    directory as:
-</p>
-<pre>
-    Name     Assignment
-    ----     ----------
-    var      ?=[&lt;initial value&gt;]
-</pre>
-<p>    may be overridden on the command line.
-</p>
-<p>    Second, conditional definition macros of the form:
-</p>
-<pre>
-    #ifdef     USE_&lt;filename&gt;<u>&lt;option&gt;
-    #undef     USE</u>&lt;filename&gt;_&lt;option&gt;
-</pre>
-<p>    where &lt;filename&gt; is an upper case version of the file name (without the
-    ".c" extension) and &lt;option&gt; is a descriptive term such as "TABLE", or
-    "NTHROOT", may be interchanged to allow you to select among algorithms
-    where more than one algorithm is available.
-</p>
-<p>    Code within the scope of undefined USE_xxx constants compiles - mostly
-    (I think) - but may not work. In most cases disabled algorithms may use
-    less code, but provide poorer accuracy, than the one enabled by default.
-    
-</p><p>    Support for six months is included in the price, and is available after
-    that for an hourly fee. Source updates are provided at no charge.
-</p>
-<p>    The source license is available for a fixed fee. Binaries made from
-    either modified or unmodified source can be distributed for a royalty
-    set as a percentage of the unit sale price.
-</p>
-<p>    If the source license is terminated, you no longer pay royalties, and
-    you may no longer include the library in your product.
-</p>
-<p>    You may make any other source code changes you wish. Support for those
-    changes is available for an hourly fee plus materials.
-</p>
-<h3><a name="section_1_1_3">Support</a></h3>
-<p>    Problems submitted for support are evaluated solely by myself to
-    determine need.
-</p>
-<p>    Support for the evaluation package is available through the contact
-    developer facility at the host sites and in online forums.
-</p>
-<p>    Support for binary and source licensees is available via email, Skype,
-    and phone.
+<p>    Binaries made from either modified or unmodified source, and binaries
+    from the versions of the library in the evaluation package, can be
+    distributed on the per unit royalty basis of binary license, without
+    the advance payment requirement.
 </p>
 <p>    Anyone may submit code changes to be included in the product if you
     allow me to copyright it as a derivative work. User submitted code
-    changes must be made in the form of a patch in "diff -U" format attached
-    to a plain text email.
+    changes should be made in the form of a patch in "diff -U" format
+    attached to a plain text email.
 </p>
 <p>    The title of the email should contain the word "PATCH". The body of the
-    email must contain language that allows me to  copyright it as a
+    email must contain language that allows me to copyright it as a
     derivative work, subject to acceptance of the patch.
 </p>
 <p>    The first lines of the patch must insert a copyright notice behind the
@@ -144,8 +90,10 @@
     language allowing copyright by me as a derivative work.
 </p>
 <p>    If accepted, the patch may be modified in any way. The resulting code
-    will be made available as part of the product and provided with
-    standard support.
+    will be made available as part of the product.
+</p>
+<p>    If the source license is terminated, you no longer pay royalties, and
+    you may no longer include the library in your product.
 </p>
 <p># vi:set expandtab:</p>
 

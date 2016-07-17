@@ -4,7 +4,7 @@ Content-type: text/html
 <HTML><HEAD><TITLE>Man page of s16_reduce</TITLE>
 </HEAD><BODY>
 <H1>s16_reduce</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 16 July 2016<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -24,29 +24,36 @@ s16 <B>s16_reduce</B>(qm_n <I>k</I>);
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
-Computes reduction of terms for <I>k</I> to unit integer - either 100
+Computes reduction of terms for <I>k</I> to unit integer (UI) - either 100
 (decimal resolution) or 128 (Q8.7 resolution). Evaluates fractional
-part of <I>k</I> for <I>k</I>/UI=x/y for x and y.
+part of <I>k</I> for <I>k</I>/UI=<I>x</I>/<I>y</I> for <I>x</I> and <I>y</I>.
+<P>
+
+Resolution of reduced fractions is constrained by using a reduction
+table to obtain manageable values for power/root calculations. This
+approximates the fractional part of the index to the greatest multiple
+of 1/4 &lt;= <I>k</I>.
 <A NAME="lbAE">&nbsp;</A>
-<H2>PARAMETERS</H2>
+<H2>PARAMETER</H2>
 
 <DL COMPACT>
 <DT><B></B><I>k</I>
 
 <DD>
-16 bit signed fixed point number with two digits or seven bits
+16 bit signed fixed point number with two decimal digits or seven bits
 of resolution.
 </DL>
 <A NAME="lbAF">&nbsp;</A>
 <H2>RETURN</H2>
 
-x and y are packed as two signed bytes into a 16 bit signed integer.
-x is returned in bit 15:8, and y is returned in bits 7:0.
-To be used in fixed point operations, both x and y must be scaled by
-the unit integer.
+<I>x</I> and <I>y</I> are packed as two signed bytes into a 16 bit signed
+integer. <I>x</I> is returned in bit 15:8, and <I>y</I> is returned in
+bits 7:0. To be used in fixed point operations, both <I>x</I> and <I>y</I>
+must be scaled by the unit integer.
 <P>
 
-The function returns zero if <I>k</I> is zero or greater than the unit integer.
+The function returns zero in bits 15:8 and one in bits 7:0 if <I>k</I> is zero
+or not less than the unit integer.
 <A NAME="lbAG">&nbsp;</A>
 <H2>SEE ALSO</H2>
 
@@ -66,7 +73,7 @@ reduce.c
 <DT><A HREF="#lbAB">NAME</A><DD>
 <DT><A HREF="#lbAC">SYNOPSIS</A><DD>
 <DT><A HREF="#lbAD">DESCRIPTION</A><DD>
-<DT><A HREF="#lbAE">PARAMETERS</A><DD>
+<DT><A HREF="#lbAE">PARAMETER</A><DD>
 <DT><A HREF="#lbAF">RETURN</A><DD>
 <DT><A HREF="#lbAG">SEE ALSO</A><DD>
 <DL>
@@ -78,6 +85,6 @@ reduce.c
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 22:14:13 GMT, August 28, 2014
+Time: 17:24:03 GMT, July 16, 2016
 </BODY>
 </HTML>

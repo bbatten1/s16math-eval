@@ -4,7 +4,7 @@ Content-type: text/html
 <HTML><HEAD><TITLE>Man page of s16_div</TITLE>
 </HEAD><BODY>
 <H1>s16_div</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 16 July 2016<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -49,6 +49,9 @@ The return value is the 16 bit quotient represented as an integer having
 an implied binary point with 7 bits of resolution, or an implied
 decimal point with two digits of resolution.
 Range is <B>-</B>327.68 through 327.67 (<B>-</B>256.000 through 255.127).
+<P>
+
+The function returns 0 when divide by zero is attempted.
 <A NAME="lbAG">&nbsp;</A>
 <H2>NOTES</H2>
 
@@ -74,6 +77,6 @@ div.c
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 22:14:13 GMT, August 28, 2014
+Time: 17:24:03 GMT, July 16, 2016
 </BODY>
 </HTML>

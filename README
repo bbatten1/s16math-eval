@@ -1,3 +1,17 @@
+README file for s16math library
+
+This file contains the following sections:
+
+INTRODUCTION
+SYSTEM REQUIREMENTS
+FUNCTIONS
+QUALITY ASSURANCE
+EVALUATION PACKAGE
+EXAMPLES
+COMPILING AND LINKING
+REPORTING PROBLEMS
+LICENSING
+
 INTRODUCTION
 ============
     s16math is a compact library of 16 bit fixed point[1] math functions
@@ -45,8 +59,8 @@ INTRODUCTION
     less resolution.
 
     So where the denominator is 100, the number 30 is treated as 30/100, or
-    2.30; 250 is treated as 250/100, or 2.50. In this library, denominators
-    of 10, 100, and 1000 are used.
+    0.30; 250 is treated as 250/100, or 2.50. In this library, decimal
+    denominators of 10, 100, and 1000 are used.
 
     The advantage of the Qm.n format is that the rounding operations needed
     to preserve precision in fixed point multiplication and division may be
@@ -61,7 +75,7 @@ INTRODUCTION
     So where n is 6, 2^n is 64, and the number 30 is treated as 30/64 (0.30);
     250 is treated as 250/64, or 3 58/64 (3.58). Where n is 7, 2^n is 128,
     and the number 30 is treated as 30/128 (0.030); 250 is treated as 250/128,
-    or 1 122/128 (1.122) etc. In this library, Q11.4, Q8.7, and Q6.9 formats
+    or 1 122/128 (1.122) etc. In this library, Q11.4, Q8.7, and Q5.10 formats
     are used.
 
     The number pi is handled as having the equivalent of approximately three
@@ -80,9 +94,9 @@ INTRODUCTION
     Real     Dec 2   -327.68   327.67
              Q8.7    -256.000  255.127
     Radians  Dec 3   -32.768   32.767    Otherwise would be max of 327.67
-             Q6.9    -64.000   63.511
+             Q5.10   -64.000   63.511
 
-    Observe the following possible gotchas:
+    Observe the following possible display format gotchas:
 
     Decimal      Q8.7     because
     -------      -----    -------
@@ -95,15 +109,60 @@ INTRODUCTION
     [2] Q (number format)
         http://en.wikipedia.org/wiki/Q_%28number_format%29
 
+SYSTEM REQUIREMENTS
+===================
+
+    The development platform is Debian Linux running on an X86 machine
+    using basic GNU/Linux cross compilation development tools. The package
+    lets you build deployable object versions of the library for a variety
+    of targets.
+
+    If you are compiling a program to use the s16math library functions in
+    a language other than C, the compiler you use needs to understand the
+    'extern "C"' construct.
+
+    The following table lists the supported MCUs and the compiler used to
+    compile each.
+
+    Target      Compiler    Package
+    ------      --------    -------
+    armv6       GNU C       gcc-arm-none tarball (1),
+                            gcc-arm-linux-gnueabi (Ubuntu)
+    cortex-m0   GNU C       gcc-arm-none tarball (1),
+                            gcc-arm-linux-gnueabi (Ubuntu)
+    x86         GNU C       Debian, Ubuntu, other Linux distros.
+    avr         gcc-avr     Debian, Ubuntu, other Linux distros.
+    8051        sdcc        Debian, Ubuntu, maybe others.
+    hc08        sdcc        Debian, Ubuntu, maybe others.
+    hc11        sdcc        Debian, Ubuntu, maybe others.
+    pic14,16    sdcc        Debian, Ubuntu, maybe others.
+    z80         sdcc        Debian, Ubuntu, maybe others.
+
+    The SDCC compiler generates little endian code, so versions of the
+    library built with it are also little endian. The Keil compiler
+    generates big endian code. To use the Keil compiler with the s16math
+    library, you need to byte swap call parameters and returned values, or
+    purchase a source license for the library and port the code to Keil.
+
+    To compile the example programs you need the GNU C compiler or
+    equivalent for the x86 example, and one of the ARM cross compile
+    packages for the KL46Z example. Your compile environment needs to have
+    stdint.h in its standard lookup path.
+
+(1) The ARM cross compiler seems to handle a wider variety of ARM MCUs.
+    see here:
+https://launchpad.net/gcc-arm-embedded/5.0/5-2015-q4-major/+download/\
+        gcc-arm-none-eabi-5_2-2015q4-20151219-linux.tar.bz2
+
 FUNCTIONS
 =========
-    s16math provides the following functions. Their man pages can be found in
-    the man directory. Use the "man" command to read them. For example, the
-    command "man -l ./man/s16_div.3m" will display the man page for the
-    s16_div function.
+    This section lists the functions provided by s16math. Their man pages
+    can be found in the man subdirectory. Use the "man" command to read
+    them. For example, the command "man -l ./man/s16_div.3m" will display
+    the man page for the s16_div function.
 
-    You can also point your browser to the html directory to read the man pages
-    in html format.
+    You can also point your browser to the html subdirectory to read the
+    man pages in html format.
 
     Function        Description
     --------        -----------
@@ -117,7 +176,7 @@ FUNCTIONS
     s16_den         convert integer portion to denominator
     s16_div         divide
     s16_divov       check for divide overflow
-    s16_factorial   n!
+    s16_fact        n!
     s16_gcd         greatest common divisor
     s16_hypot       hypoteneuse
     s16_ln          natural logarithm
@@ -129,14 +188,20 @@ FUNCTIONS
     s16_quadrant    quadrant of angle
     s16_reduce      reduction of terms
     s16_root        evaluate principal root
+    s16_rootov      check for overflow on any nth root
     s16_sec         secant
     s16_sin         sine
     s16_sincos      sine and cosine
     s16_skel        skeleton function for software fixed point math library
+    s16_sqr         optimized for x^2
+    s16_sqrov       check for squaring overflow
+    s16_sqrt        optimized for x^(1/2)
+    s16_sqrtov      check for overflow on square root
     s16_subov       check for subtract overflow
     s16_tan         tangent
     s16_todeg       radians to degrees
     s16_torad       degrees to radians
+    s16_unwind      unwind angle into unit circle
 
     All functions are leaf functions. No library function calls any other
     function that is not in the library, except where the compiler emits
@@ -172,13 +237,14 @@ QUALITY ASSURANCE
 
 EVALUATION PACKAGE
 ==================
-    The evaluation package unpacks into a directory named "eval". It
-    provides archive and shared object versions of the library that can be
-    linked with programs written in C, or with any program written a
-    language that understands the 'extern "C"' construct.
+    The evaluation package may be used for evaluation or personal use. See
+    COPYING for specifics. It has archive and shared object versions of the
+    library that can be linked with programs written in C, or with any
+    program written a language that understands the 'extern "C"' construct.
 
-    It contains a set of core files and pre- built libraries for a variety
-    of embedded architectures.
+    The evaluation package unpacks into a directory named "eval". It
+    contains a set of core files and pre- built libraries for a variety of
+    embedded architectures.
 
     Core Files
     ----------
@@ -219,7 +285,7 @@ EVALUATION PACKAGE
     the project host and - if possible - I'll include it with what is
     already published here.
 
-    ./arch-binary/,.arch-decimal/  directories:
+    ./arch-binary/,./arch-decimal/  directories:
 
     Subdirectory               Description
     ------------------         -----------------------------------------
@@ -229,8 +295,6 @@ EVALUATION PACKAGE
     - arm-cortex-m0-l/         little endian
             s16math.a          cortex-m0 archive
             s16math.so         cortex-m0 shared object little endian
-    - armv6-m-b/               big endian
-            s16math.a          armv6-m archive
     - armv6-m-l/               little endian
             s16math.a          armv6-m archive
             s16math.so         armv6-m shared object little endian
@@ -250,45 +314,36 @@ EVALUATION PACKAGE
             s16math.lib        Microchip PIC 16
     - mcu-z80/                 -
             s16math.lib        Zilog Z80 MCU archive
-    - ppc-401-b/               big endian
-            s16math.a          archive
-            s16math.so         shared object
-    - ppc-401-l/               little endian
-            s16math.a          archive
-            s16math.so         shared object
-    - ppc-power3-b/            big endian
-            s16math.a          archive
-    - ppc-power3-l/            little endian
-            s16math.a          archive
     - x86-64/                  Compiled with -march=x86-64
             s16math.a          archive
             s16math.so         shared object
     - x86-generic/             -Compiled with -mtune=generic
-            s16math.a          archive IA32/AMD64/EM64T processors
-            s16math.so         shared object IA32/AMD64/EM64T processors
+            s16math.a          archive AMD64/EM64T processors
+            s16math.so         shared object AMD64/EM64T processors
+    - x86-pentium/             -Compiled with -mtune=pentium -m32
+            s16math.a          archive IA32 processors
+            s16math.so         shared object IA32 processors
 
-    All versions of the library are compiled in a Ubuntu 14.04 Linux
-    environment using the GNU C/C++ toolchains for the generic x86, AVR, and
-    PPC code. ARM code is compiled using the Embedded ARM toolchain. Code
-    for the various MCUs is compiled using the sdcc package for the Small
-    Device C Compiler (SDCC).
+    All versions of the library are compiled in a Debian Linux environment
+    using the GNU C/C++ toolchains for the generic x86, and AVR code. ARM
+    code is compiled using the Embedded ARM toolchain. Code for the various
+    MCUs is compiled using the sdcc package for the Small Device C Compiler
+    (SDCC).
 
     ARM code is compiled in thumb mode for cortex-m0 and armv6-m. Big endian
-    versions of the source files currently compile and create an ar archive,
-    but creating a shared object file fails.
-
-    PPC code is compiled for the 401 and power3 variants. Both versions
-    compile, but the power3 version fails to create a shared object file.
+    compilation of ARM source files currently create ar archives, but
+    creating shared object files fail.
 
 EXAMPLES
 ========
-    Code in the examples directory shows the use of the functions in the
-    s16math library. Currently, there is one program.
+    Code in the examples directory shows the use of functions in the
+    s16math library. Currently, there are versions of one program which
+    compiles for the x86 or for the Freescale KLZ46 development board.
 
-    multest accepts two integer parameters on the command line, converts them
-    to hex, then calls s16_mul() to do a fixed point multiplication, followed
-    by a call to s16_mulov() to check for overflow. Results are printed to
-    stdout.
+    Each version of multest accepts two integer parameters on the command
+    line, converts them to hex, then calls s16_mul() to do a fixed point
+    multiplication, followed by a call to s16_mulov() to check for overflow.
+    Results are printed to stdout.
 
     To build the example code, change to the examples directory and peruse
     the information in the README file there.
@@ -301,11 +356,11 @@ COMPILING AND LINKING
     Using The Evaluation Package
     ----------------------------
     The libraries in the evaluation package may be used with any linker that
-    understands either the shared object or archive Unix library file format.
-    At this time, not all compilations produce a shared object version, so
-    make sure the machine architecture directory you select has the .so,
-    .a, or .lib suffix you want to use. To build your program, insert this
-    statement in your source file(s):
+    understands either the shared object or archive Unix library file
+    format. At this time, not all compilations produce a shared object
+    version, so make sure the machine architecture directory you select has
+    the .so, .a, or .lib suffix you want to use. To build your program,
+    insert this statement in your source file(s):
 
     #include "s16math.h"
 
@@ -315,7 +370,8 @@ COMPILING AND LINKING
 
     Makefile Template
     -----------------
-    This template may be used as a guide for using the SDCC cross compiler:
+    Several cross compilers are used to buld the library files. This
+    template may be used as a guide for using the SDCC cross compiler:
 
         # selects Qm.n binary. Comment out for decimal.
         CFLAGS +=-DUSE_BINARY_POINT
@@ -323,16 +379,17 @@ COMPILING AND LINKING
         SUFFIX:=lib
         IPATH:=<path-to-s16math-include-directory>
 
-        # point to {arch-binary|arch-decimal}-<machine-type>
+        # point to {arch-binary|arch-decimal}/<machine-type>
         LPATH:=<path-to-s16math-library-directory>
 
         myprog: myprog.c
             $(CC) $(CFLAGS) -o $@ $@.c -I$(IPATH) $(LPATH)/s16math.$(SUFFIX)
 
-SUPPORT
-=======
-    It is helpful if you can provide the following information when asking
-    for support:
+REPORTING PROBLEMS
+==================
+    Questions about the evaluation package may be posted in the forums
+    provided by the software project host. Please provide the following
+    information when reporting a problem:
 
     o What version of the library was used.
     o What function failed.
@@ -343,25 +400,12 @@ SUPPORT
       be noticeable.)
 
     If you are using the evaluation package from the Microchip embedded code
-    source site, support is available by clicking on the "Contact Developer"
-    tab in the "View Details" link.
-
-    See COPYING for Source and Binary licensee support.
+    source site, you can submit questions by clicking on the "Contact
+    Developer" tab in the "View Details" link.
 
 LICENSING
 =========
-    The evaluation package may be used without charge for personal use and
-    evaluation. Making the library part of a product requires a license.
 
-    Binary License
-    --------------
-    The binary license allows you to incorporate library functions into
-    your own product and sell it. See COPYING for conditions.
-
-    Source License
-    ---------------
-    The source license allows you to build the library from source and
-    include the modified or unmodified results into your own product and
-    sell it. See COPYING for conditions.
+    See COPYING for license terms.
 
 # vi:set expandtab:

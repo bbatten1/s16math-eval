@@ -16,7 +16,7 @@ S16MATH_A=../../arch-decimal/arm-cortex-m0+-l/s16math.a
 endif
 
 # Edit GCC_BIN to point to your local copy of the ARM embedded toolchain.
-GCC_BIN =/usr/local/gcc-arm-none-eabi-4_8-2014q2/bin/
+GCC_BIN =/usr/local/eabi/bin/
 PROJECT = multest
 OBJECTS = ./multest.o
 SYS_OBJECTS = ./mbed/TARGET_KL46Z/TOOLCHAIN_GCC_ARM/startup_MKL46Z4.o \
@@ -32,7 +32,6 @@ INCLUDE_PATHS =-I. -I./mbed -I./mbed/TARGET_KL46Z \
 			-I./mbed/TARGET_KL46Z/TOOLCHAIN_GCC_ARM \
 			-I$(IPATH)
 LIBRARY_PATHS = -L./mbed/TARGET_KL46Z/TOOLCHAIN_GCC_ARM
-#-L../../../arch-decimal/arm-cortex-m0plus-l
 LIBRARIES = -lmbed
 LINKER_SCRIPT = ./mbed/TARGET_KL46Z/TOOLCHAIN_GCC_ARM/MKL46Z4.ld
 
@@ -61,10 +60,20 @@ ifeq ($(DEBUG), 1)
 else
   CC_FLAGS += -DNDEBUG -Os
 endif
+.PHONY: all clean cleantags tags
 
 all: $(PROJECT).bin
 
-clean:
+cleantags:
+	rm -f tags cscope.*
+
+tags:
+	@echo GEN tags
+	@ctags -R
+	@echo GEN cscope
+	@cscope -bkq $(IPATH)/s16math.h $(shell find . -type f -name '*.[ch]*')
+
+clean: cleantags
 	rm -f $(PROJECT).bin $(PROJECT).elf $(OBJECTS)
 
 .s.o:

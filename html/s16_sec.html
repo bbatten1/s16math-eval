@@ -4,7 +4,7 @@ Content-type: text/html
 <HTML><HEAD><TITLE>Man page of s16_sec</TITLE>
 </HEAD><BODY>
 <H1>s16_sec</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 28 August 2014<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 16 July 2016<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -26,10 +26,10 @@ qm_n <B>s16_sec</B>(qm_rad <I>phi</I>);
 
 Computes <B>1/cos</B>(<I>phi</I>).
 <A NAME="lbAE">&nbsp;</A>
-<H2>PARAMETERS</H2>
+<H2>PARAMETER</H2>
 
 Parameter is radians supplied as a 16 bit integer having an implied binary
-point with 7 bits of resolution, or an implied decimal point with two
+point with 10 bits of resolution, or an implied decimal point with three
 digits of resolution.
 <DL COMPACT>
 <DT><B></B><I>phi</I>
@@ -41,20 +41,33 @@ numeric argument in radians.
 <H2>RETURN</H2>
 
 The return value is a 16 bit integer secant having an implied binary
-point with 7 bits of resolution, or an implied decimal point with two
+point with seven bits of resolution, or an implied decimal point with two
 digits of resolution.
 <DL COMPACT>
 <DT><B></B><I>y</I>
 
 <DD>
 1/cos(<I>phi</I>).
-For large values of the trigonometric ratio, the return value saturates
-at +/- 100 (100.00).
 </DL>
+<P>
+
+For large values of the trigonometric ratio, the return value saturates
+at the maximum possible positive or negative value for the resolution
+scheme in the regions around the zeroes of <B>cos</B>(<I>phi</I>) - 90 and 270 deg.
+For <I>phi</I> in the first or fourth quadrant, the saturation value is 327.67
+(255.127). For <I>phi</I> in the second or third quadrant, the saturation
+value is -327.68 (-256).
 <A NAME="lbAG">&nbsp;</A>
 <H2>NOTES</H2>
 
 Internal 32 bit intermediate results.
+<P>
+
+The accuracy of this computation is fair. For angles between <B>-45</B> degrees
+and +45 degrees inclusive, 98% of results correspond to those of the
+reference implementation to within +/- 0.01 units. All results in that
+range correspond to within +/- 0.02 units. Correspondence declines with
+increasing angle.
 <A NAME="lbAH">&nbsp;</A>
 <H2>SEE ALSO</H2>
 
@@ -74,7 +87,7 @@ sec.c
 <DT><A HREF="#lbAB">NAME</A><DD>
 <DT><A HREF="#lbAC">SYNOPSIS</A><DD>
 <DT><A HREF="#lbAD">DESCRIPTION</A><DD>
-<DT><A HREF="#lbAE">PARAMETERS</A><DD>
+<DT><A HREF="#lbAE">PARAMETER</A><DD>
 <DT><A HREF="#lbAF">RETURN</A><DD>
 <DT><A HREF="#lbAG">NOTES</A><DD>
 <DT><A HREF="#lbAH">SEE ALSO</A><DD>
@@ -87,6 +100,6 @@ sec.c
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 22:14:13 GMT, August 28, 2014
+Time: 17:24:03 GMT, July 16, 2016
 </BODY>
 </HTML>

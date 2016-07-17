@@ -1,5 +1,14 @@
+README file for s16math code examples
 All items are copyright (c) 2014 Bryan Batten <bjbatten@acm.org>
 
+This file contains the following sections
+
+Introduction
+x86
+kl46z
+
+Introduction
+------------
 The source program(s) in this directory show examples of using the s16math
 library functions.
 
@@ -14,11 +23,12 @@ from the source in each subdirectory.
 x86
 ---
 To build multest, cd to the x86 subdirectory, then invoke make with "make",
-or "make ARCH=x86-64". Add BINARY=1 on the make command line to select Qm.n
-number format. Otherwise, decimal format is used.
+or "make ARCH=x86-{64|generic|pentium}". Add BINARY=1 on the make command
+line to select Qm.n number format. Otherwise, decimal format is used.
 
     make                    to build executables that run on generic
                             64 bit x86 machine.
+    make ARCH=x86-pentium   to build 32 bit x86 executables.
     make BINARY=1           to select Qm.n format on a generic 64 bit x86
                             machine.
 
@@ -45,9 +55,10 @@ from mbed.org. The program multest.bin asks for two numbers interactively,
 calls s16_mul() to form the product, then calls s16_mulov to check for
 overflow.
 
-To build multest, cd to the kl46z subdirectory, then invoke make with "make".
-Add BINARY=1 on the make command line to select Qm.n number format. Otherwise,
-decimal format is used.
+To build multest.bin, cd to the kl46z subdirectory, edit the Makefile so
+that the variable GCC_BIN points to your local copy of the ARM embedded
+toolchain, then invoke make with "make". Add BINARY=1 on the make command
+line to select Qm.n number format. Otherwise, decimal format is used.
 
 To execute the example - multest.bin - you need to have the development board
 attached via USB and mounted as a mass storage device. This document assumes

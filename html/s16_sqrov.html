@@ -1,0 +1,93 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of s16_sqrov</TITLE>
+</HEAD><BODY>
+<H1>s16_sqrov</H1>
+Section: s16math Programmer Manual (3m)<BR>Updated: 16 July 2016<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>s16_sqrov </B>- Check for squaring overflow
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<PRE>
+#include &quot;s16math.h&quot;
+s16 <B>s16_sqrov</B>(qm_n <I>a</I>);
+</PRE>
+
+
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Squaring overflow occurs when the result of squaring a number is
+negative. Otherwise there is no overflow.
+<A NAME="lbAE">&nbsp;</A>
+<H2>PARAMETER</H2>
+
+<DL COMPACT>
+<DT><B></B><I>a</I>
+
+<DD>
+The parameter is supplied as a 16 bit integer having an implied
+binary point with 7 bits of resolution, or an implied decimal point with
+two digits of resolution.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>RETURN</H2>
+
+Zero if no overflow. Non-zero if overflow.
+<A NAME="lbAG">&nbsp;</A>
+<H2>NOTE</H2>
+
+This operation is implemented as a macro.
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<A NAME="lbAI">&nbsp;</A>
+<H3>s16math Library Overflow Check Functions</H3>
+
+<B><A HREF="/cgi-bin/man/man2html?3m+s16_addov">s16_addov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_divov">s16_divov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_mulov">s16_mulov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_powov">s16_powov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_rootov">s16_rootov</A></B>(3m),
+<B><A HREF="/cgi-bin/man/man2html?3m+s16_sqrtov">s16_sqrtov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_subov">s16_subov</A></B>(3m)
+<A NAME="lbAJ">&nbsp;</A>
+<H3>Arithmetic Operations on Binary Numbers</H3>
+
+<A HREF="http://www.doc.ic.ac.uk/~eedwards/compsys/arithmetic/">http://www.doc.ic.ac.uk/~eedwards/compsys/arithmetic/</A>
+<A NAME="lbAK">&nbsp;</A>
+<H3>Fixed-point arithmetic</H3>
+
+<A HREF="http://en.wikipedia.org/wiki/Fixed-point_arithmetic">http://en.wikipedia.org/wiki/Fixed-point_arithmetic</A>
+<A NAME="lbAL">&nbsp;</A>
+<H2>FILE</H2>
+
+sqrov.c
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">PARAMETER</A><DD>
+<DT><A HREF="#lbAF">RETURN</A><DD>
+<DT><A HREF="#lbAG">NOTE</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+<DL>
+<DT><A HREF="#lbAI">s16math Library Overflow Check Functions</A><DD>
+<DT><A HREF="#lbAJ">Arithmetic Operations on Binary Numbers</A><DD>
+<DT><A HREF="#lbAK">Fixed-point arithmetic</A><DD>
+</DL>
+<DT><A HREF="#lbAL">FILE</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:24:03 GMT, July 16, 2016
+</BODY>
+</HTML>

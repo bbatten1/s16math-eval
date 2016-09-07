@@ -13,7 +13,8 @@ Evaluation Package
     software project hosts:
 
     o Atmel     https://gallery.atmel.com/Products/List
-    o Bitbucket https://bitbucket.org/bbatten/s16math-eval/
+    o Bitbucket https://bitbucket.org/bbatten/s16math-eval/downloads
+    o GitHub    https://github.com/bbatten1/s16math-eval/tree/v0.13.6
     o Microchip http://www.embeddedcodesource.com/codesnippet/s16math
 
     It may be used for evaluation or personal use without charge.

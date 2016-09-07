@@ -95,43 +95,43 @@ root 1882
 </MODULE>
 
 <MODULE>
-sqrt 2143
+sqrt 2142
 </MODULE>
 
 <MODULE>
-reduce 2261
+reduce 2260
 </MODULE>
 
 <MODULE>
-todeg 2332
+todeg 2331
 </MODULE>
 
 <MODULE>
-torad 2404
+torad 2403
 </MODULE>
 
 <MODULE>
-addov 2475
+addov 2474
 </MODULE>
 
 <MODULE>
-subov 2545
+subov 2544
 </MODULE>
 
 <MODULE>
-divov 2611
+divov 2610
 </MODULE>
 
 <MODULE>
-mulov 2676
+mulov 2675
 </MODULE>
 
 <MODULE>
-powov 2756
+powov 2755
 </MODULE>
 
 <MODULE>
-rootov 2824
+rootov 2823
 </MODULE>
 
 </INDEX>
@@ -523,11 +523,12 @@ root
 €
 €
 €
-(d0€
+
 €
 €
 €
 €
+€
 €
 €
 €
@@ -543,41 +544,38 @@ root
 
 
 
+
+
 
 	
-	
-
-j
-ÍÉ
-
+i
+¸
 
-&
+
+
+
 i
-µ
-
+¸
+¾
 
-}
+o
 i
-ž
-í
+¦
+õ
 
-¾
-]
-¬
+ª
+O
+ž
 
+Íý
 
-
-
-n
-
-öÍ
-á
-
-g
+
+i
+¸
 
-
-
-hypot
+
+uadrant
+00159_DS_
 </REL>
 <ADB>
 </ADB>
@@ -722,10 +720,14 @@ hypot
 rootov
 <REL>
 4
+(
  
-i
-_s16_atan
-_00118_DS_
+s
+
+TK04
+x1008
+s/header/p16f72.inc
+de_rootov
 </REL>
 <ADB>
 </ADB>

@@ -181,11 +181,10 @@ typedef uint32_t	u32;
 #define to_decimal_pt(x)	(((x)*128+50)/100)
 
 /* some limits */
-/* TODO remove reference to WOF100, WOF16 */
+/* TODO remove reference to WOF100 */
 #define	WOF100	328			/* would overflow or change sign if multiplied
 							   by 100 */
-#define	WOF16	32768u		/* result would overflow or change sign for
-							   16 bit values */
+#define	MOD16	32768u		/* signed modulus for 16 bit values */
 
 /* reduce chances of name pollution */
 /* 2.7182 rounded up to 2.72 */

@@ -1,0 +1,109 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of s16_powov</TITLE>
+</HEAD><BODY>
+<H1>s16_powov</H1>
+Section: s16math Programmer Manual (3m)<BR>Updated: 06 September 2016<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>s16_powov </B>- Check for nth power overflow
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<PRE>
+#include &quot;s16math.h&quot;
+qm_n <B>s16_powov</B>(qm_n <I>a</I>, qm_n <I>b</I>, qm_n <I>c</I>);
+</PRE>
+
+
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+The relationship <I>a</I>=<I>b</I>^<I>c</I> is checked for consistency.
+<P>
+
+Overflow is deemed to have occurred if a negative power has a
+positive base, if a negative power has a negative base with an even
+exponent, or if a positive power has a negative base with an odd
+exponent. Otherwise, there is no overflow.
+<A NAME="lbAE">&nbsp;</A>
+<H2>PARAMETERS</H2>
+
+<DL COMPACT>
+<DT><B></B><I>a</I>
+
+<DD>
+power
+<DT><B></B><I>b</I>
+
+<DD>
+base
+<DT><B></B><I>c</I>
+
+<DD>
+exponent
+</DL>
+<P>
+
+Parameters are supplied as 16 bit integers having implied binary points
+with 7 bits of resolution, or implied decimal points with two digits
+of resolution.
+<A NAME="lbAF">&nbsp;</A>
+<H2>RETURN</H2>
+
+Zero if no overflow. Non-zero if overflow.
+<A NAME="lbAG">&nbsp;</A>
+<H2>NOTES</H2>
+
+Probably does not catch all cases.
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<A NAME="lbAI">&nbsp;</A>
+<H3>s16math Library Overflow Check Functions</H3>
+
+<B><A HREF="/cgi-bin/man/man2html?3m+s16_addov">s16_addov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_divov">s16_divov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_mulov">s16_mulov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_rootov">s16_rootov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_sqrov">s16_sqrov</A></B>(3m),
+<B><A HREF="/cgi-bin/man/man2html?3m+s16_sqrtov">s16_sqrtov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_subov">s16_subov</A></B>(3m)
+<A NAME="lbAJ">&nbsp;</A>
+<H3>Arithmetic Operations on Binary Numbers</H3>
+
+<A HREF="http://www.doc.ic.ac.uk/~eedwards/compsys/arithmetic/">http://www.doc.ic.ac.uk/~eedwards/compsys/arithmetic/</A>
+<A NAME="lbAK">&nbsp;</A>
+<H3>Fixed-point arithmetic</H3>
+
+<A HREF="http://en.wikipedia.org/wiki/Fixed-point_arithmetic">http://en.wikipedia.org/wiki/Fixed-point_arithmetic</A>
+<A NAME="lbAL">&nbsp;</A>
+<H2>FILE</H2>
+
+powov.c
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">PARAMETERS</A><DD>
+<DT><A HREF="#lbAF">RETURN</A><DD>
+<DT><A HREF="#lbAG">NOTES</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+<DL>
+<DT><A HREF="#lbAI">s16math Library Overflow Check Functions</A><DD>
+<DT><A HREF="#lbAJ">Arithmetic Operations on Binary Numbers</A><DD>
+<DT><A HREF="#lbAK">Fixed-point arithmetic</A><DD>
+</DL>
+<DT><A HREF="#lbAL">FILE</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:53:05 GMT, September 06, 2016
+</BODY>
+</HTML>

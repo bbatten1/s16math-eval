@@ -1,0 +1,140 @@
+Content-type: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of s16_rootov</TITLE>
+</HEAD><BODY>
+<H1>s16_rootov</H1>
+Section: s16math Programmer Manual (3m)<BR>Updated: 06 September 2016<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>s16_rootov </B>- Check for nth root overflow.
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<PRE>
+#include &quot;s16math.h&quot;
+qm_n <B>s16_rootov</B>(qm_n <I>a</I>, qm_n <I>b</I>, qm_n <I>c</I>);
+</PRE>
+
+
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+The relationship <I>a</I>=<I>b</I>^(1/<I>c</I>) is checked for consistency. Overflow is found if
+<DL COMPACT>
+<DT>&bull;<DD>
+the index is zero (because x^(1/0) divides by zero), or
+<DT>&bull;<DD>
+the radicand is equal to the signed 16 bit modulus, or
+<DT>&bull;<DD>
+the index is negative and the radicand is zero (because the reciprocal
+of zero to a fractional power also divides by zero), or
+<DT>&bull;<DD>
+the index is also odd and radicand and root differ in sign, or
+<DT>&bull;<DD>
+a positive index is even and either the radicand or the root is
+negative (see notes)
+</DL>
+<P>
+
+The function does not check for the case where the index is one and the
+root and radicand are not equal because <B>s16_root</B>() treats an
+index of one as a corner case and always returns a root equal to the
+radicand.
+<A NAME="lbAE">&nbsp;</A>
+<H2>PARAMETERS</H2>
+
+<DL COMPACT>
+<DT><B></B><I>a</I>
+
+<DD>
+root
+<DT><B></B><I>b</I>
+
+<DD>
+radicand
+<DT><B></B><I>c</I>
+
+<DD>
+index
+</DL>
+<P>
+
+Parameters are supplied as 16 bit integers having implied binary points
+with 7 bits of resolution, or implied decimal points with two digits
+of resolution.
+<A NAME="lbAF">&nbsp;</A>
+<H2>RETURN</H2>
+
+Zero if no overflow. Non-zero if overflow.
+<A NAME="lbAG">&nbsp;</A>
+<H2>NOTES</H2>
+
+Does not catch all cases. Negative indices can produce root reciprocals
+smaller than the minimum resolution of the library, meaning that a root
+with a value of zero does not always mean overflow has occurred.
+<P>
+
+Numbers with imaginary or complex roots are deemed to be overflow.
+<P>
+
+The function <B>s16_root</B>() returns zero to indicate overflow if called
+with a negative radicand and an even index.
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<A NAME="lbAI">&nbsp;</A>
+<H3>s16math Library Overflow Check Functions</H3>
+
+<B><A HREF="/cgi-bin/man/man2html?3m+s16_addov">s16_addov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_divov">s16_divov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_mulov">s16_mulov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_powov">s16_powov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_sqrov">s16_sqrov</A></B>(3m),
+<B><A HREF="/cgi-bin/man/man2html?3m+s16_sqrtov">s16_sqrtov</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_subov">s16_subov</A></B>(3m)
+<A NAME="lbAJ">&nbsp;</A>
+<H3>Negative Value Under the Square Root Radical</H3>
+
+<A HREF="http://mathbitsnotebook.com/Algebra1/Radicals/RADNegativeUnder.html">http://mathbitsnotebook.com/Algebra1/Radicals/RADNegativeUnder.html</A>
+<P>
+
+Discusses roots of negative numbers.
+<P>
+
+<A NAME="lbAK">&nbsp;</A>
+<H3>A Treatise on Algebra, Charles William Hackley, pp. 66, 67.</H3>
+
+<A HREF="https://books.google.com/books?id=P3cAAAAAMAAJ">https://books.google.com/books?id=P3cAAAAAMAAJ</A>&amp;pg=PA66&amp;lpg=PA66&amp;dq=%22negative+index%22+of+<I>a</I>+radical&amp;source=bl&amp;ots=XU2_TzJPq5&amp;sig=3LPVOtw6lQN-F3p-mx8Xy7fWEDA&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwjY4I23ldXNAhUMw4MKHTimATwQ6AEIQjAH#v=onepage&amp;q=%22negative%20index%22%20of%20a%20radical&amp;f=false
+<P>
+
+Discusses radicands with negative indices.
+<A NAME="lbAL">&nbsp;</A>
+<H2>FILE</H2>
+
+rootov.c
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">PARAMETERS</A><DD>
+<DT><A HREF="#lbAF">RETURN</A><DD>
+<DT><A HREF="#lbAG">NOTES</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+<DL>
+<DT><A HREF="#lbAI">s16math Library Overflow Check Functions</A><DD>
+<DT><A HREF="#lbAJ">Negative Value Under the Square Root Radical</A><DD>
+<DT><A HREF="#lbAK">A Treatise on Algebra, Charles William Hackley, pp. 66, 67.</A><DD>
+</DL>
+<DT><A HREF="#lbAL">FILE</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:53:05 GMT, September 06, 2016
+</BODY>
+</HTML>

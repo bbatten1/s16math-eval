@@ -1,10 +1,10 @@
-Content-type: text/html
+Content-type: text/html; charset=UTF-8
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HTML><HEAD><TITLE>Man page of s16_ln</TITLE>
 </HEAD><BODY>
 <H1>s16_ln</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 06 September 2016<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 06 January 2019<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -15,8 +15,7 @@ Section: s16math Programmer Manual (3m)<BR>Updated: 06 September 2016<BR><A HREF
 <H2>SYNOPSIS</H2>
 
 <PRE>
-#include &quot;s16math.h&quot;
-qm_n <B>s16_ln</B>(qm_n <I>n</I>);
+#include &quot;s16math.h&quot; qm_n <B>s16_ln</B>(qm_n <I>a</I>);
 </PRE>
 
 
@@ -24,14 +23,15 @@ qm_n <B>s16_ln</B>(qm_n <I>n</I>);
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
-Evaluates <B>log_e</B>(<I>n</I>), where 0 &lt; <I>n</I> &lt;= 327.67 (decimal resolution), or 255.127
-(Q8.7). Requesting the log of a negative number is treated as an error
-instead of a multiple of <I>i</I>.
+Evaluates <B>log_e</B>(<I>a</I>), where 0 &lt; <I>a</I> &lt;= 327.67 (decimal resolution), or 255.127
+(Q8.7).
+Defined for any positive real number <I>a</I> as the area under the curve y = 1/x
+from 1 to <I>a</I> (the area being taken as negative when <I>a</I> &lt; 1 [2]).
 <A NAME="lbAE">&nbsp;</A>
 <H2>PARAMETERS</H2>
 
 <DL COMPACT>
-<DT><B></B><I>n</I>
+<DT><B></B><I>a</I>
 
 <DD>
 The number.
@@ -39,13 +39,28 @@ The number.
 <A NAME="lbAF">&nbsp;</A>
 <H2>RETURN</H2>
 
-If 0 &lt; <I>n</I> &lt;= 255.127 (327.67), then the return value is the number to which
-<I>e</I> would have to be raised to yield <I>n</I>. A return of -99.00
-means <I>n</I> &lt;= 0 or <I>n</I> &gt; 327.67 (255.127).
+If 0 &lt; <I>a</I> &lt;= 255.127 (327.67), then the return value is the number to which
+<I>e</I> would have to be raised to yield <I>a</I>.
+<P>
+
+A return of -99.00 (S16_NAN) means <I>a</I> &lt;= 0. By convention, <I>a</I> = 327.68
+(256.000) is taken to be -327.68 (-256.000) and results in an
+error return.
 <A NAME="lbAG">&nbsp;</A>
 <H2>NOTES</H2>
 
 Internal 32 bit intermediate results.
+<P>
+
+The function uses a series expansion algorithm based on accuracy and
+performance.
+<P>
+
+Better accuracy was obtained using direct Reimann integration. However,
+series expansion was found to run 15 times faster on the selected MCU for
+large values of tangent. Only 0.04% of series expansion results differed
+from those of the reference by more than 0.01, and no results differed
+from the reference values by more than 0.02.
 <A NAME="lbAH">&nbsp;</A>
 <H2>SEE ALSO</H2>
 
@@ -62,13 +77,9 @@ Internal 32 bit intermediate results.
 
 <A HREF="https://en.wikipedia.org/wiki/Natural_logarithm">https://en.wikipedia.org/wiki/Natural_logarithm</A>
 <A NAME="lbAL">&nbsp;</A>
-<H3>[3] Karl's Calculus Tutor</H3>
-
-<A HREF="http://www.karlscalculus.org/explogid.html">http://www.karlscalculus.org/explogid.html</A>
-<A NAME="lbAM">&nbsp;</A>
 <H3>[4] Ruckdeschel, F.R., BASIC Scientific Subroutines Vol. I, II</H3>
 
-<A NAME="lbAN">&nbsp;</A>
+<A NAME="lbAM">&nbsp;</A>
 <H2>FILE</H2>
 
 ln.c
@@ -88,15 +99,14 @@ ln.c
 <DT><A HREF="#lbAI">s16math Library Logarithm Functions</A><DD>
 <DT><A HREF="#lbAJ">[1] Natural Logarithm</A><DD>
 <DT><A HREF="#lbAK">[2] Natural logarithm</A><DD>
-<DT><A HREF="#lbAL">[3] Karl's Calculus Tutor</A><DD>
-<DT><A HREF="#lbAM">[4] Ruckdeschel, F.R., BASIC Scientific Subroutines Vol. I, II</A><DD>
+<DT><A HREF="#lbAL">[4] Ruckdeschel, F.R., BASIC Scientific Subroutines Vol. I, II</A><DD>
 </DL>
-<DT><A HREF="#lbAN">FILE</A><DD>
+<DT><A HREF="#lbAM">FILE</A><DD>
 </DL>
 <HR>
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 17:53:05 GMT, September 06, 2016
+Time: 22:48:01 GMT, January 06, 2019
 </BODY>
 </HTML>

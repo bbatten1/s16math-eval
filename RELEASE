@@ -1,3 +1,12 @@
-0.13.6
-1. Remove bisection stage from nth root seed generation.
-2. Deem request for root of -327.68 (-256.000) to be overflow.
+0.13.7
+1. Add Microchip 24FJ128GA204 to supported mcus. Use Microchip xc16
+   compiler for pic24.
+2. Change default atan algorithm from Reimann sum to Taylor series.
+3. Change default ln algorithm from simple integral to series expansion.
+4. Add s16_logov() check for natural log, log base 10, and log base n
+   overflow.
+5. Drop Microchip pic14, pic16 SDCC compilation pending resolution of
+   header licensing issue.
+6. Add pic24 to examples.
+7. Keep github happy: Rename README to REFERENCE; rename DESCRIPTION to
+   README.

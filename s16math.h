@@ -96,6 +96,7 @@ typedef uint32_t	u32;
 #define UF			NSHIFT			/* unit integer factor */
 #define SCALE_INTEGRAL	(DSHIFT)	/* scaling factor */
 #define SCALE_RAD	(NSHIFT-DSHIFT)	/* scaling factor num <-> rad */
+#define MIN_ATAN_FRACT	584			/* 584/1024 approx. 570/1000 */
 
 #define fvalue(x)		(((x)&NMASK)<<UF)	/* fraction as integer value */
 #define ivalue(x)		((x)&MMASK)			/* integer as integer value */
@@ -124,6 +125,7 @@ typedef uint32_t	u32;
 #define UF			NSCALE			/* unit integer factor */
 #define SCALE_INTEGRAL	(RSCALE/NSCALE)	/* scaling factor */
 #define SCALE_RAD	(RSCALE/NSCALE)		/* scaling factor num <-> rad */
+#define MIN_ATAN_FRACT	570			/* 570/1000 approx. 584/1024 */
 
 #define fvalue(x)		(((x)%UF)*UF)	/* fraction as integer value */
 #define ivalue(x)		(((x)/UF)*UF)	/* integer as integer value */
@@ -141,10 +143,7 @@ typedef uint32_t	u32;
 #define rround(x)		((x)+(isneg(x)?-KR:KR))/* radian multiply */
 #endif /* (don't) USE_BINARY_POINT */
 
-#ifdef NAN	/* needed for mbed compile */
-#undef NAN
-#endif
-#define NAN			(-99*QN)
+#define S16_NAN		(-99*QN)
 #define QD			DSCALE
 #define QN			NSCALE
 #define QR			RSCALE
@@ -189,7 +188,7 @@ typedef uint32_t	u32;
 /* reduce chances of name pollution */
 /* 2.7182 rounded up to 2.72 */
 /* "warning: integer overflow in expression", even though final result fits. */
-#if defined(AVR) || defined(SDCC) && (UI==128)
+#if defined(AVR) || defined(SDCC) || defined(XC16) && (UI==128)
 #define S16_E		((qm_n)(348))
 #else
 #define	S16_E		((qm_n)(272*UI/100))
@@ -207,6 +206,12 @@ typedef uint32_t	u32;
 #define	S16_PI		((qm_rad)((s32)((s32)3142*RI/(s32)1000)))
 #define	S16_RAD		(2*S16_PI)	/* 2*pi radians in the unit circle */
 #define S16_DEG		(360*DI)	/* 360.0 degrees in the unit circle */
+
+/* atan(-327.38), atan(-256) */
+/* #define MIN_ATAN	((qm_rad)(-(RI+(570*RI)/1000)))
+   can't be used because of limitations on intermediate results in the sdcc,
+   avr, and xc16 compilers. */
+#define MIN_ATAN	((qm_rad)(-(RI+MIN_ATAN_FRACT)))
 
 /* some conversion factors */
 /* 180/pi ~ 57.3 deg in Q11.4 format per rad */
@@ -228,7 +233,7 @@ typedef union {
 	}s;
 	s32		sincos;
 } sincos_t;
-s32  s16_sincos(qm_rad phi);	/* cos 0:7; sin 8:15 Q1_2 */
+s32  s16_sincos(qm_rad phi);	/* cos 0:15; sin 15:31 qm_n */
 qm_n s16_tan(qm_rad phi);		/* tangent given phi in radians */
 
 s8 s16_quadrant(qm_rad phi);	/* quadrant of phi */
@@ -296,6 +301,7 @@ qm_rad s16_torad(qm_deg deg);	/* convert from degrees to radians */
 
 /* overflow checks for a = b <op> c, where <op> is +, -, *, /, power, root. */
 s16 s16_addov(qm_n a, qm_n b, qm_n c);
+#define s16_logov(a)	((a)==S16_NAN)			/* ln, log, log10 overflow check */
 s16 s16_subov(qm_n a, qm_n b, qm_n c);
 s16 s16_divov(qm_n a, qm_n b, qm_n c);
 s16 s16_mulov(qm_n a, qm_n b, qm_n c);

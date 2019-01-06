@@ -1,10 +1,10 @@
-Content-type: text/html
+Content-type: text/html; charset=UTF-8
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HTML><HEAD><TITLE>Man page of s16_log10</TITLE>
 </HEAD><BODY>
 <H1>s16_log10</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 06 September 2016<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 06 January 2019<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -15,8 +15,7 @@ Section: s16math Programmer Manual (3m)<BR>Updated: 06 September 2016<BR><A HREF
 <H2>SYNOPSIS</H2>
 
 <PRE>
-#include &quot;s16math.h&quot;
-qm_n <B>s16_log10</B>(qm_n <I>x</I>);
+#include &quot;s16math.h&quot; qm_n <B>s16_log10</B>(qm_n <I>a</I>);
 </PRE>
 
 
@@ -24,18 +23,14 @@ qm_n <B>s16_log10</B>(qm_n <I>x</I>);
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
-Evaluates log to base 10 of <I>x</I>, where 0 &lt; <I>x</I> &lt;= 327.67 (decimal resolution),
+Evaluates log to base 10 of <I>a</I>, where 0 &lt; <I>a</I> &lt;= 327.67 (decimal resolution),
 or 255.127 (binary resolution). The logarithm is evaluated as
-<B>s16_ln</B>(<I>x</I>)/<B>ln</B>(10). A constant is used for <B>ln</B>(10).
-<P>
-
-Requesting the log of a negative number is treated as an error instead
-of a multiple of <I>i</I>.
+<B>s16_ln</B>(<I>a</I>)/<B>ln</B>(10). A constant is used for <B>ln</B>(10).
 <A NAME="lbAE">&nbsp;</A>
 <H2>PARAMETERS</H2>
 
 <DL COMPACT>
-<DT><B></B><I>x</I>
+<DT><B></B><I>a</I>
 
 <DD>
 numeric argument with equivalent of two decimal digits or seven
@@ -44,9 +39,13 @@ binary bits of resolution.
 <A NAME="lbAF">&nbsp;</A>
 <H2>RETURN</H2>
 
-If 0 &lt; <I>x</I> &lt;= 327.67, then the return value is the number to which 10
-would have to be raised to yield <I>x</I>. A return of -99.00 means
-<I>x</I> &lt;= 0 or <I>x</I> &gt; 327.67.
+If 0 &lt; <I>a</I> &lt;= 327.67, then the return value is the number to which 10
+would have to be raised to yield <I>a</I>.
+<P>
+
+A return of -99.00 (S16_NAN) means <I>a</I> &lt;= 0. By convention, <I>a</I> = 327.68
+(256.000) is taken to be -327.68 (-256.000) and results in an
+error return.
 <A NAME="lbAG">&nbsp;</A>
 <H2>SEE ALSO</H2>
 
@@ -83,6 +82,6 @@ log10.c
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 17:53:05 GMT, September 06, 2016
+Time: 22:48:01 GMT, January 06, 2019
 </BODY>
 </HTML>

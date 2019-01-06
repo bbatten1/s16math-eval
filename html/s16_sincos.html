@@ -1,10 +1,10 @@
-Content-type: text/html
+Content-type: text/html; charset=UTF-8
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HTML><HEAD><TITLE>Man page of s16_sincos</TITLE>
 </HEAD><BODY>
 <H1>s16_sincos</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 16 July 2016<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 06 January 2019<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -15,8 +15,7 @@ Section: s16math Programmer Manual (3m)<BR>Updated: 16 July 2016<BR><A HREF="#in
 <H2>SYNOPSIS</H2>
 
 <PRE>
-#include &quot;s16math.h&quot;
-s32 <B>s16_sincos</B>(qm_rad <I>z</I>);
+#include &quot;s16math.h&quot; s32 <B>s16_sincos</B>(qm_rad <I>z</I>);
 </PRE>
 
 
@@ -24,7 +23,8 @@ s32 <B>s16_sincos</B>(qm_rad <I>z</I>);
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
-Computes sine and cosine of angle <I>z</I>
+Computes sine and cosine of angle <I>z</I>. <I>z</I> is unwound as needed to fall in
+the range -pi/2 &lt;= <I>z</I> &lt;= pi/2.
 <A NAME="lbAE">&nbsp;</A>
 <H2>PARAMETER</H2>
 
@@ -35,7 +35,6 @@ Computes sine and cosine of angle <I>z</I>
 numeric argument is an angle in radians supplied as a 16 bit integer
 having an implied binary point with 10 bits of resolution, or an implied
 decimal point with three digits of resolution.
--pi/2 &lt;= <I>z</I> &lt;= pi/2.
 </DL>
 <A NAME="lbAF">&nbsp;</A>
 <H2>RETURN</H2>
@@ -45,17 +44,13 @@ integers in a 32 bit union containing a structure with two 16 bit members.
 Cosine is returned in the cos member. Sine is returned in the
 sin member. sin, cos range from -1.00 through 1.00 inclusive.
 <A NAME="lbAG">&nbsp;</A>
-<H2>NOTE</H2>
-
-It is the caller's responsibility to ensure that -pi/2 &lt;= <I>z</I> &lt;= pi/2.
-<A NAME="lbAH">&nbsp;</A>
 <H2>SEE ALSO</H2>
 
-<A NAME="lbAI">&nbsp;</A>
+<A NAME="lbAH">&nbsp;</A>
 <H3>[1] Microcontrollers &amp; CORDIC Methods</H3>
 
 <A HREF="http://www.drdobbs.com/microcontrollers-cordic-methods/184404244">http://www.drdobbs.com/microcontrollers-cordic-methods/184404244</A>
-<A NAME="lbAJ">&nbsp;</A>
+<A NAME="lbAI">&nbsp;</A>
 <H2>FILE</H2>
 
 sincos.c
@@ -69,17 +64,16 @@ sincos.c
 <DT><A HREF="#lbAD">DESCRIPTION</A><DD>
 <DT><A HREF="#lbAE">PARAMETER</A><DD>
 <DT><A HREF="#lbAF">RETURN</A><DD>
-<DT><A HREF="#lbAG">NOTE</A><DD>
-<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+<DT><A HREF="#lbAG">SEE ALSO</A><DD>
 <DL>
-<DT><A HREF="#lbAI">[1] Microcontrollers &amp; CORDIC Methods</A><DD>
+<DT><A HREF="#lbAH">[1] Microcontrollers &amp; CORDIC Methods</A><DD>
 </DL>
-<DT><A HREF="#lbAJ">FILE</A><DD>
+<DT><A HREF="#lbAI">FILE</A><DD>
 </DL>
 <HR>
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 17:24:03 GMT, July 16, 2016
+Time: 22:48:01 GMT, January 06, 2019
 </BODY>
 </HTML>

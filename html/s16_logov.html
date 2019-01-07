@@ -1,0 +1,72 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of s16_logov</TITLE>
+</HEAD><BODY>
+<H1>s16_logov</H1>
+Section: s16math Programmer Manual (3m)<BR>Updated: 06 January 2019<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>s16_logov </B>- Check for natural log, log base 10, or log base n overflow.
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<PRE>
+#include &quot;s16math.h&quot; qm_n <B>s16_logov</B>(qm_n <I>a</I>);
+</PRE>
+
+
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+Checks <I>a</I> for equality with S16_NAN (not-a-number).
+<A NAME="lbAE">&nbsp;</A>
+<H2>PARAMETERS</H2>
+
+<DL COMPACT>
+<DT><B></B><I>a</I>
+
+<DD>
+value returned from log function
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>RETURN</H2>
+
+Zero if no overflow. Non-zero if overflow.
+<A NAME="lbAG">&nbsp;</A>
+<H2>NOTES</H2>
+
+Implemented as a macro.
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<B><A HREF="/cgi-bin/man/man2html?3m+s16_ln">s16_ln</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_log">s16_log</A></B>(3m), <B><A HREF="/cgi-bin/man/man2html?3m+s16_log10">s16_log10</A></B>(3m)
+<A NAME="lbAI">&nbsp;</A>
+<H2>FILE</H2>
+
+logov.c
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">PARAMETERS</A><DD>
+<DT><A HREF="#lbAF">RETURN</A><DD>
+<DT><A HREF="#lbAG">NOTES</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+<DT><A HREF="#lbAI">FILE</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 22:48:01 GMT, January 06, 2019
+</BODY>
+</HTML>

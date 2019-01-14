@@ -12,8 +12,9 @@ All items are copyright (c) 2014 Bryan Batten &lt;<a href="mailto:bjbatten@acm.o
 <p>This file contains the following sections
 </p>
 <p>Introduction<br/>
-x86<br/>
-kl46z
+kl46z<br/>
+pic24<br/>
+x86
 </p>
 <h4><a name="section_1_1_1_1">Introduction</a></h4>
 <p>The source program(s) in this directory show examples of using the s16math
@@ -21,53 +22,25 @@ library functions.
 </p>
 <p>Each subdirectory has an executable version of a test fixture that invokes
 the s16math library multiply function and prints the results. The program
-multest accepts two decimal integer values as input, calls s16_mul() to
+testmul accepts two decimal integer values as input, calls s16_mul() to
 form the product, then calls s16_mulov() to check for overflow.
 </p>
 <p>If you have the required compiler tools, you can also build the executables
 from the source in each subdirectory.
 </p>
-<h4><a name="section_1_1_1_2">x86</a></h4>
-<p>To build multest, cd to the x86 subdirectory, then invoke make with "make",
-or "make ARCH=x86-{64|generic|pentium}". Add BINARY=1 on the make command
-line to select Qm.n number format. Otherwise, decimal format is used.
-</p>
-<pre>
-    make                    to build executables that run on generic
-                            64 bit x86 machine.
-    make ARCH=x86-pentium   to build 32 bit x86 executables.
-    make BINARY=1           to select Qm.n format on a generic 64 bit x86
-                            machine.
-</pre>
-<p>To execute the example, enter "./multest" followed by two decimal integers.
-"./multest -h" gives help information.
-</p>
-<p>Example runs of multest:
-</p>
-<pre>
-    Command                 Output
-    -------------------     -----------------
-    &gt; multest 16383 200     163.83*2.00=327.66
-
-    &gt; multest 16384 200     163.84*2.00=-327.68
-                            overflow
-</pre>
-<p>    Overflow occurred because multiplying two numbers with the same sign
-    yielded a product with a different sign.
-</p>
-<h4><a name="section_1_1_1_3">kl46z</a></h4>
+<h4><a name="section_1_1_1_2">kl46z</a></h4>
 <p>The example is built for the Freescale FRDM-KL46Z development board using
 an ARM Cortex M0+ processor. Source files are adapted from files downloaded
-from mbed.org. The program multest.bin asks for two numbers interactively,
-calls s16_mul() to form the product, then calls s16_mulov to check for
+from mbed.org. The program testmul.bin asks for two numbers interactively,
+calls s16_mul() to form the product, then calls s16_mulov() to check for
 overflow.
 </p>
-<p>To build multest.bin, cd to the kl46z subdirectory, edit the Makefile so
+<p>To build testmul.bin, cd to the kl46z subdirectory, edit the Makefile so
 that the variable GCC_BIN points to your local copy of the ARM embedded
 toolchain, then invoke make with "make". Add BINARY=1 on the make command
 line to select Qm.n number format. Otherwise, decimal format is used.
 </p>
-<p>To execute the example - multest.bin - you need to have the development board
+<p>To execute the example - testmul.bin - you need to have the development board
 attached via USB and mounted as a mass storage device. This document assumes
 you have lines in /etc/fstab like:
 </p>
@@ -78,18 +51,18 @@ you have lines in /etc/fstab like:
 <p>Open a terminal window such as xterm, then do the following:
 </p>
 <ol>
-  <li>Download multest.bin from here to /mnt/mbed.
-<p>   &gt; cp multest.bin /mnt/mbed
+  <li>Download testmul.bin from here to /mnt/mbed.
+<p>   &gt; cp testmul.bin /mnt/mbed
 </p>
   </li><li>After a bit, the little light on the board should blink for a while. Wait
    for it to stop blinking. /mnt/mbed should now be unmounted. If it is not,
    unmount it, then wait for the little light to stop blinking.
-  </li><li>Invoke a terminal emulator. The picocom package available in Ubuntu and
-   Debian distributions gives a simple command line interface to the test
-   program. It may be invoked as:
+  </li><li>Invoke a terminal emulator. The picocom package available in Devuan,
+   Ubuntu, and other distributions gives a simple command line interface to
+   the test program. It may be invoked as:
 <p>   &gt; picocom --imap lfcrlf --omap crcrlf /dev/ttyACM0
 </p>
-  </li><li>When you press the reset switch on the development board, multest will
+  </li><li>When you press the reset switch on the development board, testmul will
    prompt for two values, perform the multiply after receiving the second
    value, print the result, then request another pair of values. This
    sequence stops when you enter an EOT (^D) character.
@@ -98,7 +71,7 @@ you have lines in /etc/fstab like:
 <p>   &gt; mount /mnt/mbed
 </p>
 </li></ol>
-<p>Example run of multest compiled with "make BINARY=1":
+<p>Example run of testmul compiled with "make BINARY=1":
 </p>
 <pre>
     Command                 Output
@@ -115,14 +88,103 @@ you have lines in /etc/fstab like:
     notation is used to display the fixed point equivalent of the numbers.
     The integer portion is shown to the left of the `.', and the fractional
     part to the right.
-    
-</p><p>    So 32767/128 = 255 + 127/128, displayed as 255.127. 32768 is actually
+</p>
+<p>    So 32767/128 = 255 + 127/128, displayed as 255.127. 32768 is actually
     a negative 16 bit number with a value of -32768. Since -32768/128 is
     -256 + 0/128, -256.000 is displayed.
-    
-</p><p>    128/128 is 1 + 0/128, displayed as 1.000. 256/128 = 2 + 0/128, displayed
+</p>
+<p>    128/128 is 1 + 0/128, displayed as 1.000. 256/128 = 2 + 0/128, displayed
     as 2.000.
 </p>
+<p>    Overflow occurred because multiplying two numbers with the same sign
+    yielded a product with a different sign.
+</p>
+<h4><a name="section_1_1_1_3">pic24</a></h4>
+<p>The example is built for the Microchip PIC24F Curiosity development board
+with a MIKROE-1203 USB UART adapter mounted on it. The testmul program asks
+for two numbers interactively, calls s16_mul() to form the product, then
+calls s16_mulov() to check for overflow.
+</p>
+<p>To build testmul, make sure the xc16 compiler toolchain is in your PATH
+variable. cd to the pic24 subdirectory, then invoke make with "make". Add
+BINARY=1 on the make command line to select Qm.n number format. Otherwise,
+decimal format is used. The command compiles a 32 bit Unix executable called
+"testmul", from which a downloadable hex file - "testmul.hex" - is created.
+</p>
+<p>To execute the example, you need to have the development board attached via
+USB. When it is attached, /dev/ttyUSB0 appears as a character device. Then
+do the following:
+</p>
+<ol>
+  <li>Open a terminal window, then use the Microchip IPE to download
+   testmul.hex to the development board and execute it:
+<p>   &gt; mplab_ipe
+</p>
+<p>   Use these settings:
+   Family:  16-bit MCUs (PIC24)
+   Device:  PIC24FJ128GA204
+   Tool:    PKOB SKDE S.No:&lt;board serial number&gt;
+   Hex File:&lt;download directory&gt;/examples/pic24/testmul.hex
+</p>
+<p>   Hit the "Apply" button, then "Connect", then "Program".
+</p>
+<p>   Alternately, you can use the MPLAB IPE GUI to do this. Exit the IPE after
+   programming is complete.
+</p>
+  </li><li>Invoke a terminal emulator. The picocom package available in Devuan,
+   Ubuntu, and other distributions gives a simple command line interface to
+   the test program. It may be invoked as:
+<p>   &gt; picocom --imap lfcrlf --omap crcrlf /dev/ttyUSB0
+</p>
+</li></ol>
+<p>Example run of testmul compiled with "make BINARY=1":
+</p>
+<pre>
+    Command                 Output
+    -------------------     -----------------
+    args&gt; 32767 128         255.127*1.000=255.127,t=15 us
+
+    args&gt; 32768 128         -256.000*1.000=-256.000,t=19 us
+
+    args&gt; 32767 256         255.127*2.000=-0.002,t=15 us
+                            overflow
+</pre>
+<p>    . 32767/128 = 255 + 127/128, and is displayed as 255.127.
+</p>
+<p>    . 32768 is actually a negative 16 bit number with a value of -32768.
+      Since -32768/128 is -256 + 0/128, -256.000 is displayed.
+</p>
+<p>    . 128/128 is 1 + 0/128, displayed as 1.000. 256/128 = 2 + 0/128,
+      displayed as 2.000.
+</p>
+<p>    Overflow occurred because multiplying two numbers with the same sign
+    yielded a product with a different sign.
+</p>
+<h4><a name="section_1_1_1_4">x86</a></h4>
+<p>To build testmul, cd to the x86 subdirectory, then invoke make with "make",
+or "make ARCH=x86-{64|generic|pentium}". Add BINARY=1 on the make command
+line to select Qm.n number format. Otherwise, decimal format is used.
+</p>
+<pre>
+    make                    to build executables that run on generic
+                            64 bit x86 machine.
+    make ARCH=x86-pentium   to build 32 bit x86 executables.
+    make BINARY=1           to select Qm.n format on a generic 64 bit x86
+                            machine.
+</pre>
+<p>To execute the example, enter "./testmul" followed by two decimal integers.
+"./testmul -h" gives help information.
+</p>
+<p>Example runs of testmul compiled with decimal resolution:
+</p>
+<pre>
+    Command                 Output
+    -------------------     -----------------
+    &gt; testmul 16383 200     163.83*2.00=327.66
+
+    &gt; testmul 16384 200     163.84*2.00=-327.68
+                            overflow
+</pre>
 <p>    Overflow occurred because multiplying two numbers with the same sign
     yielded a product with a different sign.
 </p>

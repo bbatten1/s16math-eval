@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Reference</title>
+<meta name="generator" content="HTML::TextToHTML v2.51"/>
+</head>
+<body>
+<p>README file for s16math library
+</p>
+<p>This file contains the following sections:
+</p>
+<p><strong>INTRODUCTION</strong><br/>
+<strong>SYSTEM REQUIREMENTS</strong><br/>
+<strong>FUNCTIONS</strong><br/>
+<strong>QUALITY ASSURANCE</strong><br/>
+<strong>EVALUATION PACKAGE</strong><br/>
+<strong>EXAMPLES</strong><br/>
+<strong>COMPILING AND LINKING</strong><br/>
+<strong>REPORTING PROBLEMS</strong><br/>
+<strong>LICENSING</strong>
+</p>
+<h7><a name="section_1_1_1_1_1_1_1">INTRODUCTION</a></h7>
+<p>    s16math is a compact library of 16 bit fixed point[1] math functions
+    for microcontroller - MCU - environments without fixed or floating point
+    hardware. All functions are re-entrant, thread safe, and fully
+    interruptible.
+</p>
+<p>    The development platform is Devuan Linux running on an X86-64 machine
+    using basic GNU/Linux cross compilation development tools. The package
+    lets you build deployable applications using object versions of the
+    library for a variety of targets.
+</p>
+<p>    Capabilities are well suited to processor and memory constrained
+    embedded applications such as resource limited battery powered sensors
+    and wearable medical devices. MCUs such as the HC08, HC11, 8051, Z80,
+    and ARM machines operating in 16-bit mode are supported, maximizing
+    use of limited MCU registers while avoiding the software overhead of
+    32 and 64 bit operations, preserving a small memory footprint.
+</p>
+<p>    The trigonometric and math functions make the library well suited for
+    software defined radio - SDR - signal management requirements.
+</p>
+<p>    The virtual fixed point format provides 65,536 discrete signed values
+    between -32768 and +32767 inclusive, with an equivalent decimal fixed
+    point range of -327.68 through +327.67. If binary resolution is used, the
+    range is -256.000 through +255.127 (see text on dot (".") notation below).
+    If your application requires numbers outside this range, then this
+    masterpiece - alas - is not for you.
+</p>
+<p>    Machine level integers are treated as virtual fixed point[1] numbers with
+    sign, integer, and fractional parts specified in either decimal or
+    Qm.n[2] format. The most significant bit is the sign bit, leaving 15 bits
+    to be allocated between the integer and the fractional components.
+    
+</p><p>    Numbers are a ratio of two integers: the numerator is kept in storage,
+    the denominator is implied and is equal to either a power of 10 or a
+    power of 2. The integer and fractional parts are given by the integer
+    division of the whole number by the denominator: the integer portion is
+    the quotient and the fractional part is the remainder. A dot (".")
+    notation is used to separate the integer and fractional portions of the
+    number when it is displayed.
+</p>
+<p>    If exact fractional powers of ten are desired, then a decimal format
+    should be used[1]. This provides more range than the binary format, but
+    less resolution.
+</p>
+<p>    So where the denominator is 100, the number 30 is treated as 30/100, or
+    0.30; 250 is treated as 250/100, or 2.50. In this library, decimal
+    denominators of 10, 100, and 1000 are used.
+</p>
+<p>    The advantage of the Qm.n format is that the rounding operations needed
+    to preserve precision in fixed point multiplication and division may be
+    done with simple bit shifts instead, which can significantly boost
+    performance and save code overhead in machines without hardware support
+    for integer multiplication and division.
+</p>
+<p>    In Qm.n format 'm' is the number of bits in the integer portion of the
+    number, and 'n' is the number of bits in the fractional part. The
+    denominator is a constant equal to 2^n[2].
+</p>
+<p>    So where n is 6, 2^n is 64, and the number 30 is treated as 30/64 (0.30);
+    250 is treated as 250/64, or 3 58/64 (3.58). Where n is 7, 2^n is 128,
+    and the number 30 is treated as 30/128 (0.030); 250 is treated as 250/128,
+    or 1 122/128 (1.122) etc. In this library, Q11.4, Q8.7, and Q5.10 formats
+    are used.
+</p>
+<p>    The number pi is handled as having the equivalent of approximately three
+    decimal digits of resolution - 3.142. To handle the needed range of
+    degree units, a Qm.n format equivalent to approximately a single decimal
+    digit of resolution is used - 360.0.
+</p>
+<p>    Numbers are displayed with a point (".") format to separate the integer
+    and fractional parts. The fractional part is the numerator of a fraction
+    of which the denominator is the chosen decimal or binary resolution.
+</p>
+<pre>
+    Type     Format    Min       Max     Notes
+    ----     ------  -------   -------   -----
+    Degrees  Dec 1   -3276.8   3276.7    Otherwise would be max of 327.67
+             Q11.4   -2048.00  2047.15
+    Real     Dec 2   -327.68   327.67
+             Q8.7    -256.000  255.127
+    Radians  Dec 3   -32.768   32.767    Otherwise would be max of 327.67
+             Q5.10   -64.000   63.511
+</pre>
+<p>    Observe the following possible display format gotchas:
+</p>
+<pre>
+    Decimal      Q8.7     because
+    -------      -----    -------
+      2.5    !=  2.5      2 50/100 != 2 50/128
+      2.5    ==  2.064    2 50/100 == 2 64/128
+</pre>
+<p>    [1] Fixed-point arithmetic
+</p><p>        <a href="http://en.wikipedia.org/wiki/Fixed-point_arithmetic">http://en.wikipedia.org/wiki/Fixed-point_arithmetic</a>
+</p>
+<p>    [2] Q (number format)
+</p><p>        <a href="http://en.wikipedia.org/wiki/Q_%28number_format%29">http://en.wikipedia.org/wiki/Q_%28number_format%29</a>
+</p>
+<h7><a name="section_1_1_1_1_1_1_2">SYSTEM REQUIREMENTS</a></h7>
+<p>    The development platform is Devuan Linux running on an X86-64 machine
+    using basic GNU/Linux cross compilation development tools. The package
+    lets you build deployable object versions of the library for a variety
+    of targets.
+</p>
+<p>    If you are compiling a program to use the s16math library functions in
+    a language other than C, the compiler you use needs to understand the
+    'extern "C"' construct.
+</p>
+<p>    The following table lists the supported MCUs and the compiler used to
+    compile each.
+</p>
+<pre>
+    Target      Compiler    Package
+    ------      --------    -------
+    armv6       GNU C       gcc-arm-none tarball (1),
+                            gcc-arm-linux-gnueabi (Ubuntu)
+    cortex-m0   GNU C       gcc-arm-none tarball (1),
+                            gcc-arm-linux-gnueabi (Ubuntu)
+    x86         GNU C       Devuan, Ubuntu, other Linux distros.
+    avr         gcc-avr     Devuan, Ubuntu, other Linux distros.
+    8051        sdcc        Devuan, Ubuntu, maybe others.
+    hc08        sdcc        Devuan, Ubuntu, maybe others.
+    hc11        sdcc        Devuan, Ubuntu, maybe others.
+    pic14,16    sdcc        Devuan, Ubuntu, maybe others. *
+    pic24       xc16        Microchip MPLABX IDE.
+    z80         sdcc        Devuan, Ubuntu, maybe others.
+</pre>
+<ul>
+  <li>Dropped pending resolution of SDCC - Microchip header license issue.
+</li></ul>
+<p>    The SDCC compiler generates little endian code, so versions of the
+    library built with it are also little endian. The Keil compiler
+    generates big endian code. To use the Keil compiler with the s16math
+    library, you need to byte swap call parameters and returned values, or
+    purchase a source license for the library and port the code to Keil.
+</p>
+<p>    To compile the example programs you need the GNU C compiler or
+    equivalent for the x86 example, Microchip's XC16 compiiler for the
+    pic24f example, and one of the ARM cross compile packages for the KL46Z
+    example. Your compile environment needs to have stdint.h in its standard
+    lookup path.
+</p>
+<p>(1) The ARM cross compiler seems to handle a wider variety of ARM MCUs.
+</p><p>    see here:<br/>
+<a href="https://launchpad.net/gcc-arm-embedded/5.0/5-2015-q4-major/+download/">https://launchpad.net/gcc-arm-embedded/5.0/5-2015-q4-major/+download/</a>\
+</p><p>        gcc-arm-none-eabi-5_2-2015q4-20151219-linux.tar.bz2
+</p>
+<h7><a name="section_1_1_1_1_1_1_3">FUNCTIONS</a></h7>
+<p>    This section lists the functions provided by s16math. Their man pages
+    can be found in the man subdirectory. Use the "man -l" command to read
+    them. For example, the command "man -l ./man/s16_div.3m" will display
+    the man page for the s16_div function.
+</p>
+<p>    You can also point your browser to the html subdirectory to read the
+    man pages in html format.
+</p>
+<pre>
+    Function        Description
+    --------        -----------
+    s16_acos        arc cosine
+    s16_addov       Check for add overflow
+    s16_asin        arc sine
+    s16_atan        arc tangent
+    s16_cos         cosine
+    s16_cot         cotangent
+    s16_csc         cosecant
+    s16_den         convert integer portion to denominator
+    s16_div         divide
+    s16_divov       check for divide overflow
+    s16_fact        n!
+    s16_gcd         greatest common divisor
+    s16_hypot       hypoteneuse
+    s16_ln          natural logarithm
+    s16_log         log to aribitrary base
+    s16_log10       common logarithm
+    s16_logov       check for logarithmic overflow
+    s16_mul         multiply
+    s16_mulov       check for multiply overflow
+    s16_pow         evaluate power
+    s16_powov       check for power overflow
+    s16_quadrant    quadrant of angle
+    s16_reduce      reduction of terms
+    s16_root        evaluate principal root
+    s16_rootov      check for overflow on any nth root
+    s16_sec         secant
+    s16_sin         sine
+    s16_sincos      sine and cosine
+    s16_skel        skeleton function for software fixed point math library
+    s16_sqr         optimized for x^2
+    s16_sqrov       check for squaring overflow
+    s16_sqrt        optimized for x^(1/2)
+    s16_sqrtov      check for overflow on square root
+    s16_subov       check for subtract overflow
+    s16_tan         tangent
+    s16_todeg       radians to degrees
+    s16_torad       degrees to radians
+    s16_unwind      unwind angle into unit circle
+</pre>
+<p>    All functions are leaf functions. No library function calls any other
+    function that is not in the library, except where the compiler emits
+    function calls for multiply ("*") and divide ("/") operators on machines
+    without hardware support for those operations.
+</p>
+<h7><a name="section_1_1_1_1_1_1_4">QUALITY ASSURANCE</a></h7>
+<p>    This section discusses accuracy and performance of the library
+    functions.
+</p>
+<h4><a name="section_1_1_1_2">Accuracy</a></h4>
+<p>    All source code for the library compiles for all machine architectures
+    without error or warning messages using the '-Wall' and '-pedantic'
+    flags where supported by the compiler for the machine architecture.
+    The SDCC compiler does not support those flags.
+</p>
+<p>    All math functions in the s16math library are tested for correct output by
+    comparing the output of each function with that of a corresponding
+    reference function and verifying that the respective results differ by
+    less than some threshold - such as +/- 0.01.
+</p>
+<p>    Library functions are tested for accuracy on the development system.
+    Each library function has a small C language test fixture that accepts
+    numerical input parameter(s) on the command line, calls the function
+    under test, then formats and prints the result on stdout. The
+    corresponding reference function is a bash script that accepts numerical
+    input, invokes GNU bc, then prints the result on stdout.
+</p>
+<p>    An evaluator bash script invokes both the test fixture and the
+    corresponding reference script, compares their results, then outputs the
+    difference between the two. A validator script flags differences at or
+    greater than what is allowable.
+</p>
+<p>    Higher level scripts allow looping through a computed set of values
+    to establish correct output over a range of inputs.
+</p>
+<h4><a name="section_1_1_1_3">Speed</a></h4>
+<p>    Excution speed is measured for a selected subset of the s16math library
+    functions compiled with seven bits of binary precision for the
+    Microchip pic24f-based development starter kit board running at 8MHz
+    (4MHz instruction cycle). Times for the XC16 compiler- generated
+    integer multiply and divide functions are included as baseline
+    references.
+    
+</p><p>    Where appropriate, results are shown for more than one algorithm. In
+    general, it seems bigger numbers take longer to compute.
+</p>
+<pre>
+    Op           Time in usec   Notes
+    --           ------------   -----
+    a+b          10-10          Compiler addition operator.
+    a-b          10-10          Compiler subraction operator.
+    a*b          10-10          Compiler multiply operator.
+    a/b          19-19          Compiler divide operator.
+    s16_mul(a,b) 17-17          Library fixed point multiply.
+    s16_div(a,b) 252-260        Library fixed point divide.
+    s16_atan(a)  25-30323       Library arc tangent - Riemann sum algorithm.
+    s16_atan(a)  25-625         Library arc tangent - 27 term Taylor series.
+    s16_ln(a)    286-25098      Natural log, Riemann sum.
+    s16_ln(a)    426-1658       Natural log, series approx.
+</pre>
+<p>    Because of their faster speed, series expansions are used for the arc
+    tangent and natural log library functions.
+</p>
+<h7><a name="section_1_1_1_3_1_1_1">EVALUATION PACKAGE</a></h7>
+<p>    The evaluation package may be used for evaluation or personal use. See
+    COPYING for specifics. It has archive and shared object versions of the
+    library that can be linked with programs written in C, or with any
+    program written a language that understands the 'extern "C"' construct.
+</p>
+<p>    The evaluation package unpacks into a directory named "eval". It
+    contains a set of core files and pre- built libraries for a variety of
+    embedded architectures.
+</p>
+<h4><a name="section_1_1_1_4">Core Files</a></h4>
+<p>    The package has the following core files:
+</p>
+<pre>
+    Directory | File             Description
+    ----------------             -----------
+    ./COPYING                    terms of use
+    ./README                     reference manual as plain text
+    ./RELEASE                    identify current release and changes
+    ./s16math.h                  function prototypes
+    ./examples/
+        README                   describes the options.
+        ./kl46z                  builds Freescale FRDM-KL46Z executable.
+            Makefile             builds example .bin file(s).
+            mbed/                mbed.org embedded application binary interface
+            mbed.bld             link to mbed library download site
+            multest.cpp          call multiply function, check for overflow
+        ./pic24                  builds pic24 executable.
+            Makefile             builds example program.
+            gld/                 Microchip linker script file(s)
+            mcc_generated_files/ Microchip Code Configurator (MCC) files
+            multest.c            call multiply function, check for overflow
+        ./x86
+            Makefile             builds example programs(s)
+            multest.c            call multiply function, check for overflow
+    ./man/
+        &lt;function_name&gt;.3m       man pages
+    ./html/
+        COPYING.html             terms of use in html format
+        README.html              reference manual in html format
+            ./examples
+                README.html      documentation for examples in html format.
+        &lt;function_name&gt;.html     man pages in html format
+</pre>
+<h4><a name="section_1_1_1_5">Library Files</a></h4>
+<p>    Library files for various machine architectures are in subdirectories
+    named "arch-binary" for functions compiled for Qm.n format and
+    arch-decimal" for functions compiled in decimal format.
+</p>
+<p>    If you need a version of the library not shown here, post a request on
+    the project host and - if possible - I'll include it with what is
+    already published here.
+</p>
+<p>    ./arch-binary/,./arch-decimal/  directories:
+</p>
+<pre>
+    Subdirectory               Description
+    ------------------         -----------------------------------------
+    - arm-cortex-m0+-l/        little endian
+            s16math.a          cortex-m0+ archive
+            s16math.so         cortex-m0+ shared object little endian
+    - arm-cortex-m0-l/         little endian
+            s16math.a          cortex-m0 archive
+            s16math.so         cortex-m0 shared object little endian
+    - armv6-m-l/               little endian
+            s16math.a          armv6-m archive
+            s16math.so         armv6-m shared object little endian
+    - atm-avr2/                devices with up to 8 KiB of program mem
+            s16math.a          -
+    - atm-avr2-args/           devices with up to 8 KiB of program mem
+            s16math.a          -maccumulate-args option
+    - mcu-gbz80/               -
+            s16math.lib        Zilog Z80 MCU archive
+    - mcu-hc08/                -
+            s16math.lib        Freescale/Motorola HC08 archive
+    - mcu-mcs51/               -
+            s16math.lib        8051 MCU archive
+    - mcu-pic14-16f72/         -
+            s16math.lib        Microchip PIC 14 -p16f72 option *
+    - mcu-pic16/               -
+            s16math.lib        Microchip PIC 16 *
+    - mcu-z80/                 -
+            s16math.lib        Zilog Z80 MCU archive
+    - pic24FJ128GA204/         Compiled with -mcci, -O1
+            s16math.a          archive
+    - x86-64/                  Compiled with -march=x86-64
+            s16math.a          archive
+            s16math.so         shared object
+    - x86-generic/             Compiled with -mtune=generic
+            s16math.a          archive AMD64/EM64T processors
+            s16math.so         shared object AMD64/EM64T processors
+    - x86-pentium/             Compiled with -mtune=pentium -m32
+            s16math.a          archive IA32 processors
+            s16math.so         shared object IA32 processors
+</pre>
+<ul>
+  <li>Dropped pending resolution of SDCC - Microchip header license issue.
+</li></ul>
+<p>    All versions of the library are compiled in a Devuan Linux environment
+    using the GNU C/C++ toolchains for the generic x86, and AVR code. ARM
+    code is compiled using the Embedded ARM toolchain. Code for the various
+    MCUs is compiled using the sdcc package for the Small Device C Compiler
+    (SDCC). Microchip's xc16 compiler is used for pic24 code.
+</p>
+<p>    ARM code is compiled in thumb mode for cortex-m0 and armv6-m. Big endian
+    compilation of ARM source files currently create ar archives, but
+    creating shared object files fail.
+</p>
+<h7><a name="section_1_1_1_5_1_1_1">EXAMPLES</a></h7>
+<p>    Code in the examples directory shows the use of functions in the
+    s16math library. Currently, there are versions of one program which
+    compiles for the x86, Microchip pic24f development board, and the
+    Freescale KLZ46 development board.
+</p>
+<p>    Each version of multest accepts two integer parameters on the command
+    line, converts them to hex, then calls s16_mul() to do a fixed point
+    multiplication, followed by a call to s16_mulov() to check for overflow.
+    Results are printed to stdout.
+</p>
+<p>    To build the example code, change to the examples directory and peruse
+    the information in the README file there.
+</p>
+<h7><a name="section_1_1_1_5_1_1_2">COMPILING AND LINKING</a></h7>
+<p>    Your compile environment needs to have stdint.h in its standard lookup
+    path. The storage unit definitions it contains are used in s16math.h.
+</p>
+<h4><a name="section_1_1_1_6">Using The Evaluation Package</a></h4>
+<p>    The libraries in the evaluation package may be used with any linker that
+    understands either the shared object or archive Unix library file
+    format. At this time, not all compilations produce a shared object
+    version, so make sure the machine architecture directory you select has
+    the .so, .a, or .lib suffix you want to use. To build your program,
+    insert this statement in your source file(s):
+</p>
+<p>    #include "s16math.h"
+</p>
+<p>    and include a reference to the library on the compile command line. To
+    use decimal resolution, select a directory under arch-decimal. Use
+    arch-binary for Qm.n format.
+</p>
+<h4><a name="section_1_1_1_7">Makefile Template</a></h4>
+<p>    Several cross compilers are used to buld the library files. This
+    template may be used as a guide for using the SDCC cross compiler:
+</p>
+<pre>
+        # selects Qm.n binary. Comment out for decimal.
+        CFLAGS +=-DUSE_BINARY_POINT
+        CC:=sdcc
+        SUFFIX:=lib
+        IPATH:=&lt;path-to-s16math-include-directory&gt;
+
+        # point to {arch-binary|arch-decimal}/&lt;machine-type&gt;
+        LPATH:=&lt;path-to-s16math-library-directory&gt;
+
+        myprog: myprog.c
+            $(CC) $(CFLAGS) -o $@ $@.c -I$(IPATH) $(LPATH)/s16math.$(SUFFIX)
+</pre>
+<h7><a name="section_1_1_1_7_1_1_1">REPORTING PROBLEMS</a></h7>
+<p>    Questions about the evaluation package may be posted in the forums
+    provided by the software project host. Please provide the following
+    information when reporting a problem:
+</p>
+<ul>
+  <li>What version of the library was used.
+  </li><li>What function failed.
+  </li><li>What were its operands.
+  </li><li>What result was observed.
+  </li><li>What result was expected.
+  </li><li>Why it is a problem. (Due to limited precision, rounding errors can
+      be noticeable.)
+</li></ul>
+<p>    If you are using the evaluation package from the Microchip embedded code
+    source site, you can submit questions by clicking on the "Contact
+    Developer" tab in the "View Details" link.
+</p>
+<h7><a name="section_1_1_1_7_1_1_2">LICENSING</a></h7>
+<p>    See COPYING for license terms.
+</p>
+<p># vi:set expandtab:</p>
+
+</body>
+</html>

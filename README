@@ -63,13 +63,13 @@ hardware.
 
 Installation
 
-The download file unpacks into a directory named "eval". So change to
-the directory where you wish to install it, download the zip file and
-unzip it.
+The download file unpacks into a directory named "s16math-eval-<rev>".
+So change to the directory where you wish to install it, download the
+zip file, or tar file, and unpack it.
 
-You should now see the subdirectory "eval". Go there. Peruse REFERENCE.
-Alternately, point your browser to eval/html and peruse REFERENCE.html.
-Proceed thence.
+You should now see the subdirectory "s16math-eval-<rev>". Go there and
+peruse REFERENCE, or point your browser to s16math-eval-<rev>/html and
+peruse REFERENCE.html. Proceed thence.
 
 [1] Fixed-point arithmetic
     http://en.wikipedia.org/wiki/Fixed-point_arithmetic

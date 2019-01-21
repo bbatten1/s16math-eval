@@ -95,43 +95,43 @@ root 1533
 </MODULE>
 
 <MODULE>
-sqrt 1802
+sqrt 1773
 </MODULE>
 
 <MODULE>
-reduce 1869
+reduce 1840
 </MODULE>
 
 <MODULE>
-todeg 1926
+todeg 1897
 </MODULE>
 
 <MODULE>
-torad 1980
+torad 1951
 </MODULE>
 
 <MODULE>
-addov 2049
+addov 2020
 </MODULE>
 
 <MODULE>
-subov 2109
+subov 2080
 </MODULE>
 
 <MODULE>
-divov 2167
+divov 2138
 </MODULE>
 
 <MODULE>
-mulov 2225
+mulov 2196
 </MODULE>
 
 <MODULE>
-powov 2301
+powov 2272
 </MODULE>
 
 <MODULE>
-rootov 2368
+rootov 2339
 </MODULE>
 
 </INDEX>
@@ -468,23 +468,20 @@ root
 <REL>
 4
  
-j
-Еn
-Ъ
-&
-До
 П
-──
-j
-А&
-jТjСj─
+ю
+n
+PЕn
+шо
+PЕn
+шо
 
 
 
 
-
-╪
-
+
+
+
 
 
 W
@@ -501,38 +498,33 @@ D*
 ╗
 ╙
 
-P*
+E*
 х
 
-ф*
-х
-
-
-╛
+д*
+х
+
+(*
+<*
+х
+⌡*
+х
 
-─*
-х
-
-Г*
-Ь*
-h
-
+&
+д
+r*
+х
 
-j*
-х
-о*
-╤
-
-?*
-х
+Б*
+x
 
 
 
 
 6_root
 S_
-8_DS_
-30_DS_
+4_DS_
+31_DS_
 </REL>
 <ADB>
 </ADB>
@@ -649,10 +641,9 @@ powov
 rootov
 <REL>
 4
-░
 ;
-r0x05
-ootov.asm
+$
+05_DS_
 </REL>
 <ADB>
 </ADB>

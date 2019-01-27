@@ -17,8 +17,8 @@ endif
 
 # Edit GCC_BIN to point to your local copy of the ARM embedded toolchain.
 GCC_BIN =/usr/local/eabi/bin/
-PROJECT = multest
-OBJECTS = ./multest.o
+PROJECT = testmul
+OBJECTS = ./testmul.o
 SYS_OBJECTS = ./mbed/TARGET_KL46Z/TOOLCHAIN_GCC_ARM/startup_MKL46Z4.o \
 			  ./mbed/TARGET_KL46Z/TOOLCHAIN_GCC_ARM/system_MKL46Z4.o \
 			  ./mbed/TARGET_KL46Z/TOOLCHAIN_GCC_ARM/cmsis_nvic.o \

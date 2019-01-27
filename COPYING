@@ -12,9 +12,8 @@ Evaluation Package
     The evaluation package may be downloaded for free from these
     software project hosts:
 
-    o Atmel     https://gallery.atmel.com/Products/List
-    o Bitbucket https://bitbucket.org/bbatten/s16math-eval/downloads
-    o GitHub    https://github.com/bbatten1/s16math-eval/tree/v0.13.6
+    o Bitbucket https://bitbucket.org/bbatten/s16math-eval
+    o GitHub    https://github.com/bbatten1/s16math-eval
     o Microchip http://www.embeddedcodesource.com/codesnippet/s16math
 
     It may be used for evaluation or personal use without charge.
@@ -33,18 +32,23 @@ Evaluation Package
 Licenses
 ++++++++
     The product is available for commercial use under either a binary
-    license or a source license. For pricing, send an email (plain text
-    preferred) with "RFQ" or "Request For Quote" in the subject line to:
+    license or a source license. For pricing, send a plain text email with
+    "RFQ" or "Request For Quote" in the subject line to:
 
     <bjbatten@acm.org>
 
     Terms at the time of purchase apply to all versions of the library.
 
-    Licenses are "at will" and may be terminated by either party. There are
-    no refunds. The license is effective when funds are deposited into my
-    Paypal account. To do this, log in to Paypal, click on "Send and
-    Request" -> "Pay for goods or services" and enter bjbatten@acm.org in
-    the email address field.
+    The license is effective when funds are deposited into my Paypal
+    account. To do this, log in to Paypal, click on
+    
+        "Send and Request" -> "Pay for goods or services"
+
+    and enter bjbatten@acm.org in the email address field.
+
+    A license may be terminated solely for noncompliance with terms. If a
+    license is terminated, you no longer pay royalties, and you may no
+    longer include the library in your product.
 
 Binary License
 --------------
@@ -56,9 +60,6 @@ Binary License
     The binary license allows you to incorporate binaries from the current
     and later versions of the evaluation package into your own product.
 
-    If the binary license is terminated, you no longer pay royalties, and
-    you may no longer include the library in your product.
-
 Source License
 --------------
     The source license is available for a fixed fee. Full source for all
@@ -68,17 +69,19 @@ Source License
 
     Binaries made from either modified or unmodified source, and binaries
     from the versions of the library in the evaluation package, can be
-    distributed on the per unit royalty basis of binary license, without
-    the advance payment requirement.
+    distributed on the per unit royalty basis of the binary license, without
+    the advance payment needed for the binary license.
 
-    Anyone may submit code changes to be included in the product if you
-    allow me to copyright it as a derivative work. User submitted code
+Patches
+++++++++++++++
+    Patches are welcome. Upon acceptance, code changes will be included in
+    the product if you allow me to copyright them as derivative works. Code
     changes should be made in the form of a patch in "diff -U" format
     attached to a plain text email.
 
     The title of the email should contain the word "PATCH". The body of the
-    email must contain language that allows me to copyright it as a
-    derivative work, subject to acceptance of the patch.
+    email has to explicitly allow me to copyright the source code changes
+    as a derivative work, subject to acceptance of the patch.
 
     The first lines of the patch must insert a copyright notice behind the
     latest copyright notice in the file to be patched, and then insert
@@ -86,8 +89,5 @@ Source License
 
     If accepted, the patch may be modified in any way. The resulting code
     will be made available as part of the product.
-
-    If the source license is terminated, you no longer pay royalties, and
-    you may no longer include the library in your product.
 
 # vi:set expandtab:

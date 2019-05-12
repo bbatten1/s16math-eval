@@ -86,22 +86,40 @@ typedef uint32_t	u32;
 #define NSCALE		(1<<NSHIFT)		/* scaling factor is implicit denominator */
 #define NMASK		((NSCALE)-1)	/* fraction mask */
 #define NWIDTH		3				/* for test fixture printf */
-#define MMASK		(~NMASK)		/* integer mask */
+#define MMASK		(~NMASK)		/* integer fraction mask */
+/* rounding field */
+#define FSHIFT		3
+#define FSCALE		(1<<FSHIFT)
+#define FMASK		(FSCALE-1)
 /* radians */
-#define RSHIFT		10				/* Qm.10 */
+#define CRSHIFT		13				/* Q2.13 - CORDIC radian */
+#define RSHIFT		10				/* Q5.10 */
 #define RSCALE		(1<<RSHIFT)		/* scaling factor is implicit denominator */
-#define RMASK		(RSCALE-1)		/* fraction mask */
+#define CRSCALE		(1<<CRSHIFT)	/* scaling factor is implicit denominator */
+#define RMASK		(RSCALE-1)		/* rad fraction mask */
+#define CRMASK		(CRSCALE-1)		/* cordic rad fraction mask */
 #define RWIDTH		4				/* for test fixture printf */
 #define RF			RSHIFT			/* unit radian factor */
 #define UF			NSHIFT			/* unit integer factor */
 #define SCALE_INTEGRAL	(DSHIFT)	/* scaling factor */
-#define SCALE_RAD	(NSHIFT-DSHIFT)	/* scaling factor num <-> rad */
+#define SCALE_RAD	(RSHIFT-NSHIFT)	/* scaling factor num <-> rad */
+#define SCALE_CORA	(CRSHIFT-RSHIFT)/* scaling factor cordic rad <-> rad */
+#define SCALE_CORAN	(CRSHIFT-NSHIFT)/* scaling factor cordic rad <-> num */
 #define MIN_ATAN_FRACT	584			/* 584/1024 approx. 570/1000 */
+
+/* CORDIC table constants */
+/* 3141593/10^6*2^13 */
+#define NUM_CORDIC_ENTRIES	14		/* max num of non-zero entries */
+#define S16_CPI		25736			/* 3141593/10^6*2^13 rounded */
+#define CORDIC_LC	((qm_cora)4974)	/* 6072/10^4=x/2^13 */
+#define CORDIC_K	((qm_cora)13491)/* magnitude scaling 16468/10^4=x/2^13 */
 
 #define fvalue(x)		(((x)&NMASK)<<UF)	/* fraction as integer value */
 #define ivalue(x)		((x)&MMASK)			/* integer as integer value */
 #define frac_part(x)	((x)&NMASK)			/* fractional value as integer */
 #define int_part(x)		((x)>>UF)			/* integer value as integer */
+#define lsdigit(x)		((x)&FMASK)			/* least significant digit */
+#define oddfloor(x)		((x)&FSCALE)		/* rounding floor is odd */
 #define is_odd(x)		(((x)&(UI|NMASK))!=0)
 #define prescale(x)		((s32)abs(x)<<UF)	/* for divide */
 #define prerscale(x)	((s32)abs(x)<<RF)	/* for radian divide */
@@ -114,23 +132,39 @@ typedef uint32_t	u32;
 #define rround(x)	(isneg(x)?-((abs(x)-KR)):(x)+KR)/* radian multiply */
 
 #else /* (don't) USE_BINARY_POINT */
-
+/* degrees/digits */
 #define DSCALE		10				/* resolution 1/10, etc. */
 #define DWIDTH		1				/* for test fixture printf */
+/* numbers other than radians */
 #define NSCALE		100	
 #define NWIDTH		2				/* for test fixture printf */
+/* rounding field */
+#define FSCALE		DSCALE			/* rounding field */
+/* radians */
 #define RSCALE		1000
+#define CRSCALE		10000
 #define RWIDTH		3				/* for test fixture printf */
 #define RF			RSCALE			/* unit radian factor */
 #define UF			NSCALE			/* unit integer factor */
 #define SCALE_INTEGRAL	(RSCALE/NSCALE)	/* scaling factor */
 #define SCALE_RAD	(RSCALE/NSCALE)		/* scaling factor num <-> rad */
+#define SCALE_CORA	(CRSCALE/RSCALE)	/* scaling factor cordic rad <-> rad */
+#define SCALE_CORAN	(CRSCALE/NSCALE)	/* scaling factor cordic rad <-> num */
 #define MIN_ATAN_FRACT	570			/* 570/1000 approx. 584/1024 */
+
+/* CORDIC table constants */
+/* 3141593/10^6*10^4 */
+#define NUM_CORDIC_ENTRIES	15		/* max num of non-zero entries */
+#define S16_CPI		31416			/* 3141593/10^6*10^4 rounded */
+#define CORDIC_LC	((qm_cora)6072)	/* collective length correction 0.6072 */
+#define CORDIC_K	((qm_cora)16468)/* magnitude scaling 1.6468 */
 
 #define fvalue(x)		(((x)%UF)*UF)	/* fraction as integer value */
 #define ivalue(x)		(((x)/UF)*UF)	/* integer as integer value */
 #define frac_part(x)	((x)%UF)		/* fractional part as integer */
 #define int_part(x)		((x)/UF)		/* integer part as integer */
+#define lsdigit(x)		((x)%FSCALE)	/* least significant digit */
+#define oddfloor(x)		(((x)/FSCALE)&1)/* rounding floor is odd */
 #define is_odd(x)		(((x)%(2*UI))!=0)
 #define prescale(x)		((s32)abs(x)*UF)
 #define prerscale(x)	((s32)abs(x)*RF)
@@ -162,6 +196,7 @@ typedef uint32_t	u32;
 #define qm_n	s16		/* Q8.7		Q3_2 */
 #define qm_deg	s16		/* Q11.4	Q4_1 */
 #define qm_rad	s16		/* Q5.10	Q2_3 */
+#define qm_cora	s16		/* Q2.13 	Q1_4 cordic angle table entry precision */
 #define q1_6	s8		/* Q1.6 - +- 1.63 byte wide sin/cos values */
 #define Q1_2	s8		/* Q1.2 - +- 2.55: byte wide sin/cos values */
 #define	Q0_5	s16		/* Q0.5 - fraction only */
@@ -219,6 +254,9 @@ typedef uint32_t	u32;
 /* pi/180 ~ 0.017453.. rad in Q5.10 format per deg */
 #define	RAD_PER_DEG	((0017*RI)/1000)
 
+extern const qm_cora s16_cordictab[NUM_CORDIC_ENTRIES];
+/* ^^^ needed to keep microchip xc16-gcc from complaining about
+   "multiple definition of `_s16_cordictab'" */
 /*
    Polar coordinates
    cf. Trigonometric functions
@@ -245,6 +283,7 @@ qm_n s16_sec(qm_rad phi);		/* 1/cos */
 qm_rad s16_acos(qm_n cos);		/* arc cosine in radians */
 qm_rad s16_asin(qm_n sin);		/* arc sine in radians */
 qm_rad s16_atan(qm_n tan);		/* arc tangent in radians */
+qm_rad s16_atan2(qm_n y,qm_n x);/* arc tangent in radians from y/x */
 qm_n s16_hypot(qm_n x,qm_n y);	/* hypoteneuse */
 qm_n s16_ln(qm_n n);			/* power to which e would have to be
 								   raised to equal n. */
@@ -259,18 +298,18 @@ qm_n s16_mul(qm_n a, qm_n b);	/* Q3.2 product a3.2*b3.2 */
 qm_n s16_pow(qm_n a,qm_n n);	/* returns a^n */
 s16 s16_reduce(qm_n k);			/* evaluate k/100=x/y for x and y and return x
 								   in bits 8-15, y in bits 0-7. */
+qm_n s16_round(qm_n x);			/* round to nearest, ties to even */
 qm_n s16_root(qm_n a,qm_n n);	/* returns n'th root nearest to a^(1/n) */
 #define s16_sqr(a) (s16_mul(a,a))/* returns a^2 */
 qm_n s16_sqrt(qm_n a);			/* fixed point principle square root */
 qm_n s16_fact(qm_n n);			/* returns n! */
-s16 s16_scale(s16 n,s16 s);		/* Downscale number n by factor s. */
 
 /* convert rad --> deg.
-   rad is supplied as percentage - i.e. with four digits to the right of
-   an implied decimal point.
-   0 <= rad <= 628 - i.e. 2*pi, or 6.2832
+   rad is supplied as implicit rational number with three digits to the right
+   of an implied decimal point.
+   0 <= rad <= 6283 - i.e. 2*pi, or 6.283
 
-   returns degrees as integer: 0 <= deg <= 360
+   returns degrees as implicit rational number: 0.0 <= deg <= 360.0
 
    360 deg    x deg
    -------- = -----
@@ -283,11 +322,12 @@ s16 s16_scale(s16 n,s16 s);		/* Downscale number n by factor s. */
 qm_deg s16_todeg(qm_rad rad);	/* convert from radians to degrees */
 
 /* Convert degrees to radians.
-   degrees is supplied as integer: 0 <= deg <= 360
+   Convert  degrees  with one decimal digit - or 4 bits - of resolution to
+   radians with three digits - or 10 bits - of resolution: 0.0 <= deg <= 360.0
 
-   returns radians as implicit rational number with four digits to the right
+   returns radians as implicit rational number with three digits to the right
    of an implied decimal point.
-   0 <= rad <= 2*pi, or 6.2831
+   0 <= rad <= 2*pi, or 6.283
 
    2*pi rad   x rad
    -------- = -----

@@ -4,7 +4,7 @@ Content-type: text/html; charset=UTF-8
 <HTML><HEAD><TITLE>Man page of s16_atan</TITLE>
 </HEAD><BODY>
 <H1>s16_atan</H1>
-Section: s16math Programmer Manual (3m)<BR>Updated: 27 January 2019<BR><A HREF="#index">Index</A>
+Section: s16math Programmer Manual (3m)<BR>Updated: 12 May 2019<BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
 <A NAME="lbAB">&nbsp;</A>
@@ -41,37 +41,48 @@ numeric argument.
 
 The return value is the 16 bit arc tangent in radians represented as an
 integer having an implied binary point with 10 bits of resolution, or
-an implied decimal point with three digits of resolution.
+an implied decimal point with three digits of resolution. For tangents
+outside the range +- 3, calculated arc tangents asymptotically saturate
+towards +- 1.37 radians.
 <A NAME="lbAG">&nbsp;</A>
 <H2>NOTES</H2>
 
 The function uses a 27 term Taylor series algorithm based on
-accuracy and performance.
+accuracy and performance. For tangents in the range +- 1, results
+correspond to those of the reference implementation to within +- 0.01.
+Accuracy declines for values outside +- 1.
 <P>
 
-Initial results were obtained using direct Reimann integration. However,
+Initial results were obtained using direct Riemann integration. However,
 a 27 term Taylor series is as accurate and runs 48 times faster for large
-values on the selected MCU.
+values on the selected MCU. <B>s16_atan2()</B> provides even more speed
+at the expense of less accuracy.
+<P>
+
+See REFERENCE for more on function execution times.
 <A NAME="lbAH">&nbsp;</A>
 <H2>SEE ALSO</H2>
 
 <A NAME="lbAI">&nbsp;</A>
+<H3><B><A HREF="/cgi-bin/man/man2html?3m+s16_atan2">s16_atan2</A></B>(3m)</H3>
+
+<A NAME="lbAJ">&nbsp;</A>
 <H3><B>Arctan</B>(<I>x</I>) using CORDIC</H3>
 
 <A HREF="http://www.convict.lu/Jeunes/Math/arctan.htm">http://www.convict.lu/Jeunes/Math/arctan.htm</A>
-<A NAME="lbAJ">&nbsp;</A>
+<A NAME="lbAK">&nbsp;</A>
 <H3>Derivatives of Inverse Trigonometric Functions</H3>
 
 <A HREF="http://oregonstate.edu/instruct/mth251/cq/Stage6/Lesson/invTrigDeriv.html">http://oregonstate.edu/instruct/mth251/cq/Stage6/Lesson/invTrigDeriv.html</A>
-<A NAME="lbAK">&nbsp;</A>
+<A NAME="lbAL">&nbsp;</A>
 <H3>Inverse trigonometric functions</H3>
 
 <A HREF="http://en.wikipedia.org/wiki/Inverse_trigonometric_functions">http://en.wikipedia.org/wiki/Inverse_trigonometric_functions</A>
-<A NAME="lbAL">&nbsp;</A>
+<A NAME="lbAM">&nbsp;</A>
 <H3>Table of Integrals</H3>
 
 <A HREF="http://www.math.com/tables/integrals/tableof.htm">http://www.math.com/tables/integrals/tableof.htm</A>
-<A NAME="lbAM">&nbsp;</A>
+<A NAME="lbAN">&nbsp;</A>
 <H2>FILE</H2>
 
 atan.c
@@ -88,17 +99,18 @@ atan.c
 <DT><A HREF="#lbAG">NOTES</A><DD>
 <DT><A HREF="#lbAH">SEE ALSO</A><DD>
 <DL>
-<DT><A HREF="#lbAI"><B>Arctan</B>(<I>x</I>) using CORDIC</A><DD>
-<DT><A HREF="#lbAJ">Derivatives of Inverse Trigonometric Functions</A><DD>
-<DT><A HREF="#lbAK">Inverse trigonometric functions</A><DD>
-<DT><A HREF="#lbAL">Table of Integrals</A><DD>
+<DT><A HREF="#lbAI"><B>s16_atan2</B>(3m)</A><DD>
+<DT><A HREF="#lbAJ"><B>Arctan</B>(<I>x</I>) using CORDIC</A><DD>
+<DT><A HREF="#lbAK">Derivatives of Inverse Trigonometric Functions</A><DD>
+<DT><A HREF="#lbAL">Inverse trigonometric functions</A><DD>
+<DT><A HREF="#lbAM">Table of Integrals</A><DD>
 </DL>
-<DT><A HREF="#lbAM">FILE</A><DD>
+<DT><A HREF="#lbAN">FILE</A><DD>
 </DL>
 <HR>
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 18:23:22 GMT, January 27, 2019
+Time: 21:12:03 GMT, May 12, 2019
 </BODY>
 </HTML>

@@ -1,4 +1,5 @@
-0.13.8
-1. Rename eval package directory from "eval" to "s16math-eval-<rev>".
-2. Update COPYING file license description and download link references.
-3. Update README package directory name format to "s16math-eval-<rev>".
+0.13.9
+1. Implement two parameter arc tangent function.
+2. Increase precision and size of CORDIC table.
+3. Add s16_round() IEEE 754 rounding function.
+4. Delete s16_scale() function.

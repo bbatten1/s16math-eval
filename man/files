@@ -3,15 +3,16 @@ s16_den.3m
 s16_acos.3m
 s16_asin.3m
 s16_atan.3m
+s16_atan2.3m
 s16_sin.3m
 s16_cos.3m
 s16_sincos.3m
 s16_tan.3m
 s16_quadrant.3m
+s16_round.3m
 s16_cot.3m
 s16_sec.3m
 s16_csc.3m
-s16_scale.3m
 s16_fact.3m
 s16_hypot.3m
 s16_div.3m

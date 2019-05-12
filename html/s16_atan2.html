@@ -1,0 +1,135 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of s16_atan2</TITLE>
+</HEAD><BODY>
+<H1>s16_atan2</H1>
+Section: s16math Programmer Manual (3m)<BR>Updated: 12 May 2019<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<B>s16_atan2 </B>- arc tangent from two variables
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<PRE>
+#include &quot;s16math.h&quot; qm_rad <B>s16_atan2</B>(qm_n <I>y</I>, qm_n <I>x</I>);
+</PRE>
+
+
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+The function transforms rectangular to polar coordinates. The effect is
+to calculate the arc tangent of <I>y</I>/<I>x</I> using the signs of the two arguments
+to find the quadrant of the result. 
+<A NAME="lbAE">&nbsp;</A>
+<H2>PARAMETERS</H2>
+
+<DL COMPACT>
+<DT><B></B><I>y</I>
+
+<DD>
+Vertical axis value. Equivalently sine. Q component of I/Q data.
+<DT><B></B><I>x</I>
+
+<DD>
+Horizontal axis value. Equivalently cosine. I component of I/Q data.
+</DL>
+<P>
+
+Parameters are supplied as 16 bit integers having implied binary points
+with 7 bits of resolution, or implied decimal points with two digits
+of resolution.
+<A NAME="lbAF">&nbsp;</A>
+<H2>RETURN</H2>
+
+The return value is the arc tangent in radians represented as a 16 bit
+integer having an implied binary point with 10 bits of resolution, or an
+implied decimal point with three digits of resolution. For tangents
+outside the range +- 3, calculated arc tangents asymptotically saturate
+towards +- 1.37 radians.
+<P>
+
+Corner cases arise when either <I>y</I> (sin) or <I>x</I> (cos) is zero. These are
+handled as follows:
+<P>
+
+<B>y is zero:</B> If <I>x</I> is less than zero, S16_PI (180 degrees) is
+returned. Otherwise zero is returned.
+<P>
+
+<B>x is zero:</B> If <I>y</I> is greater than zero, S16_PI/2 (90 degrees) is
+returned. If <I>y</I> is zero, zero is returned. Otherwise -S16_PI/2 (-90
+degrees) is returned.
+<A NAME="lbAG">&nbsp;</A>
+<H2>NOTES</H2>
+
+The function is slightly less accurate than <B><A HREF="/cgi-bin/man/man2html?3m+s16_atan">s16_atan</A>(3m)</B>. However,
+measurements using a Microchip pic24 show a worst case speedup by a factor
+of three over that function.
+<P>
+
+See REFERENCE for more on function execution times.
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<A NAME="lbAI">&nbsp;</A>
+<H3><B><A HREF="/cgi-bin/man/man2html?3m+s16_atan">s16_atan</A></B>(3m)</H3>
+
+<A NAME="lbAJ">&nbsp;</A>
+<H3>Microcontrollers &amp; CORDIC Methods</H3>
+
+<A HREF="http://www.drdobbs.com/microcontrollers-cordic-methods/184404244">http://www.drdobbs.com/microcontrollers-cordic-methods/184404244</A>
+<A NAME="lbAK">&nbsp;</A>
+<H3>CORDIC Wikipedia</H3>
+
+en.wikipedia.org/wiki/CORDIC#Modes_of_operation
+<A NAME="lbAL">&nbsp;</A>
+<H3>Convergent rounding - Wikipedia</H3>
+
+<A HREF="https://en.wikipedia.org/wiki/Rounding#Round_half_to_even">https://en.wikipedia.org/wiki/Rounding#Round_half_to_even</A>
+<A NAME="lbAM">&nbsp;</A>
+<H3>Simple C source for CORDIC</H3>
+
+<A HREF="http://www.dcs.gla.ac.uk">www.dcs.gla.ac.uk</A>/~jhw/cordic/
+<A NAME="lbAN">&nbsp;</A>
+<H3>Ruckdeschel, F.R.</H3>
+
+BASIC Scientific Subroutines,Vol. II
+<A NAME="lbAO">&nbsp;</A>
+<H2>FILE</H2>
+
+atan2.c
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">PARAMETERS</A><DD>
+<DT><A HREF="#lbAF">RETURN</A><DD>
+<DT><A HREF="#lbAG">NOTES</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+<DL>
+<DT><A HREF="#lbAI"><B>s16_atan</B>(3m)</A><DD>
+<DT><A HREF="#lbAJ">Microcontrollers &amp; CORDIC Methods</A><DD>
+<DT><A HREF="#lbAK">CORDIC Wikipedia</A><DD>
+<DT><A HREF="#lbAL">Convergent rounding - Wikipedia</A><DD>
+<DT><A HREF="#lbAM">Simple C source for CORDIC</A><DD>
+<DT><A HREF="#lbAN">Ruckdeschel, F.R.</A><DD>
+</DL>
+<DT><A HREF="#lbAO">FILE</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 21:12:03 GMT, May 12, 2019
+</BODY>
+</HTML>

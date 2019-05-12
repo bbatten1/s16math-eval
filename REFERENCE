@@ -1,4 +1,4 @@
-README file for s16math library
+REFERENCE file for s16math library
 
 This file contains the following sections:
 
@@ -173,6 +173,7 @@ FUNCTIONS
     s16_addov       Check for add overflow
     s16_asin        arc sine
     s16_atan        arc tangent
+    s16_atan2       arc tangent2
     s16_cos         cosine
     s16_cot         cotangent
     s16_csc         cosecant
@@ -194,6 +195,7 @@ FUNCTIONS
     s16_reduce      reduction of terms
     s16_root        evaluate principal root
     s16_rootov      check for overflow on any nth root
+    s16_round       IEEE 754 rounding
     s16_sec         secant
     s16_sin         sine
     s16_sincos      sine and cosine
@@ -215,8 +217,7 @@ FUNCTIONS
 
 QUALITY ASSURANCE
 =================
-    This section discusses accuracy and performance of the library
-    functions.
+    This section discusses accuracy and speed of the library functions.
 
     Accuracy
     --------
@@ -257,18 +258,21 @@ QUALITY ASSURANCE
     Where appropriate, results are shown for more than one algorithm. In
     general, it seems bigger numbers take longer to compute.
 
-    Op           Time in usec   Notes
-    --           ------------   -----
-    a+b          10-10          Compiler addition operator.
-    a-b          10-10          Compiler subraction operator.
-    a*b          10-10          Compiler multiply operator.
-    a/b          19-19          Compiler divide operator.
-    s16_mul(a,b) 17-17          Library fixed point multiply.
-    s16_div(a,b) 252-260        Library fixed point divide.
-    s16_atan(a)  25-30323       Library arc tangent - Riemann sum algorithm.
-    s16_atan(a)  25-625         Library arc tangent - 27 term Taylor series.
-    s16_ln(a)    286-25098      Natural log, Riemann sum.
-    s16_ln(a)    426-1658       Natural log, series approx.
+    Op             Time in usec Notes
+    --             ------------ -----
+    a+b            10-10        Compiler addition operator.
+    a-b            10-10        Compiler subraction operator.
+    a*b            10-10        Compiler multiply operator.
+    a/b            19-19        Compiler divide operator.
+    s16_mul(a,b)   17-17        Library fixed point multiply.
+    s16_div(a,b)   252-260      Library fixed point divide.
+    s16_atan(a)    25-30323     Library arc tangent - Riemann sum algorithm.
+    s16_atan(a)    17-623       Library arc tangent - 27 term Taylor series.
+    s16_atan2(a,b) 24-204       Library two parameter arc tangent - cordic.
+    s16_ln(a)      286-25098    Natural log, Riemann sum.
+    s16_ln(a)      426-1658     Natural log, series approx.
+    s16_round()    29-32        IEEE754 round, decimal precision.
+    s16_round()    18-19        IEEE754 found, binary precision.
 
     Because of their faster speed, series expansions are used for the arc
     tangent and natural log library functions.
@@ -280,7 +284,8 @@ EVALUATION PACKAGE
     library that can be linked with programs written in C, or with any
     program written a language that understands the 'extern "C"' construct.
 
-    The evaluation package unpacks into a directory named "eval". It
+    The evaluation package unpacks into the directory "s16math-eval-<rev>",
+    where <rev> is a three part revision number in the form x.y.z. It
     contains a set of core files and pre- built libraries for a variety of
     embedded architectures.
 
@@ -291,7 +296,8 @@ EVALUATION PACKAGE
     Directory | File             Description
     ----------------             -----------
     ./COPYING                    terms of use
-    ./README                     reference manual as plain text
+    ./README                     summary description
+    ./REFERENCE                  reference manual as plain text
     ./RELEASE                    identify current release and changes
     ./s16math.h                  function prototypes
     ./examples/
@@ -313,7 +319,8 @@ EVALUATION PACKAGE
         <function_name>.3m       man pages
     ./html/
         COPYING.html             terms of use in html format
-        README.html              reference manual in html format
+        README                   summary description
+        REFERENCE.html           reference manual in html format
             ./examples
                 README.html      documentation for examples in html format.
         <function_name>.html     man pages in html format

@@ -123,7 +123,8 @@ do the following:
    Tool:    PKOB SKDE S.No:<board serial number>
    Hex File:<download directory>/examples/pic24/testmul.hex
 
-   Hit the "Apply" button, then "Connect", then "Program".
+   Hit the "Browse" button to choose your hex file. Then hit the "Apply"
+   button, then "Connect", then "Program".
 
    Alternately, you can use the MPLAB IPE GUI to do this. Exit the IPE after
    programming is complete.
